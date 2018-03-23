@@ -1,0 +1,560 @@
+/*exported CartClient */
+var CartClient = function (cartId, redirectUrl) {
+    var cartAggregatorUrl = 'https://' + window.location.host + '/cart-aggregator/carts/',
+        multiofferStyles =
+            '.multioffer-modal .form-control {' +
+                'font-weight: normal;' +
+                'outline: 0;' +
+                'color: #303030;' +
+                'width: 100%;' +
+                'background-color: #fff;' +
+                'background-image: none;' +
+                'border: 1px solid #ccc;' +
+                'border-radius: 4px;' +
+                'box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);' +
+                'transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;' +
+            '}' +
+            '.multioffer-modal select.form-control {' +
+                'display: inline-block;' +
+            '}' +
+            '.multioffer-modal .styled-select {' +
+                'position: relative;' +
+            '}' +
+            '.multioffer-modal .styled-select select {' +
+                'appearance: none;' +
+                '-moz-appearance: none;' +
+                '-webkit-appearance: none;' +
+                'cursor: pointer;' +
+            '}' +
+            '.multioffer-modal .styled-select::before {' +
+                'border-left: 1px solid #b1b1b1;' +
+                'background-color: #fff;' +
+                'box-shadow: -5px 0 0 0 #ffffff;' +
+                'content: "";' +
+                'position: absolute;' +
+                'pointer-events: none;' +
+            '}' +
+            '.multioffer-modal .styled-select::after {' +
+                'background: #ffffff url("../../cart/css/images/icons-sprite.png") no-repeat -158px -15px;' +
+                'content: "";' +
+                'position: absolute;' +
+                'pointer-events: none;' +
+            '}' +
+            '.multioffer-modal .styled-select.widget-select select {' +
+                'font-size: 12px;' +
+                'height: 22px;' +
+                'line-height: 15px;' +
+                'padding: 3px 8px;' +
+            '}' +
+            '.multioffer-modal .styled-select.widget-select::before {' +
+                'top: 4px;' +
+                'right: 5px;' +
+                'height: 15px;' +
+                'width: 20px;' +
+            '}' +
+            '.multioffer-modal .styled-select.widget-select::after {' +
+                'background-position: 0 -33px;' +
+                'top: 3px;' +
+                'right: 10px;' +
+                'height: 15px;' +
+                'width: 7px;' +
+            '}' +
+            '.multioffer-modal .input-error {' +
+            '   border-color: #f00f0f;' +
+            '}',
+        frontendBootstrapStyles =
+            '.multioffer-modal .modal-backdrop.in {' +
+                'opacity: .5;' +
+            '}' +
+            '.multioffer-modal .modal-dialog {' +
+                'width: 600px;' +
+                'position: relative;' +
+                'margin: 70px auto;' +
+            '}' +
+            '.multioffer-modal .modal {' +
+                'display: none;' +
+                'position: fixed;' +
+                'top: 0;' +
+                'right: 0;' +
+                'bottom: 0;' +
+                'left: 0;' +
+            '}' +
+            '.multioffer-modal .modal-content {' +
+                'position: relative;' +
+                'background-color: #fff;' +
+                'border: 4px solid #444;' +
+                'border-radius: 13px;' +
+                'box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);' +
+                'background-clip: padding-box;' +
+                'outline: none;' +
+            '}' +
+            '.multioffer-modal .modal-header {' +
+                'min-height: 16px;' +
+                'padding: 25px 30px 0 30px;' +
+                'margin: 0 0 15px;' +
+            '}' +
+            '.multioffer-modal .modal-header .modal-title {' +
+                'margin: 0;' +
+                'line-height: 1.428571429;' +
+            '}' +
+            '.multioffer-modal .modal-header h4 {' +
+                'color: #3b3b3b;' +
+                'font-size: 16px;' +
+                'text-shadow: 1px 1px 0 #fcfcfc;' +
+                'font-weight: bold;' +
+            '}' +
+            '.multioffer-modal .modal-header .btn-close {' +
+                'margin: -15px -15px 0 0;' +
+                'padding: 0;' +
+                'float: right;' +
+            '}' +
+            '.multioffer-modal .modal-body {' +
+                'position: relative;' +
+                'padding: 0 30px 20px;' +
+            '}' +
+            '.multioffer-modal .modal-footer {' +
+                'text-align: right;' +
+                'padding: 14px 15px 15px;' +
+            '}' +
+            '.multioffer-modal .info-modal .modal-content {' +
+                'border-color: #80C1ff;' +
+            '}' +
+            '.multioffer-modal button.btn-close {' +
+                'background: transparent url("../../cart/css/images/icons-sprite.png") no-repeat;' +
+                'background-position: -144px -17px;' +
+                'width: 14px;' +
+                'height: 14px;' +
+                'border: none;' +
+                'text-indent: -9999px;' +
+            '}' +
+            '.multioffer-modal button.btn-primary {' +
+                'border-color: #ff7b1e;' +
+                'box-shadow: inset 0 1px 0 0 #ff9502;' +
+                'background-color: #ff7300;' +
+                'background-image: linear-gradient(to bottom, #ff9502 5%, #f60 100%);' +
+                'color: #fff;' +
+                'text-shadow: 1px 1px 0 #ff3b10;' +
+            '}' +
+            '.multioffer-modal button.btn-primary[disabled],' +
+            '.multioffer-modal button.btn-primary[disabled]:hover,' +
+            '.multioffer-modal button.btn-primary[disabled]:focus,' +
+            '.multioffer-modal button.btn-primary[disabled]:active {' +
+                'cursor: default;' +
+                'background-image: none;' +
+                'box-shadow: none;' +
+                'opacity: .65;' +
+                'border-color: rgba(0, 0, 0, .1) rgba(0, 0, 0, .1) rgba(0, 0, 0, .25);' +
+                'background-color: #e6e6e6;' +
+                'text-shadow: 1px 1px 0 #fff;' +
+                'color: #757575;' +
+            '}'+
+            '.multioffer-modal button.btn-primary:hover, button.btn-primary:focus {' +
+                'color: #fff;' +
+                'border-color: #ff7b1e;' +
+                'background-color: #f60;' +
+            '}' +
+            '.multioffer-modal .validation-message {' +
+                'display: none;' +
+                'position: relative;' +
+                'width: 100%;' +
+                'margin: 8px 0 0 -1px;' +
+                'padding: 0;' +
+            '}' +
+            '.multioffer-modal .validation-message > div {' +
+                'width: 100%;' +
+                'max-width: none;' +
+                'padding: 3px 8px;' +
+                'background: #f00f0f;' +
+                'border-radius: 4px;' +
+                'color: #fff;' +
+                'font-size: 11px;' +
+                'text-align: center;' +
+            '}' +
+            '.multioffer-modal .validation-message::before {' +
+                'content: "";' +
+                'position: absolute;' +
+                'top: -5px;' +
+                'left: 50%;' +
+                'width: 0;' +
+                'height: 0;' +
+                'margin-left: -5px;' +
+                'border-style: solid;' +
+                'border-width: 0 5px 5px;' +
+                'border-color: transparent;' +
+                'border-bottom-color: #f00f0f;' +
+            '}' +
+            '.multioffer-modal .validation-message.in {' +
+                'display: block;' +
+            '}';
+
+    function getLanguage() {
+        var location = window.location.host;
+
+        if (location.indexOf('allegro.pl') !== -1) {
+            return 'pl-PL';
+        } else if (location.indexOf('aukro.cz') !== -1) {
+            return 'cs-CZ';
+        } else if (location.indexOf('aukro.ua') !== -1) {
+            return 'ru-UA';
+        } 
+    }
+
+    var language = getLanguage();
+
+    function isOk(request) {
+        return request.readyState === 4 && request.status === 200;
+    }
+
+    function isCreated(request) {
+        return request.readyState === 4 && request.status === 201;
+    }
+
+    function isNotFound(request) {
+        return request.readyState === 4 && request.status === 404;
+    }
+
+    function isValidationError(request) {
+        return request.readyState === 4 && request.status === 422;
+    }
+
+    function isInternalError(request) {
+        return request.readyState === 4 && request.status === 500;
+    }
+
+    function isRequestFinishedWithErrorMessage(request) {
+        var response = JSON.parse(request.responseText);
+
+        return response.errors;
+    }
+
+    function prepareJson(id, quantity, availableQuantity, variant, currentOffer) {
+        quantity = quantity ? quantity : 1;
+
+        if (currentOffer && currentOffer.items.length) {
+            quantity += currentOffer.items[0].quantities.selected;
+        }
+
+        return JSON.stringify({
+            'offer': {
+                'id': id,
+                'variant': {
+                    'id': variant
+                }
+
+            },
+            'amount': quantity > availableQuantity ? availableQuantity : quantity
+        });
+    }
+
+    function getError(request) {
+        var capacity = false,
+            response = JSON.parse(request.responseText),
+            status = response.errors[0].code,
+            message = response.errors[0].message,
+            details = null;
+
+        function isVariantException() {
+            return message === "VariantNotSetException" || message === "VariantInvalidException";
+        }
+
+        if (message === "CartCapacityException") {
+            capacity = 20;
+            status = "CART_CAPACITY_EXCEEDED";
+        }
+
+        if (isVariantException()) {
+            status = "MULTIOFFER_VALIDATION";
+            details = JSON.parse(response.errors[0].details);
+        }
+
+        return {'error': response.errors[0].code, 'status': status, 'capacity': capacity, 'details': details};
+    }
+
+    function doGet(url, callback) {
+        var data,
+            req = new XMLHttpRequest();
+
+        req.open('GET', url, true);
+        req.onreadystatechange = function () {
+            if (isOk(req)) {
+                data = JSON.parse(req.responseText);
+                callback(false, data);
+            } else if (isNotFound(req)) {
+                data = '';
+                callback({'status': 404}, data);
+            }
+        };
+        req.setRequestHeader("Accept-Language", language);
+        req.send();
+    }
+
+    function addToCart(url, requestType, contentType, data, callback) {
+        var error,
+            req = new XMLHttpRequest();
+        req.open(requestType, url, true);
+        req.onreadystatechange = function () {
+            if (isOk(req) || isCreated(req)) {
+                callback(false);
+            } else if (isValidationError(req)) {
+                if (isRequestFinishedWithErrorMessage(req)) {
+                    error = getError(req);
+                    callback(error);
+                } else {
+                    callback(false);
+                }
+            } else if (isInternalError(req)) {
+                callback({'status': 500});
+            }
+        };
+        req.setRequestHeader('Content-type', contentType);
+        req.setRequestHeader("Accept-Language", language);
+        req.send(data);
+    }
+
+    function getOfferFromCart(id, callback) {
+        doGet(cartAggregatorUrl + cartId + '/items?offer.id=' + id, callback);
+    }
+
+    function updateUserCart(cartData, offer, callback) {
+        if (offer && offer.items.length) {
+            addToCart(cartAggregatorUrl + cartId + '/items/' + offer.items[0].id, 'PUT', 'application/vnd.allegro.public.v2+json', cartData, callback);
+        } else {
+            addToCart(cartAggregatorUrl + cartId + '/items', 'POST', 'application/vnd.allegro.public.v1+json', cartData, callback);
+        }
+
+    }
+
+    function processCustomParams(customParams) {
+
+        function isPropertyDefined(propertyName) {
+            return "undefined" !== typeof customParams && customParams.hasOwnProperty(propertyName);
+        }
+
+        function isShowItem() {
+            return isPropertyDefined("isShowItem") && true === customParams.isShowItem;
+        }
+
+        function areCustomParamsDefined() {
+            return isPropertyDefined("cpForNga");
+        }
+
+        function isSenderDefined() {
+            return isPropertyDefined("sender");
+        }
+
+        function hasInstalments() {
+            return isSenderDefined() && 'Instalment' === customParams.sender;
+        }
+
+        function hasVariant() {
+            return isPropertyDefined("variant");
+        }
+
+        function prepareCmEvent() {
+            var event = {
+                "cat": "PurchasingProcess",
+                "a": isShowItem() ? "AddToCartFromItemSite" : "AddToCartFromOtherSites"
+            };
+            if (isSenderDefined()) {
+                event.lab = customParams.sender;
+            }
+            return event;
+        }
+
+        return {
+            "event": prepareCmEvent(),
+            "cp": function () {
+                return areCustomParamsDefined() ? customParams.cpForNga : null;
+            },
+            "variant": hasVariant() ? customParams.variant : null,
+            "instalments": hasInstalments()
+        };
+    }
+
+    function sendCookieMonsterEvent(event, params, callback) {
+        if ("undefined" === typeof window.cm || "undefined" === typeof window.cm.conf) {
+            callback();
+            return;
+        }
+        window.cm.event(
+            event,
+            params,
+            {"onSuccess": callback, "onFailure": callback}
+        );
+    }
+
+    function getItem(itemId, callback) {
+        doGet('/purchase/CartItem.php?id=' + itemId + '&t=' + new Date().getTime(), callback);
+    }
+
+    function convertFloatToBigDecimal(number) {
+        return number.replace(/[^0-9]/, "");
+    }
+
+    this.addItemToCart = function (id, quantity, price, availableQuantity, callback, customParams) {
+        function getOfferFromCartCallback(error, currentOffer) {
+            if (error) {
+                return;
+            }
+            var params = processCustomParams(customParams),
+                data = prepareJson(id, quantity, availableQuantity, params.variant, currentOffer);
+
+            updateUserCart(data, currentOffer, function (error) {
+                function  ourCallback (error) {
+                    var callbackUrl = redirectUrl;
+
+                    if (!error) {
+                        callbackUrl= redirectUrl + "#?item=" + id;
+
+                        if (params && params.instalments) {
+                            callbackUrl += "&instalments=true";
+                        }
+                    }
+                    if (error && error.capacity) {
+                        callbackUrl = redirectUrl + "#?error=" + error.status + "&capacity=" + error.capacity;
+                    }
+
+                    window.location = callbackUrl;
+                }
+
+                function doCallbacks() {
+                    if (undefined === callback || null === callback) {
+                        ourCallback(error);
+                    } else {
+                        callback(error, ourCallback);
+                    }
+                }
+
+                function isMultiofferValidationError (error) {
+                    return error && error.status === "MULTIOFFER_VALIDATION";
+                }
+
+                function displayMultiofferModal (error) {
+                    var option = '',
+                        listingSelector = document.body,
+                        offerPreviewButton = document.querySelectorAll(".offer-preview .add-to-cart[disabled]"),
+                        closeButton,
+                        addToCartButton,
+                        variantDropdown,
+                        multiofferMessage;
+
+                    if (offerPreviewButton.length) {
+                        offerPreviewButton[0].classList.remove('spinner');
+                        offerPreviewButton[0].removeAttribute('disabled');
+                    }
+
+                    function hideMultiofferModal () {
+                        function doesModalExists() {
+                            return document.getElementsByClassName('multioffer-modal')[0];
+                        }
+                        if (doesModalExists()) {
+                            listingSelector.removeChild(document.querySelector('.multioffer-modal'));
+                        }
+                    }
+
+                    function showValidationMessage() {
+                        multiofferMessage.style.display = 'block';
+                        variantDropdown.className = "form-control multioffer-dropdown input-error";
+                    }
+
+                    function hideValidationMessage() {
+                        multiofferMessage.style.display = 'none';
+                        variantDropdown.className = "form-control multioffer-dropdown";
+                    }
+
+                    function validateSelectedVariant() {
+                        if (!variantDropdown.selectedIndex) {
+                            showValidationMessage();
+                        } else {
+                            var updatedData = JSON.parse(data);
+
+                            addToCartButton.classList.add('spinner');
+                            addToCartButton.setAttribute('disabled', true);
+
+                            hideValidationMessage();
+                            updatedData.offer.variant.id = variantDropdown.options[variantDropdown.selectedIndex].value;
+                            updateUserCart(JSON.stringify(updatedData), currentOffer, function() {
+                                hideMultiofferModal();
+                                sendCookieMonsterEvent(params.event, params.cp, doCallbacks);
+                            });
+                        }
+                    }
+
+                    hideMultiofferModal();
+
+                    error.details.forEach(function (variant) {
+                        option += '<option value="' + variant.id +'">' + variant.attributes[0].value + ' (dostępnych: ' + variant.quantity + ')</option>';
+                    });
+
+                    option = '<select class="form-control multioffer-dropdown"><option value="" disabled selected>wybierz</option>' + option + '</select>';
+
+                    listingSelector.insertAdjacentHTML('afterbegin',
+                        '<div class="multioffer-modal">' +
+                            '<style scoped>' +
+                                multiofferStyles +
+                                frontendBootstrapStyles +
+                            '</style>' +
+                            '<div class="modal info-modal" style="display: block; z-index: 10012;">' +
+                                '<div class="modal-dialog">' +
+                                    '<div class="modal-content">' +
+                                        '<form>' +
+                                            '<div class="modal-header">' +
+                                                '<button type="button" class="btn-close multioffer-modal-close">×</button>' +
+                                                '<h4 class="modal-title">wybierz rozmiar</h4>' +
+                                            '</div>' +
+                                            '<div class="modal-body">'+
+                                                '<div class="form-group">' +
+                                                    '<div class="styled-select widget-select input-group-validation right-sm" style="width: 40%;">' +
+                                                        option +
+                                                        '<div class="validation-message multioffer-validation-message in" style="display: none;" >' +
+                                                            '<div>wybierz rozmiar</div>' +
+                                                        '</div>' +
+                                                    '</div>' +
+                                                '</div>' +
+                                            '</div>' +
+                                            '<div class="modal-footer">' +
+                                                '<button type="button" class="btn btn-primary multioffer-add-to-cart">dodaj do koszyka</button>' +
+                                            '</div>' +
+                                        '</form>' +
+                                    '</div>' +
+                                '</div>' +
+                            '</div>' +
+                            '<div class="modal-backdrop multioffer-modal-backdrop in" style="z-index: 10011;"></div>' +
+                        '</div>');
+
+                        closeButton =  document.getElementsByClassName('multioffer-modal-close')[0];
+                        addToCartButton = document.getElementsByClassName('multioffer-add-to-cart')[0];
+                        variantDropdown = document.getElementsByClassName('multioffer-dropdown')[0];
+                        multiofferMessage = document.getElementsByClassName('multioffer-validation-message')[0];
+
+                    addToCartButton.addEventListener("click", validateSelectedVariant);
+                    closeButton.addEventListener("click", hideMultiofferModal);
+                    variantDropdown.addEventListener('change', hideValidationMessage);
+                }
+
+                if (isMultiofferValidationError(error)) {
+                    displayMultiofferModal(error);
+                    error = null;
+                } else {
+                    sendCookieMonsterEvent(params.event, params.cp, doCallbacks);
+                }
+
+
+            });
+        }
+
+        getOfferFromCart(id, getOfferFromCartCallback);
+    };
+
+    this.addItemToCartWithoutExtraData = function (id, quantity, callback) {
+        var that = this;
+
+        getItem(id, function (error, data) {
+            that.addItemToCart(id, quantity, convertFloatToBigDecimal(data.buyNowPrice), data.quantity, callback);
+        });
+    };
+
+    this.isResponsiveCartEnabled = function () {
+        return true;
+    };
+};

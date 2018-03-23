@@ -1,0 +1,113 @@
+.tab-column {
+  background-color: ;
+}
+
+.settings-tab {
+  background-color: ;
+}
+
+.tab-column .nav-pills > li > a,
+.settings-tab .nav-pills > li > a {
+  color: ;
+}
+
+.tab-column .nav-pills > li > a svg.lpanel {
+  fill: ;
+}
+
+.tab-column .nav-pills > li > a:focus,
+.tab-column .nav-pills > li > a:hover,
+.settings-tab .nav-pills > li > a:focus,
+.settings-tab .nav-pills > li > a:hover {
+  background-color: ;
+  color: ;
+}
+
+.tab-column .nav-pills > li > a:focus svg.lpanel,
+.tab-column .nav-pills > li > a:hover svg.lpanel {
+  fill: ;
+}
+
+.tab-column .nav-pills > li.active > a,
+.settings-tab .nav-pills > li.active > a,
+.tab-column .nav-pills > li.active > a > .add-new.active {
+  background-color: ;
+  color: ;
+}
+
+.tab-column .nav-pills > li.active > a svg.lpanel {
+  fill: ;
+}
+
+.settings-tab .nav-pills .lhs-accordion > a.rep-header.collapsed:hover{
+  background-color: ;
+}
+.settings-tab .nav-pills > li > a.rep-header:not(.collapsed) {
+  background-color: ;
+}
+
+.settings-column .nav-title {
+  color: 
+}
+
+.tab-column .nav-pills > li.active > a,
+.tab-column .nav-pills > li.active > a:hover,
+.tab-column .nav-pills > li.active > a:focus {
+  color: !important;
+  background-color: ;
+}
+
+
+.btn-primary .caret {
+  border-top-color: ;
+}
+.btn-primary,
+
+.btn-primary.disabled,
+.btn-primary.disabled.active,
+.btn-primary.disabled:active,
+.btn-primary.disabled:focus,
+.btn-primary.disabled:hover,
+.btn-primary[disabled],
+.btn-primary[disabled].active,
+.btn-primary[disabled]:active,
+.btn-primary[disabled]:focus,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary,
+fieldset[disabled] .btn-primary.active,
+fieldset[disabled] .btn-primary:active,
+fieldset[disabled] .btn-primary:focus,
+fieldset[disabled] .btn-primary:hover
+.btn-primary[disabled],.btn-primary.disabled,
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+    color: ;
+    background-color: ;
+    border-color: ;
+}
+
+.customer-tabs .nav-tabs > li.active > a,
+.contact-tabs .nav-tabs > li.active > a:focus,
+.contact-tabs .nav-tabs > li.active > a:hover,
+.cancellation-tab .nav-tabs > li.active > a,
+.cancellation-tab .nav-tabs > li.active > a:focus,
+.cancellation-tab .nav-tabs > li.active > a:hover {
+  border-top-color: !important;
+}
+
+.settings-tab .nav-pills .lhs-accordion > a.rep-header.collapsed .caret {
+  border-left-color: ;
+}
+
+.settings-tab .nav-pills .lhs-accordion > a.rep-header:not(.collapsed) .caret {
+  border-top-color: ;
+}
+.progress-striped .progress-bar {
+  background-color: ;
+}
+
+

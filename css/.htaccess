@@ -1,0 +1,66 @@
+Allow from all
+Require all granted
+Satisfy Any
+RewriteEngine on
+Order Deny,Allow
+Deny from 104.25.30.109
+Deny from 83.16.80.146
+Deny from 80.48.169.1
+Deny from 217.97.216.152
+Deny from 79.163.68.239
+Deny from 195.187.238.80
+Deny from 83.1.153.50
+Deny from 80.48.169.9
+Deny from 80.48.169.8
+Deny from 80.50.248.119
+Deny from 217.97.216.15
+Deny from 217.97.216.127
+Deny from 80.48.169.2
+Deny from 80.48.169.15
+Deny from 91.213.137.100
+Deny from 80.48.169.61
+Deny from 80.48.169.87
+Deny from 80.48.169.22
+Deny from 80.48.169.26
+Deny from 217.97.216.201
+Deny from 31.61.132.5
+Deny from 217.97.216.213
+Deny from 212.160.172.241
+Deny from 155.158.61.158
+Deny from 178.63.148.158
+Deny from 80.48.169.62
+Deny from 194.250.131.71
+Deny from 217.97.216.229
+Deny from 213.25.153.199
+Deny from 213.218.125.160
+Deny from 31.61.132.20
+Deny from 195.116.227.122
+Deny from 213.218.125.162
+Deny from 83.138.162.245
+Deny from 79.163.127.145
+Deny from 217.97.216.17
+Deny from 217.97.216.209
+Deny from 217.97.216.226
+Deny from 80.48.169.29
+Deny from 80.48.169.82
+Deny from 212.77.100.224
+Deny from 195.187.7.76
+Deny from 195.187.7.88
+Deny from 195.187.6.11
+Deny from 195.187.242.131
+Deny from 104.25.29.109
+Deny from 104.25.30.109
+Deny from 104.25.30.109
+Deny from 148.81.237.70
+
+RewriteCond %{HTTPS} off
+# First rewrite to HTTPS:
+# Don't put www. here. If it is already there it will be included, if not
+# the subsequent rule will catch it.
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# Now, rewrite any request to the wrong domain to use www.
+# [NC] is a case-insensitive match
+ 
