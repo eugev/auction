@@ -3,8 +3,8 @@
 session_start();
 
 
-//$con = new mysqli("localhost", "dotpay","55cykablyat","dotpay_fr_dotpay" );
-$con = new mysqli("localhost", "root","root","auction" );
+$con = new mysqli("localhost", "dotpay","55cykablyat","dotpay_fr_dotpay" );
+//$con = new mysqli("localhost", "root","root","auction" );
 
 //$con = new mysqli("localhost", "root","","dotpay_fr_dotpay" );
 	
