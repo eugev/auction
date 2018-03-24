@@ -1,52 +1,97 @@
 <!DOCTYPE html>
-<!-- saved from url=(1677)https://allegro.pl/login/form?authorization_uri=https:%2F%2Fallegro.pl%2Fauth%2Foauth%2Fauthorize%3Fclient_id%3Dtb5SFf3cRxEyspDN%26redirect_uri%3Dhttps:%2F%2Fallegro.pl%2Flogin%2Fauth%3Forigin_url%253D%25252Ftransaction-entry%25252Fbuy-now%25253Frequest%25253DeyJzZXJ2aWNlIjp7ImNvdW50cnlDb2RlIjoiUEwiLCJjdXJyZW5jeSI6bnVsbH0sIm9mZmVycyI6W3siaWQiOiI3MjQ5NTI3NTQ2IiwicXVhbnRpdHkiOjEsInZhcmlhbnQiOm51bGwsImFkZGl0aW9uYWxTZXJ2aWNlcyI6bnVsbCwiZ2xvYmFsU2VydmljZXMiOm51bGx9XSwiY2FydCI6bnVsbCwicHVyY2hhc2VDYXJ0IjpudWxsLCJndWVzdCI6bnVsbCwibWV0YWRhdGEiOnsicHJvY2Vzc0VudHJ5IjoiQlVZX05PVyIsInVzZXJUeXBlIjoiVVNFUiIsImZsYWdzIjpudWxsfSwiY21Vc2VySWQiOm51bGwsImJ1bmRsZXMiOm51bGwsInB1cmNoYXNlRmVhdHVyZXMiOm51bGx9%2526qstate%253DeyJyZXF1ZXN0IjoiL3RyYW5zYWN0aW9uLWVudHJ5L2J1eS1ub3c%25252FcmVxdWVzdD1leUp6WlhKMmFXTmxJanA3SW1OdmRXNTBjbmxEYjJSbElqb2lVRXdpTENKamRYSnlaVzVqZVNJNmJuVnNiSDBzSW05bVptVnljeUk2VzNzaWFXUWlPaUkzTWpRNU5USTNOVFEySWl3aWNYVmhiblJwZEhraU9qRXNJblpoY21saGJuUWlPbTUxYkd3c0ltRmtaR2wwYVc5dVlXeFRaWEoyYVdObGN5STZiblZzYkN3aVoyeHZZbUZzVTJWeWRtbGpaWE1pT201MWJHeDlYU3dpWTJGeWRDSTZiblZzYkN3aWNIVnlZMmhoYzJWRFlYSjBJanB1ZFd4c0xDSm5kV1Z6ZENJNmJuVnNiQ3dpYldWMFlXUmhkR0VpT25zaWNISnZZMlZ6YzBWdWRISjVJam9pUWxWWlgwNVBWeUlzSW5WelpYSlVlWEJsSWpvaVZWTkZVaUlzSW1ac1lXZHpJanB1ZFd4c2ZTd2lZMjFWYzJWeVNXUWlPbTUxYkd3c0ltSjFibVJzWlhNaU9tNTFiR3dzSW5CMWNtTm9ZWE5sUm1WaGRIVnlaWE1pT201MWJHeDkiLCJ1cmxQcmVmaXgiOiJodHRwczovL2FsbGVncm8ucGwiLCJjb2JyYW5kSWQiOjAsImdlbmVyYXRlVG9rZW4iOnRydWUsImd1ZXN0Ijp7Imd1ZXN0Qm94IjoidmVsYUJ1eU5vd0Zsb3ciLCJzZXNzVG9rZW4iOiJPTTREOGhNQlpwZEVzZ1RUOVRwUVJ3Tzc4MGxNSGIzeSIsIml0ZW1JZCI6bnVsbCwicXVhbnRpdHkiOjAsInZlcnNpb24iOjJ9fQ%25253D%25253D%26response_type%3Dcode%26state%3D2gTOSl&oauth=true -->
-<html xmlns="http://www.w3.org/1999/xhtml" data-front-main="da2b96355d9e43ad" lang="pl" class="cookie-policy-banner-not-dismissed installments-banner-not-dismissed loyalty-program-banner-not-dismissed technical-break-banner-not-dismissed"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
-    <!--<base href="/login/">--><base href=".">
-    <title>Allegro.pl - Więcej niż aukcje. Najlepsze oferty na największej platformie handlowej.</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-    <meta name="robots" content="noindex, nofollow">
-    <link rel="stylesheet" type="text/css" media="all" href="./login_files/login-frontend-5bb4c58b.css">
-    <script src="./login_files/osd.js.download"></script><script src="./login_files/pubads_impl_rendering_188.js.download"></script><script async="" src="./login_files/tracker.js.download"></script><script type="text/javascript" async="" src="./login_files/recaptcha__pl.js.download"></script><script type="text/javascript">
-        /*<![CDATA[*/
-        var NEWRELIC_ENV = (function() {
-            var pattern = new RegExp("(^|.*\\.)(allegro\\.pl|aukro\\.ua|allegro\\.ua|allegro\\.de|aukro\\.cz)$"),
-                    ENV = {
-                        PROD: {
-                            APP_ID: '19558331',
-                            PERCENTAGE: 2
-                        },
-                        TEST: {
-                            APP_ID: '19558485',
-                            PERCENTAGE: 100
-                        }
-                    };
-            return pattern.test(window.location.host) ? ENV.PROD : ENV.TEST;
-        })();
+<!-- saved from url=(0096)https://allegro.pl/transaction-front/app/user/purchase/e3740be0-2df9-11e8-a9a0-239c66f09ef6/dapf -->
+<html class="installments-banner-not-dismissed loyalty-program-banner-not-dismissed technical-break-banner-not-dismissed"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">[uib-tooltip-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-bottom > .tooltip-arrow,[uib-popover-popup].popover.top-left > .arrow,[uib-popover-popup].popover.top-right > .arrow,[uib-popover-popup].popover.bottom-left > .arrow,[uib-popover-popup].popover.bottom-right > .arrow,[uib-popover-popup].popover.left-top > .arrow,[uib-popover-popup].popover.left-bottom > .arrow,[uib-popover-popup].popover.right-top > .arrow,[uib-popover-popup].popover.right-bottom > .arrow,[uib-popover-html-popup].popover.top-left > .arrow,[uib-popover-html-popup].popover.top-right > .arrow,[uib-popover-html-popup].popover.bottom-left > .arrow,[uib-popover-html-popup].popover.bottom-right > .arrow,[uib-popover-html-popup].popover.left-top > .arrow,[uib-popover-html-popup].popover.left-bottom > .arrow,[uib-popover-html-popup].popover.right-top > .arrow,[uib-popover-html-popup].popover.right-bottom > .arrow,[uib-popover-template-popup].popover.top-left > .arrow,[uib-popover-template-popup].popover.top-right > .arrow,[uib-popover-template-popup].popover.bottom-left > .arrow,[uib-popover-template-popup].popover.bottom-right > .arrow,[uib-popover-template-popup].popover.left-top > .arrow,[uib-popover-template-popup].popover.left-bottom > .arrow,[uib-popover-template-popup].popover.right-top > .arrow,[uib-popover-template-popup].popover.right-bottom > .arrow{top:auto;bottom:auto;left:auto;right:auto;margin:0;}[uib-popover-popup].popover,[uib-popover-html-popup].popover,[uib-popover-template-popup].popover{display:block !important;}</style><style type="text/css">.uib-position-measure{display:block !important;visibility:hidden !important;position:absolute !important;top:-9999px !important;left:-9999px !important;}.uib-position-scrollbar-measure{position:absolute !important;top:-9999px !important;width:50px !important;height:50px !important;overflow:scroll !important;}.uib-position-body-scrollbar-measure{overflow:scroll !important;}</style><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <!--<base href="/">--><base href=".">
+    <title>Allegro.pl - Więcej niż aukcje. Najlepsze oferty na największej platformie handlowej. - https://allegro.pl/</title>
+    
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <meta content="global,all" name="classification">
+    <meta content="nofollow" name="robots">
+    
 
-        if (Math.random() * 100 < NEWRELIC_ENV.PERCENTAGE) {
-            window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:22,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(5),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(4),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:9,2:8,3:6,4:10,5:3,6:23,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1),i=t(2);t("loader").features.stn=!0,t(3);var a=Event;n.on("fn-start",function(t){var e=t[0];e instanceof a&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof a&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),i.on("fn-start",function(){this.bstStart=Date.now()}),i.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:9,2:8,3:7,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],6:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=t("ee").create(),i=t(1)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t,e){function n(){return s}if(t[1]){var r=t[1];if("function"==typeof r){var s=a(r,"nr@wrapped",function(){return i(r,"fn-",n,r.name||"anonymous")});this.wrapped=t[1]=s,o.emit("initEventContext",[t,e],this.wrapped)}else"function"==typeof r.handleEvent&&i.inPlace(r,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:24,ee:"QJf3ax",gos:"7eSDFh"}],7:[function(t,e){var n=t("ee").create(),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState","replaceState"],"-")},{1:24,ee:"QJf3ax"}],8:[function(t,e){var n=t("ee").create(),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:24,ee:"QJf3ax"}],9:[function(t,e){function n(t,e,n){t[0]=i(t[0],"fn-",null,n)}function r(t,e,n){function r(){return a}this.ctx={};var a={"nr@context":this.ctx};o.emit("initTimerContext",[t,n],a),t[0]=i(t[0],"fn-",r,n)}var o=t("ee").create(),i=t(1)(o);e.exports=o,i.inPlace(window,["setTimeout","setImmediate"],"setTimer-"),i.inPlace(window,["setInterval"],"setInterval-"),i.inPlace(window,["clearTimeout","clearImmediate"],"clearTimeout-"),o.on("setInterval-start",n),o.on("setTimer-start",r)},{1:24,ee:"QJf3ax"}],10:[function(t,e){function n(){f.inPlace(this,p,"fn-",o)}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),e.hasOwnProperty("addEventListener")&&u.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:6,2:24,ee:"QJf3ax"}],11:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=n(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1),u=window.XMLHttpRequest;t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=n(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var u=0;c>u;u++)e.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof u&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof u&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof u&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:12,3:10,4:6,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],12:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],13:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:22,2:23,handle:"D5DuLP"}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):void(r.q&&(r.q[t]||(r.q[t]=[]),r.q[t].push(e)))}var r=t("ee").create();e.exports=n,n.ee=r,r.q={}},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=f.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===u.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=f.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=window,f=c.document;t(2);var u=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-768.min.js"},p=e.exports={offset:i(),origin:u,features:{}};f.addEventListener?(f.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(f.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:22,2:13,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],22:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],23:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],24:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@original",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=t,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:23,ee:"QJf3ax"}]},{},["G9z0Bl",4,11,5]);
-            ;NREUM.info={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",licenseKey:"6c5ff34b20",applicationID: NEWRELIC_ENV.APP_ID,sa:1,agent:"js-agent.newrelic.com/nr-768.min.js"}
+    <script async="" src="https://ngastatic.com/s4c/tracker.js"></script><script async="" src="https://www.google-analytics.com/analytics.js"></script><script>
+        (function () {
+            var LOCALE = {
+                PL: {
+                    countryCode: 'PL',
+                    title: 'Allegro.pl - Więcej niż aukcje. Najlepsze oferty na największej platformie handlowej.',
+                }
+            };
+            var CONFIG = {
+                NEWRELIC: {
+                    PL: {
+                        APP_ID: '15237013',
+                        PERCENTAGE: 10
+                    }
+                },
+                GA: {
+                    PL: {
+                        TRACKING_ID: 'UA-2827377-1',
+                        SAMPLE_RATE: 100
+                    }
+                }
+            };
+            var COUNTRY_CODE = getCountryCode();
+
+            function getCountryCode() {
+                return LOCALE.PL.countryCode;
+            }
+            function isProduction() {
+                var pattern = new RegExp("(^|.*\\.)(allegro\\.pl)$");
+                return pattern.test(window.location.hostname);
+            }
+            function shouldEnableNewRelic() {
+                return isProduction() && Math.random() * 100 < CONFIG.NEWRELIC[COUNTRY_CODE].PERCENTAGE
+            }
+            function shouldEnableGA() {
+                return isProduction();
+            }
+            function setTransactionFrontendGlobals() {
+                window.TF_NR = {
+                    ENABLED: shouldEnableNewRelic(),
+                    APP_ID: CONFIG.NEWRELIC[COUNTRY_CODE].APP_ID
+                };
+                window.TF_GA = {
+                    ENABLED: shouldEnableGA(),
+                    TRACKING_ID: CONFIG.GA[COUNTRY_CODE].TRACKING_ID,
+                    SAMPLE_RATE: CONFIG.GA[COUNTRY_CODE].SAMPLE_RATE
+                };
+            }
+
+            setTransactionFrontendGlobals();
+            document.getElementsByTagName("title")[0].innerHTML = LOCALE[COUNTRY_CODE] ? LOCALE[COUNTRY_CODE].title : "Allegro";
+        })();
+    </script><style></style>
+    <script type="text/javascript">
+        if (window.TF_NR.ENABLED) {
+            window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(19),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,s.now(),!0])}catch(u){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,s.now()])}var i=t("handle"),a=t(20),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(p){"stack"in p&&(t(12),t(11),"addEventListener"in window&&t(6),s.xhrWrappable&&t(13),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,s.now(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(){C++,M=y.hash,this[u]=b.now()}function o(){C--,y.hash!==M&&i(0,!0);var t=b.now();this[l]=~~this[l]+t-this[u],this[d]=t}function i(t,e){E.emit("newURL",[""+y,e])}function a(t,e){t.on(e,function(){this[e]=b.now()})}var c="-start",s="-end",f="-body",u="fn"+c,d="fn"+s,p="cb"+c,h="cb"+s,l="jsTime",m="fetch",v="addEventListener",w=window,y=w.location,b=t("loader");if(w[v]&&b.xhrWrappable){var g=t(9),x=t(10),E=t(8),O=t(6),R=t(12),P=t(7),T=t(13),S=t("ee"),N=S.get("tracer");t(14),b.features.spa=!0;var M,j=w[v],C=0;S.on(u,r),S.on(p,r),S.on(d,o),S.on(h,o),S.buffer([u,d,"xhr-done","xhr-resolved"]),O.buffer([u]),R.buffer(["setTimeout"+s,"clearTimeout"+c,u]),T.buffer([u,"new-xhr","send-xhr"+c]),P.buffer([m+c,m+"-done",m+f+c,m+f+s]),E.buffer(["newURL"]),g.buffer([u]),x.buffer(["propagate",p,h,"executor-err","resolve"+c]),N.buffer([u,"no-"+u]),a(T,"send-xhr"+c),a(S,"xhr-resolved"),a(S,"xhr-done"),a(P,m+c),a(P,m+"-done"),E.on("pushState-end",i),E.on("replaceState-end",i),j("hashchange",i,!0),j("load",i,!0),j("popstate",function(){i(0,C>1)},!0)}},{}],5:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(12),c=t(11),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",p="resource",h="-start",l="-end",m="fn"+h,v="fn"+l,w="bstTimer",y="pushState",b=t("loader");b.features.stn=!0,t(8);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=b.now())}),o.on(v,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,b.now()])}),a.on(m,function(t,e,n){this.bstStart=b.now(),this.bstType=n}),a.on(v,function(t,e){i(w,[e,this.bstStart,b.now(),this.bstType])}),c.on(m,function(){this.bstStart=b.now()}),c.on(v,function(t,e){i(w,[e,this.bstStart,b.now(),"requestAnimationFrame"])}),o.on(y+h,function(t){this.time=b.now(),this.startPath=location.pathname+location.hash}),o.on(y+l,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],6:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(22)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],7:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=r.apply(this,arguments);return o.emit(n+"start",arguments,t),t.then(function(e){return o.emit(n+"end",[null,e],t),e},function(e){throw o.emit(n+"end",[e],t),e})})}var o=t("ee").get("fetch"),i=t(19);e.exports=o;var a=window,c="fetch-",s=c+"body-",f=["arrayBuffer","blob","json","text","formData"],u=a.Request,d=a.Response,p=a.fetch,h="prototype";u&&d&&p&&(i(f,function(t,e){r(u[h],e,s),r(d[h],e,s)}),r(a,"fetch",c),o.on(c+"end",function(t,e){var n=this;e?e.clone().arrayBuffer().then(function(t){n.rxSize=t.byteLength,o.emit(c+"done",[null,e],n)}):o.emit(c+"done",[t],n)}))},{}],8:[function(t,e,n){var r=t("ee").get("history"),o=t(22)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],9:[function(t,e,n){var r=t("ee").get("mutation"),o=t(22)(r),i=NREUM.o.MO;e.exports=r,i&&(window.MutationObserver=function(t){return this instanceof i?new i(o(t,"fn-")):i.apply(this,arguments)},MutationObserver.prototype=i.prototype)},{}],10:[function(t,e,n){function r(t){var e=a.context(),n=c(t,"executor-",e),r=new f(n);return a.context(r).getCtx=function(){return e},a.emit("new-promise",[r,e],e),r}function o(t,e){return e}var i=t(22),a=t("ee").get("promise"),c=i(a),s=t(19),f=NREUM.o.PR;e.exports=a,f&&(window.Promise=r,["all","race"].forEach(function(t){var e=f[t];f[t]=function(n){function r(t){return function(){a.emit("propagate",[null,!o],i),o=o||!t}}var o=!1;s(n,function(e,n){Promise.resolve(n).then(r("all"===t),r(!1))});var i=e.apply(f,arguments),c=f.resolve(i);return c}}),["resolve","reject"].forEach(function(t){var e=f[t];f[t]=function(t){var n=e.apply(f,arguments);return t!==n&&a.emit("propagate",[t,!0],n),n}}),f.prototype["catch"]=function(t){return this.then(null,t)},f.prototype=Object.create(f.prototype,{constructor:{value:r}}),s(Object.getOwnPropertyNames(f),function(t,e){try{r[e]=f[e]}catch(n){}}),a.on("executor-start",function(t){t[0]=c(t[0],"resolve-",this),t[1]=c(t[1],"resolve-",this)}),a.on("executor-err",function(t,e,n){t[1](n)}),c.inPlace(f.prototype,["then"],"then-",o),a.on("then-start",function(t,e){this.promise=e,t[0]=c(t[0],"cb-",this),t[1]=c(t[1],"cb-",this)}),a.on("then-end",function(t,e,n){this.nextPromise=n;var r=this.promise;a.emit("propagate",[r,!0],n)}),a.on("cb-end",function(t,e,n){a.emit("propagate",[n,!0],this.nextPromise)}),a.on("propagate",function(t,e,n){this.getCtx&&!e||(this.getCtx=function(){if(t instanceof Promise)var e=a.context(t);return e&&e.getCtx?e.getCtx():this})}),r.toString=function(){return""+f})},{}],11:[function(t,e,n){var r=t("ee").get("raf"),o=t(22)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],12:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(22)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],13:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",c)}function i(t){b.push(t),l&&(x?x.then(a):v?v(a):(E=-E,O.data=E))}function a(){for(var t=0;t<b.length;t++)r([],b[t]);b.length&&(b=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(6);var f=t("ee"),u=f.get("xhr"),d=t(22)(u),p=NREUM.o,h=p.XHR,l=p.MO,m=p.PR,v=p.SI,w="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],b=[];e.exports=u;var g=window.XMLHttpRequest=function(t){var e=new h(t);try{u.emit("new-xhr",[e],e),e.addEventListener(w,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(h,g),g.prototype=h.prototype,d.inPlace(g.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),l){var x=m&&m.resolve();if(!v&&!m){var E=1,O=document.createTextNode(E);new l(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===w||a()})},{}],14:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=a.now()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var s=t.getResponseHeader("X-NewRelic-App-Data");s&&(e.cat=s.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return l(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(15),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,p=t("id"),h=t(18),l=t(17),m=window.XMLHttpRequest;a.features.xhr=!0,t(13),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=l(r);i&&(n.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var c=0;c<d;c++)e.addEventListener(u[c],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)})}},{}],15:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],16:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[f.now()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(19),c=t(20),s=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",h=p+"ixn-";a(d,function(t,e){u[e]=o(p+e,!0,"api")}),u.addPageAction=o(p+"addPageAction",!0),u.setCurrentRouteName=o(p+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var l=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(h+"tracer",[f.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){l[e]=o(h+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],17:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],18:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],19:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],20:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],21:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],22:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(20),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){p([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o,e)}catch(a){p([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){p([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function p(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o,i){if(!p.aborted||i){t&&t(n,r,o);for(var a=e(o),c=l(n),s=c.length,f=0;f<s;f++)c[f].apply(a,r);var d=u[y[n]];return d&&d.push([b,n,r,a]),a}}function h(t,e){w[t]=l(t).concat(e)}function l(t){return w[t]||[]}function m(t){return d[t]=d[t]||o(n)}function v(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var w={},y={},b={on:h,emit:n,get:m,listeners:l,context:e,buffer:v,abort:a,aborted:!1};return b}function i(){return new r}function a(){(u.api||u.feature)&&(p.aborted=!0,u=p.backlog={})}var c="nr@context",s=t("gos"),f=t(19),u={},d={},p=e.exports=o();p.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!x++){var t=g.info=NREUM.info,e=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(y,function(e,n){t[e]||(t[e]=n)}),s("mark",["onload",a()+g.offset],null,"api");var n=p.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===p.readyState&&i()}function i(){s("mark",["domContent",a()+g.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(c=Math.max((new Date).getTime(),c))-g.offset}var c=(new Date).getTime(),s=t("handle"),f=t(19),u=t("ee"),d=window,p=d.document,h="addEventListener",l="attachEvent",m=d.XMLHttpRequest,v=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var w=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-spa-1044.min.js"},b=m&&v&&v[h]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:c,now:a,origin:w,features:{},xhrWrappable:b};t(16),p[h]?(p[h]("DOMContentLoaded",i,!1),d[h]("load",r,!1)):(p[l]("onreadystatechange",o),d[l]("onload",r)),s("mark",["firstbyte",c],null,"api");var x=0,E=t(21)},{}]},{},["loader",2,14,5,3,4]);
+            ;NREUM.info={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",licenseKey:"6c5ff34b20",applicationID:window.TF_NR.APP_ID,sa:1}
         }
-        /*]]>*/
     </script>
-    <script type="text/javascript" src="./login_files/jquery.min-1d35678c.js.download"></script>
-    <script type="text/javascript" src="./login_files/angular.min-8c9ac3aa.js.download"></script>
-    <script type="text/javascript" src="./login_files/angular-ui-router.min-78c94563.js.download"></script>
-    <script type="text/javascript" src="./login_files/ui-bootstrap-tpls.min-e7cb7da4.js.download"></script>
-    <script type="text/javascript" src="./login_files/angular-gettext.min-7b3f9ac5.js.download"></script>
-    <script type="text/javascript" src="./login_files/angular-cookies.min-8b9622db.js.download"></script>
-    <script type="text/javascript" src="./login_files/cart-client-519064af.js.download"></script>
-    <script type="text/javascript" src="./login_files/login.min-fce3fc62.js.download"></script>
-    <script type="text/javascript" src="./login_files/fingerprint2.min-91ff2059.js.download"></script>
-    <script async="async" defer="defer" type="text/javascript" src="./login_files/api.js.download"></script>
-    <script type="text/javascript" src="./login_files/angular-recaptcha.min-ff26c6ab.js.download"></script>
-    <script type="text/javascript" src="./login_files/ng-analytics.min-8207e71f.js.download"></script>
-<script src="./login_files/opbox-external.js.download"></script><script src="./login_files/vendors.js.download"></script><script async="" src="./login_files/gpt.js.download"></script><link rel="preload" href="./login_files/integrator.js.download" as="script"><script type="text/javascript" src="./login_files/integrator.js.download"></script><link rel="preload" href="./login_files/integrator.js(1).download" as="script"><script type="text/javascript" src="./login_files/integrator.js(1).download"></script><link rel="preload" href="./login_files/pubads_impl_188.js.download" as="script"><script src="./login_files/pubads_impl_188.js.download" async=""></script></head>
-<body data-m-front-main="true" data-s-front-main="98939582f68fb220">
+
+    <script>
+        if (window.TF_GA.ENABLED) {
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', window.TF_GA.TRACKING_ID, {'sampleRate': window.TF_GA.SAMPLE_RATE});
+            ga('require', 'eventTracker');
+            ga('require', 'outboundLinkTracker');
+            ga('require', 'urlChangeTracker');
+            ga('send', 'pageview');
+        }
+    </script>
+    <script async="" src="https://seo.allegrostatic.pl/scripts/autotrack.js"></script>
+
+<link href="./2 set sending option_files/styles.8018dfe27a063df2d2d5245601dd6b24.css" rel="stylesheet"><script src="./2 set sending option_files/vendor.7873c8900046d8669ff9.js.pobrane" type="text/javascript"></script><script src="./2 set sending option_files/main.af7cb966ad0d34e247ae__.js.pobrane" type="text/javascript"></script><script src="./2 set sending option_files/modules.ed658269fa97241c77f6.js.pobrane" type="text/javascript"></script>
+<script src="./2 set sending option_files/opbox-external.js.pobrane"></script><script src="./2 set sending option_files/vendors.js.pobrane"></script></head><body>
 <div class="side-nav vela"></div>
 <div class="main-wrapper">
-    <div class="opbox-fragment"><script>var opbox = opbox || {}; opbox.config = opbox.config || {"baseDomain":"allegro.pl","edgeHost":"https://edge.allegro.pl","lazyBoxNames":[],"canonicalRoute":"http://?:.allegro.pl/headerService/header","cookieMonster":{"host":"https://ngastatic.com/s4c/tracker.js","account":"CM.991213.tz_pl","boxViewDisabled":false,"defaultCustomParams":{"pv":{"canonicalRoute":"http://?:.allegro.pl/headerService/header","_opbox":{"routePath":"/headerService/header","analyticsTags":[],"traceId":"37ae3886e48cc84e"}},"ev":{"canonicalRoute":"http://?:.allegro.pl/headerService/header"}}}} || {};</script>
-<script nomodule="true" src="./login_files/placeholder-polyfill-external.js.download"></script>
+    <div class="opbox-fragment"><script>var opbox = opbox || {}; opbox.config = opbox.config || {"baseDomain":"allegro.pl","edgeHost":"https://edge.allegro.pl","lazyBoxNames":[],"canonicalRoute":"http://?:.allegro.pl/headerService/header","cookieMonster":{"host":"https://ngastatic.com/s4c/tracker.js","account":"CM.991213.tz_pl","boxViewDisabled":false,"defaultCustomParams":{"pv":{"canonicalRoute":"http://?:.allegro.pl/headerService/header","_opbox":{"routePath":"/headerService/header","analyticsTags":[],"traceId":"dbb768fa1cc6c248"}},"ev":{"canonicalRoute":"http://?:.allegro.pl/headerService/header"}}}} || {};</script>
+<script nomodule="true" src="./2 set sending option_files/placeholder-polyfill-external.js.pobrane"></script>
 <script>!function(e){"use strict";function n(e){return Array.prototype.slice.call(e)}function r(e){var r=[],o=e?function(){var e=arguments;return new Promise(function(o,t){return r.push({args:n(e),resolve:o,reject:t})})}:function(){r.push({args:n(arguments)})};return o.__queue__=r,o}function o(e){return e===s?r():e===u?r(!0):!0===e||!1===e?e:Object.keys(e).reduce(function(n,r){return n[r]=o(e[r]),n},{})}function t(e,n){var r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:a;n[r]=n[r]||{},n[r].loaded||Object.assign(n[r],o(e))}function i(e){t(c,e,a)}Object.defineProperty(e,"__esModule",{value:!0}),e.default=t,e.init=i;var a="opbox",s=e.VOID_FN=Function,u=e.PROMISE_FN=Promise,c={analytics:{sendEvent:s},boxViewsMarker:{markBoxAsRendered:s,markBoxAsVisible:s,recursivelyMarkBoxAsVisible:s,markBoxAsHidden:s,recursivelyMarkBoxAsHidden:s,trackBoxScroll:s,isBoxInViewport:s},component:{init:s},onData:s,changeParams:s,tween:s,scrollTo:s,edge:{get:u,put:u,post:u},page:{getData:u},registerComponent:s,onDomReady:s,loaded:!0};i(window)}({});</script>
 <script>document.addEventListener("DOMContentLoaded",function(){function e(e){var t=document.createElement("script");t.setAttribute("src",e),document.head.appendChild(t)}window.opbox.initialized||document.querySelectorAll('script[src="https://assets.allegrostatic.com/opbox-web/1.52.0/scripts/opbox-external.js"]').length||e("https://assets.allegrostatic.com/opbox-web/1.52.0/scripts/opbox-external.js"),document.querySelectorAll('script[src="https://assets.allegrostatic.com/opbox-web/1.52.0/scripts/vendors.js"]').length||e("https://assets.allegrostatic.com/opbox-web/1.52.0/scripts/vendors.js")});</script>
 <script>!function(e){var n={};function o(i){if(n[i])return n[i].exports;var t=n[i]={i:i,l:!1,exports:{}};return e[i].call(t.exports,t,t.exports,o),t.l=!0,t.exports}o.m=e,o.c=n,o.d=function(e,n,i){o.o(e,n)||Object.defineProperty(e,n,{configurable:!1,enumerable:!0,get:i})},o.n=function(e){var n=e&&e.__esModule?function(){return e.default}:function(){return e};return o.d(n,"a",n),n},o.o=function(e,n){return Object.prototype.hasOwnProperty.call(e,n)},o.p="",o(o.s=4)}([function(e,n,o){"use strict";e.exports={cookiePolicy:{id:"cookie-policy-banner",cookieName:"policyBannerHide",cookieExpireDate:365,hideBeforeNextVisit:!0,link:"https://allegro.pl/regulamin/pl/polityka-plikow-cookies",linkText:"plików cookies",message:"Strona korzysta z {{link}} w celu realizacji usług. Jeżeli nie zmienisz ustawień, będą one zapisywane w pamięci Twojego urządzenia.",allowOverwriteMessage:!1},installments:{id:"installments-banner",cookieName:"installmentsBannerHidden",cookieExpireDate:7,url:"https://dlakupujacych.allegro.pl/zaufane-platnosci/raty-0-procent?bi_s=allegro_so&bi_m=Top_Band_ALL&bi_c=raty",message:"Teraz prawdziwe <strong>RATY&nbsp;0%</strong> na Allegro",allowOverwriteMessage:!0},loyaltyProgram:{id:"loyalty-program-banner",cookieName:"loyaltyProgramBannerHidden",cookieExpireDate:7,url:"https://monety.allegro.pl/?bi_s=allegro_so&bi_m=Top_Band_ALL&bi_c=monetyzacja",iconLinkMessage:"Płać mniej! Zbieraj <strong>Monety</strong> i wymieniaj na kupony",detailsLinkMessage:"sprawdź szczegóły",allowOverwriteMessage:!0},technicalBreak:{id:"technical-break-banner",allowOverwriteMessage:!0}}},,,,function(e,n,o){"use strict";var i,t=o(0),r=(i=t)&&i.__esModule?i:{default:i};var a=function(e,n){(function(e){for(var n=e+"=",o=decodeURIComponent(document.cookie).split(";"),i=0;i<o.length;i++){for(var t=o[i];" "==t.charAt(0);)t=t.substring(1);if(0==t.indexOf(n))return t.substring(n.length,t.length)}return""})(n)||document.querySelector("html").classList.add(e+"-not-dismissed")};Object.keys(r.default).forEach(function(e){var n=r.default[e],o=n.id,i=n.cookieName;a(o,i)})}]);</script>
@@ -58,16 +103,16 @@
  * @license  MIT
  */
 e.exports=function(e){return null!=e&&(n(e)||r(e)||!!e._isBuffer)}},4:function(e,t){t.defaults={},t.set=function(e,n,r){var o=r||{},i=t.defaults,u=o.expires||i.expires,s=o.domain||i.domain,a=void 0!==o.path?o.path:void 0!==i.path?i.path:"/",f=void 0!==o.secure?o.secure:i.secure,c=void 0!==o.httponly?o.httponly:i.httponly,l=u?new Date("number"==typeof u?(new Date).getTime()+864e5*u:u):"";document.cookie=e.replace(/[^+#$&^`|]/g,encodeURIComponent).replace("(","%28").replace(")","%29")+"="+n.replace(/[^+#$&\/:<-\[\]-}]/g,encodeURIComponent)+(l&&l.getTime()>=0?";expires="+l.toUTCString():"")+(s?";domain="+s:"")+(a?";path="+a:"")+(f?";secure":"")+(c?";httponly":"")},t.get=function(e){for(var t=document.cookie.split(";"),n=0;n<t.length;n++){var r=t[n],o=r.length,i=r.indexOf("=");i=i<0?o:i;if(decodeURIComponent(r.substring(0,i).replace(/^\s+/,""))===e)return decodeURIComponent(r.substring(i+1,o))}return null},t.erase=function(e,n){t.set(e,"",{expires:-1,domain:n&&n.domain,path:n&&n.path,secure:0,httponly:0})},t.all=function(){for(var e={},t=document.cookie.split(";"),n=0;n<t.length;n++){var r=t[n],o=r.length,i=r.indexOf("=");i=i<0?o:i;e[decodeURIComponent(r.substring(0,i).replace(/^\s+/,""))]=decodeURIComponent(r.substring(i+1,o))}return e}}})})}(null);</script>
-<link type="text/css" rel="stylesheet" href="./login_files/index.css">
-<link type="text/css" rel="stylesheet" href="./login_files/index__b25dfe03.css">
-<link type="text/css" rel="stylesheet" href="./login_files/fonts-c27b1842da.css">
-<link type="text/css" rel="stylesheet" href="./login_files/metrum-header-de930aacb8.css">
+<link type="text/css" rel="stylesheet" href="./2 set sending option_files/index.css">
+<link type="text/css" rel="stylesheet" href="./2 set sending option_files/index__b25dfe03.css">
+<link type="text/css" rel="stylesheet" href="./2 set sending option_files/fonts-c27b1842da.css">
+<link type="text/css" rel="stylesheet" href="./2 set sending option_files/metrum-header-de930aacb8.css">
 <script> </script>
-<div data-box-name="cookie policy" data-prototype-id="allegro.bar" data-prototype-version="1.0" data-skin-class-name="cookie-policy-banner-bottom" data-implementation-version="1.2.4" data-analytics-enabled="" data-analytics-category="allegro.bar" data-analytics-tags="" data-analytics-groups="%5B%22allegro.header%22%5D" data-seen="true" data-visible-for="644721"><a name="cookie-policy"></a><div data-service-domain="allegro.pl" class="opbox-bar  cookie-policy-banner">
+<div data-box-name="cookie policy" data-prototype-id="allegro.bar" data-prototype-version="1.0" data-skin-class-name="cookie-policy-banner-bottom" data-implementation-version="1.2.4" data-analytics-enabled="" data-analytics-category="allegro.bar" data-analytics-tags="" data-analytics-groups="%5B%22allegro.header%22%5D"><a name="cookie-policy"></a><div data-service-domain="allegro.pl" class="opbox-bar  cookie-policy-banner">
         <div class="bar-wrapper">
-            <p class="message">Strona korzysta z <a href="https://allegro.pl/regulamin/pl/polityka-plikow-cookies" target="_blank" class="bar-link" data-analytics-clickable="">plików cookies</a> w celu realizacji usług. Jeżeli nie zmienisz ustawień, będą one zapisywane w pamięci Twojego urządzenia.</p><a class="close-bar" href="https://allegro.pl/login/#cookie-policy-banner" data-analytics-interaction-value="closeCookiePolicy" data-analytics-interaction=""></a>
+            <p class="message">Strona korzysta z <a href="https://allegro.pl/regulamin/pl/polityka-plikow-cookies" target="_blank" class="bar-link" data-analytics-clickable="">plików cookies</a> w celu realizacji usług. Jeżeli nie zmienisz ustawień, będą one zapisywane w pamięci Twojego urządzenia.</p><a class="close-bar" href="https://allegro.pl/#cookie-policy-banner" data-analytics-interaction-value="closeCookiePolicy" data-analytics-interaction=""></a>
         </div>
-    </div></div><div data-box-name="allegro.metrumHeader" data-prototype-id="allegro.metrumHeader" data-prototype-version="2.0" data-skin-class-name="" data-implementation-version="1.18.5" data-analytics-enabled="" data-analytics-category="allegro.metrumHeader" data-analytics-tags="" data-analytics-groups="%5B%22allegro.header%22%5D" data-seen="true" data-visible-for="644721"><a name="allegro-metrumheader"></a>
+    </div></div><div data-box-name="allegro.metrumHeader" data-prototype-id="allegro.metrumHeader" data-prototype-version="2.0" data-skin-class-name="" data-implementation-version="1.18.5" data-analytics-enabled="" data-analytics-category="allegro.metrumHeader" data-analytics-tags="" data-analytics-groups="%5B%22allegro.header%22%5D" data-seen="true" data-visible-for="500"><a name="allegro-metrumheader"></a>
         <nav class="fee54_CWqWO opbox-metrum-header--default fee54_3qdRv" data-metrum-header-sticky-disabled="">
             <div class="fee54_2mDvq">
                 <div class="opbox-metrum-header__center fee54_15baT fee54_EjxZ1 fee54_y44_L fee54_16wEg fee54_101dP fee54_1_kHL">
@@ -75,7 +120,7 @@ e.exports=function(e){return null!=e&&(n(e)||r(e)||!!e._isBuffer)}},4:function(e
         <h2 itemscope="" itemtype="http://schema.org/Organization" class="fee54_2N0im" data-description="header logo">
             
         <a href="https://allegro.pl/" class="fee54_LPPcP " title="Allegro.pl - aukcje internetowe, bezpieczne zakupy" data-analytics-click-value="logotype" data-analytics-clickable="">
-            <img class="fee54_1_FZs" src="./login_files/allegro-e2b1a7f8.svg" alt="Allegro.pl - aukcje internetowe, bezpieczne zakupy">
+            <img class="fee54_1_FZs" src="./2 set sending option_files/allegro-e2b1a7f8.svg" alt="Allegro.pl - aukcje internetowe, bezpieczne zakupy">
         </a>
         
     
@@ -92,7 +137,7 @@ e.exports=function(e){return null!=e&&(n(e)||r(e)||!!e._isBuffer)}},4:function(e
             
             
         <div class="fee54_kE_A4 fee54_3NVgZ fee54_2VJ3u" data-dropdown-id="account_dropdown" data-description="header dropdown account_dropdown">
-            <button type="button" class="fee54_2iUzi fee54_2w7sa fee54_3vXlh"><span class="fee54_1E7NQ"><span class="opbox-metrum-header__account-name-wrapper">Moje Allegro</span><span data-notification-tag="total" class="fee54_3rwCT fee54_-h8c5 fee54_39KUd"></span></span></button>
+            <button type="button" class="fee54_2iUzi fee54_2w7sa fee54_3vXlh"><span class="fee54_1E7NQ"><span class="opbox-metrum-header__account-name-wrapper">areczek5511</span><span data-notification-tag="total" class="fee54_3rwCT fee54_-h8c5 fee54_39KUd"></span></span></button>
             
         <div class="fee54_3RqiL fee54_2cRD9  fee54_2Jkdp">
             
@@ -131,18 +176,14 @@ e.exports=function(e){return null!=e&&(n(e)||r(e)||!!e._isBuffer)}},4:function(e
         <a href="https://allegro.pl/myaccount/Coins.php" class="fee54_1clM8 fee54_1J5td" rel="nofollow" data-analytics-clickable="" data-analytics-click-opbox-custom-placement="account_dropdown_link">monety i kupony</a>
         
     
-            <div class="opbox-metrum-header__account-login">
+            <div class="opbox-metrum-header__account-login"></div>
+            <div class="opbox-metrum-header__account-logout">
                 <div class="fee54_3cW8w fee54_1rrip"></div>
                 
-        <a href="https://allegro.pl/login/auth" class=" fee54_2NxiC fee54_1H33r" rel="nofollow" data-description="header login button" data-analytics-clickable="" data-analytics-click-opbox-custom-placement="account_dropdown_link">zaloguj</a>
-        
-    
-                
-        <a href="https://allegro.pl/rejestracja/#/" class=" fee54_2NxiC fee54_1H33r" rel="nofollow" data-description="header register button" data-analytics-clickable="" data-analytics-click-opbox-custom-placement="account_dropdown_link">załóż konto</a>
+        <a href="https://allegro.pl/logout.php" class=" fee54_2NxiC fee54_1H33r" rel="nofollow" data-description="header logout button" data-analytics-clickable="" data-analytics-click-opbox-custom-placement="account_dropdown_link">wyloguj</a>
         
     
             </div>
-            <div class="opbox-metrum-header__account-logout"></div>
         
         </div>
     
@@ -163,150 +204,266 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
 </script>
     </div>
 <script>!function(e){var t={};function i(o){if(t[o])return t[o].exports;var n=t[o]={i:o,l:!1,exports:{}};return e[o].call(n.exports,n,n.exports,i),n.l=!0,n.exports}i.m=e,i.c=t,i.d=function(e,t,o){i.o(e,t)||Object.defineProperty(e,t,{configurable:!1,enumerable:!0,get:o})},i.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return i.d(t,"a",t),t},i.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},i.p="",i(i.s=1)}([function(e,t,i){"use strict";e.exports={cookiePolicy:{id:"cookie-policy-banner",cookieName:"policyBannerHide",cookieExpireDate:365,hideBeforeNextVisit:!0,link:"https://allegro.pl/regulamin/pl/polityka-plikow-cookies",linkText:"plików cookies",message:"Strona korzysta z {{link}} w celu realizacji usług. Jeżeli nie zmienisz ustawień, będą one zapisywane w pamięci Twojego urządzenia.",allowOverwriteMessage:!1},installments:{id:"installments-banner",cookieName:"installmentsBannerHidden",cookieExpireDate:7,url:"https://dlakupujacych.allegro.pl/zaufane-platnosci/raty-0-procent?bi_s=allegro_so&bi_m=Top_Band_ALL&bi_c=raty",message:"Teraz prawdziwe <strong>RATY&nbsp;0%</strong> na Allegro",allowOverwriteMessage:!0},loyaltyProgram:{id:"loyalty-program-banner",cookieName:"loyaltyProgramBannerHidden",cookieExpireDate:7,url:"https://monety.allegro.pl/?bi_s=allegro_so&bi_m=Top_Band_ALL&bi_c=monetyzacja",iconLinkMessage:"Płać mniej! Zbieraj <strong>Monety</strong> i wymieniaj na kupony",detailsLinkMessage:"sprawdź szczegóły",allowOverwriteMessage:!0},technicalBreak:{id:"technical-break-banner",allowOverwriteMessage:!0}}},function(e,t,i){"use strict";var o=a(i(2)),n=a(i(0));function a(e){return e&&e.__esModule?e:{default:e}}Object.keys(n.default).forEach(function(e){var t=n.default[e],i=t.id,a=t.cookieName,r=t.hideBeforeNextVisit,s=t.cookieExpireDate,l=document.querySelector(".opbox-bar."+i);l&&new o.default(a,{baseElement:l,hideBeforeNextVisit:r,cookieExpireDate:s}).render()})},function(e,t,i){"use strict";var o,n=function(){function e(e,t){for(var i=0;i<t.length;i++){var o=t[i];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,i,o){return i&&e(t.prototype,i),o&&e(t,o),t}}(),a=i(3),r=(o=a)&&o.__esModule?o:{default:o};var s=function(){function e(t,i){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e),this.cookieName=t,this.baseElement=i.baseElement,this.hideBeforeNextVisit=i.hideBeforeNextVisit,this.closeElement=this.baseElement.querySelector(".close-bar"),this.cookieExpireDate=i.cookieExpireDate||365,this.cookieDomain=e.getDomainForCookie(this.baseElement.getAttribute("data-service-domain"))}return n(e,[{key:"setHiddenBarCookie",value:function(){r.default.set(this.cookieName,"1",{expires:this.cookieExpireDate,domain:this.cookieDomain})}},{key:"attachListeners",value:function(){var e=this;this.closeElement&&this.closeElement.addEventListener("click",function(t){t.preventDefault(),e.baseElement.classList.add("disabled"),e.setHiddenBarCookie(),e.sendEvent(window,"resize")},!1)}},{key:"sendEvent",value:function(e,t){var i=document.createEvent("CustomEvent");i.initCustomEvent(t,!1,!1,{}),e.dispatchEvent(i)}},{key:"render",value:function(){r.default.get(this.cookieName)||(this.attachListeners(),this.hideBeforeNextVisit&&this.setHiddenBarCookie())}}],[{key:"getDomainForCookie",value:function(e){return"."+e}}]),e}();e.exports=s},function(e,t){t.defaults={},t.set=function(e,i,o){var n=o||{},a=t.defaults,r=n.expires||a.expires,s=n.domain||a.domain,l=void 0!==n.path?n.path:void 0!==a.path?a.path:"/",c=void 0!==n.secure?n.secure:a.secure,u=void 0!==n.httponly?n.httponly:a.httponly,d=void 0!==n.samesite?n.samesite:a.samesite,p=r?new Date("number"==typeof r?(new Date).getTime()+864e5*r:r):0;document.cookie=e.replace(/[^+#$&^`|]/g,encodeURIComponent).replace("(","%28").replace(")","%29")+"="+i.replace(/[^+#$&/:<-\[\]-}]/g,encodeURIComponent)+(p&&p.getTime()>=0?";expires="+p.toUTCString():"")+(s?";domain="+s:"")+(l?";path="+l:"")+(c?";secure":"")+(u?";httponly":"")+(d?";samesite="+d:"")},t.get=function(e){for(var t=document.cookie.split(";");t.length;){var i=t.pop(),o=i.indexOf("=");if(o=o<0?i.length:o,decodeURIComponent(i.slice(0,o).replace(/^\s+/,""))===e)return decodeURIComponent(i.slice(o+1))}return null},t.erase=function(e,i){t.set(e,"",{expires:-1,domain:i&&i.domain,path:i&&i.path,secure:0,httponly:0})},t.all=function(){for(var e={},t=document.cookie.split(";");t.length;){var i=t.pop(),o=i.indexOf("=");o=o<0?i.length:o,e[decodeURIComponent(i.slice(0,o).replace(/^\s+/,""))]=decodeURIComponent(i.slice(o+1))}return e}}]);</script>
-<script async="async" src="./login_files/index__4e326cee.js.download"></script>
+<script async="async" src="./2 set sending option_files/index__4e326cee.js.pobrane"></script>
 <script>!function(e){"use strict";!function(o,r){if("object"==typeof exports&&"object"==typeof module)module.exports=r();else if("function"==typeof e&&e.amd)e([],r);else{var t=r();for(var n in t)("object"==typeof exports?exports:o)[n]=t[n]}}("undefined"!=typeof self?self:this,function(){return function(e){function o(t){if(r[t])return r[t].exports;var n=r[t]={i:t,l:!1,exports:{}};return e[t].call(n.exports,n,n.exports,o),n.l=!0,n.exports}var r={};return o.m=e,o.c=r,o.d=function(e,r,t){o.o(e,r)||Object.defineProperty(e,r,{configurable:!1,enumerable:!0,get:t})},o.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return o.d(r,"a",r),r},o.o=function(e,o){return Object.prototype.hasOwnProperty.call(e,o)},o.p="",o(o.s=30)}({0:function(e,o,r){Object.defineProperty(o,"__esModule",{value:!0}),o.cx=o.createClassNameResolver=void 0;var t=r(1),n=function(e){return e&&e.__esModule?e:{default:e}}(t),a=o.createClassNameResolver=function(e){return function(){for(var o=arguments.length,r=Array(o),t=0;t<o;t++)r[t]=arguments[t];return r.map(function(o){return e[o]||o}).join(" ")}};o.cx=a(n.default)},1:function(e,o){e.exports={"opbox-metrum-header-link":"fee54_LPPcP",opboxMetrumHeaderLink:"fee54_1J5td","opbox-metrum-header-link-signal":"fee54_1clM8",opboxMetrumHeaderLinkSignal:"fee54_1clM8","opbox-metrum-header-button":"fee54_2NxiC",opboxMetrumHeaderButton:"fee54_2NxiC","is-disabled":"fee54_19bdT",isDisabled:"fee54_19bdT","opbox-metrum-header-button--secondary":"fee54_1H33r",opboxMetrumHeaderButtonSecondary:"fee54_1H33r","opbox-metrum-header-divider":"fee54_3cW8w",opboxMetrumHeaderDivider:"fee54_1rrip","opbox-metrum-header-list":"fee54_3NZWu",opboxMetrumHeaderList:"fee54_3OnM4","opbox-metrum-header-list--unstyled":"fee54_3lLbn",opboxMetrumHeaderListUnstyled:"fee54_3lLbn","opbox-metrum-header-list__item":"fee54_1NJil",opboxMetrumHeaderListItem:"fee54_3GPbu","opbox-metrum-header-list__item--link":"fee54_14dcF",opboxMetrumHeaderListItemLink:"fee54_14dcF","opbox-metrum-header-list__item--flex":"fee54_YrDJ_",opboxMetrumHeaderListItemFlex:"fee54_YrDJ_","opbox-metrum-header-list__column":"fee54_dD2Hu",opboxMetrumHeaderListColumn:"fee54_dD2Hu","opbox-metrum-header-list__column--right":"fee54_3HNSE",opboxMetrumHeaderListColumnRight:"fee54_3HNSE","opbox-metrum-header-type":"fee54_nTAMw",opboxMetrumHeaderType:"fee54_nTAMw","opbox-metrum-header-type--xsmall":"fee54_3Tjt-",opboxMetrumHeaderTypeXsmall:"fee54_3Tjt-","opbox-metrum-header-dropdown":"fee54_kE_A4",opboxMetrumHeaderDropdown:"fee54_kE_A4","opbox-metrum-header-dropdown__toggle":"fee54_2iUzi",opboxMetrumHeaderDropdownToggle:"fee54_2iUzi","opbox-metrum-header-dropdown__drop":"fee54_3RqiL",opboxMetrumHeaderDropdownDrop:"fee54_3RqiL","opbox-metrum-header-dropdown__drop--right":"fee54_2cRD9",opboxMetrumHeaderDropdownDropRight:"fee54_2cRD9","opbox-metrum-header-dropdown__drop--columns":"fee54_33phb",opboxMetrumHeaderDropdownDropColumns:"fee54_33phb","opbox-metrum-header-dropdown__col":"fee54_2Z1oc",opboxMetrumHeaderDropdownCol:"fee54_2Z1oc","is-open":"fee54_3TaXR",isOpen:"fee54_3TaXR","opbox-metrum-header-card":"fee54_16wEg",opboxMetrumHeaderCard:"fee54_16wEg","opbox-metrum-header-card--sticky":"fee54_2olss",opboxMetrumHeaderCardSticky:"fee54_2olss","opbox-metrum-header-card--no-space":"fee54_273li",opboxMetrumHeaderCardNoSpace:"fee54_273li","opbox-metrum-header-card--no-space-top":"fee54_101dP",opboxMetrumHeaderCardNoSpaceTop:"fee54_101dP","opbox-metrum-header-card--no-space-bottom":"fee54_1_kHL",opboxMetrumHeaderCardNoSpaceBottom:"fee54_1_kHL","opbox-metrum-header-card--no-space-right":"fee54_1LO11",opboxMetrumHeaderCardNoSpaceRight:"fee54_1LO11","opbox-metrum-header--allegrode":"fee54_2h2Fg",opboxMetrumHeaderAllegrode:"fee54_2h2Fg","opbox-metrum-header--simple":"fee54_3qdRv",opboxMetrumHeaderSimple:"fee54_3qdRv","opbox-metrum-header__tall@md":"fee54_y44_L",opboxMetrumHeaderTallMd:"fee54_y44_L","opbox-metrum-header__depts":"fee54_kF7w-",opboxMetrumHeaderDepts:"fee54_kF7w-","opbox-metrum-header__categories":"fee54_3aVI1",opboxMetrumHeaderCategories:"fee54_3aVI1","opbox-metrum-header-dropdown__categories":"fee54_2Db0Z",opboxMetrumHeaderDropdownCategories:"fee54_2Db0Z","opbox-metrum-header-dropdown__account":"fee54_3eIzt",opboxMetrumHeaderDropdownAccount:"fee54_3eIzt","opbox-metrum-header__divider":"fee54_1rrip","opbox-metrum-header__category":"fee54_3U4XY",opboxMetrumHeaderCategory:"fee54_3U4XY","opbox-metrum-header-dropdown--label-mini":"fee54_JEPvv",opboxMetrumHeaderDropdownLabelMini:"fee54_JEPvv","opbox-metrum-header-dropdown--label-midi":"fee54_dIDzM",opboxMetrumHeaderDropdownLabelMidi:"fee54_dIDzM","opbox-metrum-header__dropdown-toggle@sm":"fee54_3Frg5",opboxMetrumHeaderDropdownToggleSm:"fee54_3Frg5","opbox-metrum-header__icon--my-account":"fee54_2VJ3u",opboxMetrumHeaderIconMyAccount:"fee54_2VJ3u","opbox-metrum-header__icon-toggle":"fee54_2w7sa",opboxMetrumHeaderIconToggle:"fee54_2w7sa","opbox-metrum-header__search":"fee54_ThaHT",opboxMetrumHeaderSearch:"fee54_ThaHT","opbox-metrum-header__nav":"fee54_1LzRP",opboxMetrumHeaderNav:"fee54_1LzRP","opbox-metrum-header__icon":"fee54_3NVgZ",opboxMetrumHeaderIcon:"fee54_3NVgZ","opbox-metrum-header__accordion-line":"fee54_1fkFB",opboxMetrumHeaderAccordionLine:"fee54_1fkFB","opbox-metrum-header-wrapper--allegrode":"fee54_3NYkf",opboxMetrumHeaderWrapperAllegrode:"fee54_3NYkf","headroom--not-top":"fee54_198yM",headroomNotTop:"fee54_198yM","opbox-metrum-header-wrapper":"fee54_1xreU",opboxMetrumHeaderWrapper:"fee54_15baT","opbox-metrum-header":"fee54_CWqWO",opboxMetrumHeader:"fee54_CWqWO","opbox-metrum-header__center":"fee54_EjxZ1",opboxMetrumHeaderCenter:"fee54_EjxZ1","opbox-metrum-header__wrapper":"fee54_15baT","opbox-metrum-header__logo-wrapper":"fee54_3Bsgp",opboxMetrumHeaderLogoWrapper:"fee54_2N0im","opbox-metrum-header__link":"fee54_1J5td","opbox-metrum-header__logo":"fee54_1_FZs",opboxMetrumHeaderLogo:"fee54_1_FZs","opbox-metrum-header__sub-brand":"fee54_2-R2q",opboxMetrumHeaderSubBrand:"fee54_2-R2q","opbox-metrum-header__inline@sm":"fee54_3o8jl",opboxMetrumHeaderInlineSm:"fee54_3o8jl","opbox-metrum-header__border-bottom":"fee54_2mDvq",opboxMetrumHeaderBorderBottom:"fee54_2mDvq","opbox-metrum-header__border-bottom-none@sm":"fee54_1SADD",opboxMetrumHeaderBorderBottomNoneSm:"fee54_1SADD","opbox-metrum-header__border-right@sm":"fee54_3EtAX",opboxMetrumHeaderBorderRightSm:"fee54_3EtAX","opbox-metrum-header__border-left@sm":"fee54_2uFef",opboxMetrumHeaderBorderLeftSm:"fee54_2uFef","opbox-metrum-header__wide":"fee54_2Jkdp",opboxMetrumHeaderWide:"fee54_2Jkdp","opbox-metrum-header__overflow-hidden":"fee54_hCEVX",opboxMetrumHeaderOverflowHidden:"fee54_hCEVX","opbox-metrum-header__bar":"fee54_3m5js",opboxMetrumHeaderBar:"fee54_3m5js","opbox-metrum-header__bar--animate":"fee54_3L49X",opboxMetrumHeaderBarAnimate:"fee54_3L49X","opbox-metrum-header__links":"fee54_3znqn",opboxMetrumHeaderLinks:"fee54_3znqn","opbox-metrum-header__inline-link":"fee54_IFG6k",opboxMetrumHeaderInlineLink:"fee54_IFG6k","opbox-metrum-header__link-icon":"fee54_2790e",opboxMetrumHeaderLinkIcon:"fee54_2790e","opbox-metrum-header__notification":"fee54_3rwCT",opboxMetrumHeaderNotification:"fee54_3rwCT","opbox-metrum-header__notification--bottom-right":"fee54_3Hkbe",opboxMetrumHeaderNotificationBottomRight:"fee54_3Hkbe","opbox-metrum-header__notification--icon":"fee54_2wHfT",opboxMetrumHeaderNotificationIcon:"fee54_2wHfT","opbox-metrum-header__link-notification":"fee54_-h8c5",opboxMetrumHeaderLinkNotification:"fee54_-h8c5","opbox-metrum-header__account-name-notification":"fee54_39KUd",opboxMetrumHeaderAccountNameNotification:"fee54_39KUd","opbox-metrum-header__list-item":"fee54_3GPbu","opbox-metrum-header__link-category":"fee54_1MoEt",opboxMetrumHeaderLinkCategory:"fee54_1MoEt","opbox-metrum-header__list":"fee54_3OnM4","opbox-metrum-header__padding-left":"fee54_296TH",opboxMetrumHeaderPaddingLeft:"fee54_296TH","opbox-metrum-header__strip":"fee54_1Ns3d",opboxMetrumHeaderStrip:"fee54_1Ns3d","opbox-metrum-header__banner":"fee54_i44Jx",opboxMetrumHeaderBanner:"fee54_i44Jx","opbox-metrum-header__icon--bag":"fee54_1YC-6",opboxMetrumHeaderIconBag:"fee54_1YC-6","opbox-metrum-header__close-button":"fee54_2_lXA",opboxMetrumHeaderCloseButton:"fee54_2_lXA","opbox-metrum-header__arrow":"fee54_2o1kg",opboxMetrumHeaderArrow:"fee54_2o1kg","opbox-metrum-header__arrow--left":"fee54_3YT6m",opboxMetrumHeaderArrowLeft:"fee54_3YT6m","opbox-metrum-header__arrow--right":"fee54_Dxw8g",opboxMetrumHeaderArrowRight:"fee54_Dxw8g","is-hidden":"fee54_3u41m",isHidden:"fee54_3u41m","opbox-metrum-header__dropdown-link":"fee54_2ZRG6",opboxMetrumHeaderDropdownLink:"fee54_2ZRG6","mobile-wrapper":"fee54_314tm",mobileWrapper:"fee54_314tm","opbox-metrum-header-navigation-bar--hide":"fee54_33Hg3",opboxMetrumHeaderNavigationBarHide:"fee54_33Hg3","opbox-metrum-header-observed-offers-star":"fee54_2pfd3",opboxMetrumHeaderObservedOffersStar:"fee54_2pfd3","observed-offers-star-icon":"fee54_Eh80L",observedOffersStarIcon:"fee54_Eh80L","opbox-metrum-header-logo-wrapper":"fee54_2N0im","opbox-metrum-header__account-name":"fee54_3vXlh",opboxMetrumHeaderAccountName:"fee54_3vXlh","opbox-metrum-header__account-name-with-notification":"fee54_1E7NQ",opboxMetrumHeaderAccountNameWithNotification:"fee54_1E7NQ","opbox-metrum-header__slot":"fee54_3Lznh",opboxMetrumHeaderSlot:"fee54_3Lznh","showcase-slider-namespace":"fee54_3ZXXU",showcaseSliderNamespace:"fee54_3ZXXU",carousel:"fee54_lGvLy","opbox-metrum-header-navigation-bar":"fee54_3BjQA",opboxMetrumHeaderNavigationBar:"fee54_3BjQA","headroom--unpinned":"fee54_I0ofi",headroomUnpinned:"fee54_I0ofi","opbox-metrum-header-wrapper--simple":"fee54_3Md45",opboxMetrumHeaderWrapperSimple:"fee54_3Md45"}},2:function(e,o,r){function t(e,o){if(!(e instanceof o))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(o,"__esModule",{value:!0});var n="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},a=function(){function e(e,o){for(var r=0;r<o.length;r++){var t=o[r];t.enumerable=t.enumerable||!1,t.configurable=!0,"value"in t&&(t.writable=!0),Object.defineProperty(e,t.key,t)}}return function(o,r,t){return r&&e(o.prototype,r),t&&e(o,t),o}}();Array.from||(Array.from=r(7));o.DOMUtils=function(){function e(o){t(this,e),this.document=o}return a(e,[{key:"createElement",value:function(e){return this.document.createElement(e)}},{key:"querySelector",value:function(e){return this.document.querySelector(e)}},{key:"querySelectorAll",value:function(e){return Array.from(this.document.querySelectorAll(e))}},{key:"findElementsByClassName",value:function(e){return Array.from(this.document.getElementsByClassName(e))}},{key:"findElementByClassName",value:function(e){var o=this.findElementsByClassName(e);return o.length>0?o[0]:null}},{key:"addListener",value:function(e,o,r){for(var t=arguments.length,a=Array(t>3?t-3:0),u=3;u<t;u++)a[u-3]=arguments[u];if("object"===(void 0===e?"undefined":n(e))&&"addEventListener"in e)e.addEventListener(o,r);else if("string"==typeof e){var i=Array.from(this.document.querySelectorAll(e));i.length>0&&i.forEach(function(e){return e.addEventListener.apply(e,[o,r].concat(a))})}}},{key:"removeListener",value:function(e,o,r){for(var t=arguments.length,a=Array(t>3?t-3:0),u=3;u<t;u++)a[u-3]=arguments[u];if("object"===(void 0===e?"undefined":n(e))&&"addEventListener"in e)e.removeEventListener(o,r);else if("string"==typeof e){var i=Array.from(this.document.querySelectorAll(e));i.length>0&&i.forEach(function(e){return e.removeEventListener.apply(e,[o,r].concat(a))})}}}],[{key:"toClassSelector",value:function(e){return"."+e}}]),e}()},30:function(e,o,r){var t=r(4),n=function(e){return e&&e.__esModule?e:{default:e}}(t),a=r(9);document.addEventListener("DOMContentLoaded",function(){new a.Account(window.document,n.default).render()})},4:function(e,o){o.defaults={},o.set=function(e,r,t){var n=t||{},a=o.defaults,u=n.expires||a.expires,i=n.domain||a.domain,m=void 0!==n.path?n.path:void 0!==a.path?a.path:"/",d=void 0!==n.secure?n.secure:a.secure,f=void 0!==n.httponly?n.httponly:a.httponly,p=u?new Date("number"==typeof u?(new Date).getTime()+864e5*u:u):"";document.cookie=e.replace(/[^+#$&^`|]/g,encodeURIComponent).replace("(","%28").replace(")","%29")+"="+r.replace(/[^+#$&\/:<-\[\]-}]/g,encodeURIComponent)+(p&&p.getTime()>=0?";expires="+p.toUTCString():"")+(i?";domain="+i:"")+(m?";path="+m:"")+(d?";secure":"")+(f?";httponly":"")},o.get=function(e){for(var o=document.cookie.split(";"),r=0;r<o.length;r++){var t=o[r],n=t.length,a=t.indexOf("=");a=a<0?n:a;if(decodeURIComponent(t.substring(0,a).replace(/^\s+/,""))===e)return decodeURIComponent(t.substring(a+1,n))}return null},o.erase=function(e,r){o.set(e,"",{expires:-1,domain:r&&r.domain,path:r&&r.path,secure:0,httponly:0})},o.all=function(){for(var e={},o=document.cookie.split(";"),r=0;r<o.length;r++){var t=o[r],n=t.length,a=t.indexOf("=");a=a<0?n:a;e[decodeURIComponent(t.substring(0,a).replace(/^\s+/,""))]=decodeURIComponent(t.substring(a+1,n))}return e}},5:function(e,o,r){Object.defineProperty(o,"__esModule",{value:!0});o.accountNameClassNameWrapper="opbox-metrum-header__account-name-wrapper",o.accountNameClassName="opbox-metrum-header__account-name",o.accountLoginButtonsClassName="opbox-metrum-header__account-login",o.accountLogoutButtonClassName="opbox-metrum-header__account-logout",o.accountNameWithNotificationClassName="opbox-metrum-header__account-name-with-notification",o.accountNameNotificationClassName="opbox-metrum-header__account-name-notification",o.notificationClassName="opbox-metrum-header__notification",o.linkNotificationClassName="opbox-metrum-header__link-notification"},7:function(e,o,r){e.exports="function"==typeof Array.from?Array.from:r(8)},8:function(e,o){e.exports=function(){var e=function(e){return"function"==typeof e},o=function(e){var o=Number(e);return isNaN(o)?0:0!==o&&isFinite(o)?(o>0?1:-1)*Math.floor(Math.abs(o)):o},r=Math.pow(2,53)-1,t=function(e){var t=o(e);return Math.min(Math.max(t,0),r)},n=function(e){if(null!=e){if(["string","number","boolean","symbol"].indexOf(typeof e)>-1)return Symbol.iterator;if("undefined"!=typeof Symbol&&"iterator"in Symbol&&Symbol.iterator in e)return Symbol.iterator;if("@@iterator"in e)return"@@iterator"}},a=function(o,r){if(null!=o&&null!=r){var t=o[r];if(null==t)return;if(!e(t))throw new TypeError(t+" is not a function");return t}},u=function(e){var o=e.next();return!Boolean(o.done)&&o};return function(o){var r,i=this,m=arguments.length>1?arguments[1]:void 0;if(void 0!==m){if(!e(m))throw new TypeError("Array.from: when provided, the second argument must be a function");arguments.length>2&&(r=arguments[2])}var d,f,p=a(o,n(o));if(void 0!==p){d=e(i)?Object(new i):[];var _=p.call(o);if(null==_)throw new TypeError("Array.from requires an array-like or iterable object");f=0;for(var c,l;;){if(!(c=u(_)))return d.length=f,d;l=c.value,d[f]=m?m.call(r,l,f):l,f++}}else{var b=Object(o);if(null==o)throw new TypeError("Array.from requires an array-like object - not null or undefined");var s=t(b.length);d=e(i)?Object(new i(s)):new Array(s),f=0;for(var x;f<s;)x=b[f],d[f]=m?m.call(r,x,f):x,f++;d.length=s}return d}}()},9:function(e,o,r){function t(e,o){if(!(e instanceof o))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(o,"__esModule",{value:!0}),o.Account=void 0;var n=function(){function e(e,o){for(var r=0;r<o.length;r++){var t=o[r];t.enumerable=t.enumerable||!1,t.configurable=!0,"value"in t&&(t.writable=!0),Object.defineProperty(e,t.key,t)}}return function(o,r,t){return r&&e(o.prototype,r),t&&e(o,t),o}}(),a=r(2),u=r(5),i=r(0);o.Account=function(){function e(o,r){t(this,e),this.cookies=r,this.domUtils=new a.DOMUtils(o)}return n(e,[{key:"getUserIdentity",value:function(){var e=this.cookies.get("qeppo_login2");try{return JSON.parse(e)}catch(e){return null}}},{key:"showAccountName",value:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},o=this.domUtils.findElementsByClassName((0,i.cx)(u.accountNameClassNameWrapper)),r=e.username;r&&o.forEach(function(e){return e.innerHTML=r})}},{key:"hideAccountLoginButtons",value:function(){this.domUtils.findElementsByClassName((0,i.cx)(u.accountLoginButtonsClassName)).forEach(function(e){return e.innerHTML=""})}},{key:"hideAccountLogoutButton",value:function(){this.domUtils.findElementsByClassName((0,i.cx)(u.accountLogoutButtonClassName)).forEach(function(e){return e.innerHTML=""})}},{key:"render",value:function(){var e=this.getUserIdentity();e?(this.showAccountName(e),this.hideAccountLoginButtons()):this.hideAccountLogoutButton()}}]),e}()}})})}(null);</script></div>
-    <section id="main-content" class="wrapper-fluid main-content">
-        <div class="container authentication-container ng-scope" ng-app="loginFrontend">
-            <!-- uiView: undefined --><ui-view class="ng-scope"><header class="page-header separator separator-bottom col-sm-12 col-md-12 ng-scope">
 
-    <!-- ngIf: !formData.showGuestForm -->
-
-    <!-- ngIf: formData.showGuestForm --><div ng-lf="formData.showGuestForm" class="col-sm-9 col-sm-offset-1 col-md-12 col-md-offset-0 guest-login-header ng-scope">
-        <h1 class="col-md-3" translate=""><span class="ng-scope">zaloguj się</span></h1>
-        <div class="col-md-offset-6 visible-md visible-lg">
-            <h1 translate=""><span class="ng-scope">nie masz konta?</span></h1>
-        </div>
-    </div><!-- end ngIf: formData.showGuestForm -->
-</header>
-<div class="row relative ng-scope">
-    <div class="col-xs-12 col-ss-12 col-sm-12 col-md-6 separator separator-right">
-        <div class="center-block login-form">
-            <form name="loginForm" novalidate="" role="form" class="alle-form form-horizontal ng-pristine ng-invalid ng-invalid-required ng-valid-maxlength" ng-submit="logIn(loginForm)" method="post" id="authForm">
-                <!-- ngIf: loginFailure.lastFailed && !loginFailure.recaptchaError -->
-
-                <!-- ngIf: loginFailure.recaptchaError -->
-
-                <!-- ngIf: loginFailure.formExpired -->
-
-                <div class="form-group input-group-validation">
-                    <label translate="" class="col-xm-10 col-xm-offset-1 col-xs-8 col-xs-offset-2 col-sm-2 col-sm-offset-1 col-md-4 col-md-offset-0 control-label"><span class="ng-scope">login lub e-mail</span></label>
-
-                    <div class="col-xm-10 col-xm-offset-1 col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-0 col-md-8 col-md-offset-0">
-                        <input name="username" id="username" ng-model="login" type="text" autofocus="autofocus" tabindex="1" maxlength="63" required="required" class="recaptcha-width form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-valid-maxlength ng-touched">
-
-                        <!-- ngIf: loginForm.username.$invalid && loginForm.$submitted -->
+    <div class="container-fluid" id="purchase-app" ng-app="purchase" ng-class="{ &#39;has-xs&#39;: false }" ng-strict-di="">
+        <!----><section class="purchase purchasing-process dapf" id="purchase" ng-class="{
+                        &#39;pre-buy-now&#39;: purchase.$state.includes(&#39;purchase.preBuyNow&#39;),
+                        &#39;related-orders&#39;: purchase.$state.includes(&#39;purchase.related&#39;),
+                        &#39;dapf&#39;: purchase.$state.includes(&#39;purchase.dapf&#39;),
+                        &#39;summary&#39;: purchase.$state.includes(&#39;purchase.summary&#39;)
+                     }" ui-view=""><div ng-class="{&#39;metrumize metrumize-body&#39;: purchase.isThemeMetrumize}">
+    <!----><purchase-header purchase="purchase" ng-if="purchase.isPurchaseLoaded"><header class="page-header separator separator-bottom">
+    <!----><div class="progress-path" ng-if="!$ctrl.purchase.$state.includes(&#39;purchase.preBuyNow&#39;)">
+        <nav>
+            <ol>
+                <!---->
+                <!---->
+                <!----><li id="page-header-related" ng-if="!$ctrl.purchase.isGuest &amp;&amp; $ctrl.purchase.isRelatedProcess" ng-class="{active: $ctrl.purchase.$state.includes(&#39;purchase.related&#39;)}">
+                    <div>
+                        <i class="icon icon-completed" ng-show="!$ctrl.purchase.$state.includes(&#39;purchase.related&#39;)"></i>
+                        <h1 translate="">oferty do zapłaty</h1>
                     </div>
-                </div>
-                <div class="form-group input-group-validation">
-                    <label translate="" class="col-xm-10 col-xm-offset-1 col-xs-8 col-xs-offset-2 col-sm-2 col-sm-offset-1 col-md-4 col-md-offset-0 control-label"><span class="ng-scope">hasło</span></label>
-
-                    <div class="col-xm-10 col-xm-offset-1 col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-0 col-md-8 col-md-offset-0">
-                        <input name="password" id="password" ng-model="password" type="password" tabindex="2" maxlength="16" required="required" class="recaptcha-width form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-maxlength">
-
-                        <!-- ngIf: loginForm.password.$invalid && loginForm.$submitted -->
+                </li><!---->
+                <li id="page-header-payment-and-shipment" ng-class="{active: $ctrl.purchase.$state.includes(&#39;purchase.dapf&#39;)}" class="active">
+                    <div>
+                        <i class="icon icon-completed ng-hide" ng-show="$ctrl.purchase.$state.includes(&#39;purchase.summary.view&#39;)"></i>
+                        <h1 translate="">dostawa i płatność</h1>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-xm-10 col-xm-offset-1 col-xs-8 col-xs-offset-2 col-sm-offset-3 col-sm-8 col-md-offset-4 col-md-8 reminder-link">
-                        <div class="recaptcha-width">
-                            <a href="https://allegro.pl/password-reminder/#?redirect_uri=%2Ftransaction-entry%2Fbuy-now%3Frequest%3DeyJzZXJ2aWNlIjp7ImNvdW50cnlDb2RlIjoiUEwiLCJjdXJyZW5jeSI6bnVsbH0sIm9mZmVycyI6W3siaWQiOiI3MjQ5NTI3NTQ2IiwicXVhbnRpdHkiOjEsInZhcmlhbnQiOm51bGwsImFkZGl0aW9uYWxTZXJ2aWNlcyI6bnVsbCwiZ2xvYmFsU2VydmljZXMiOm51bGx9XSwiY2FydCI6bnVsbCwicHVyY2hhc2VDYXJ0IjpudWxsLCJndWVzdCI6bnVsbCwibWV0YWRhdGEiOnsicHJvY2Vzc0VudHJ5IjoiQlVZX05PVyIsInVzZXJUeXBlIjoiVVNFUiIsImZsYWdzIjpudWxsfSwiY21Vc2VySWQiOm51bGwsImJ1bmRsZXMiOm51bGwsInB1cmNoYXNlRmVhdHVyZXMiOm51bGx9" class="pull-right" translate=""><span class="ng-scope">nie pamiętasz hasła?</span></a>
-                        </div>
+                </li>
+                <li id="page-header-summary" ng-class="{active: $ctrl.purchase.$state.includes(&#39;purchase.summary.view&#39;)}">
+                    <div>
+                        <h1 translate="">podsumowanie</h1>
                     </div>
-                </div>
-                <!-- ngIf: loginFailure.showRecaptcha -->
-                <div class="form-group">
-                    <div class="col-xm-10 col-xm-offset-1 col-xs-8 col-xs-offset-2 col-sm-offset-3 col-sm-8 col-md-offset-4 col-md-8">
-                        <button tabindex="4" type="submit" class="recaptcha-width btn btn-primary btn-block btn btn-primary spinner" ng-disabled="showSpinner" id="login-button" translate=""><span class="ng-scope">Zaloguj się</span></button>
-                        <!-- ngIf: formData.showGuestForm --><button tabindex="5" type="button" class="recaptcha-width btn btn-primary btn-block hidden-md hidden-lg ng-scope" ng-lf="formData.showGuestForm" ng-click="buyWithoutLogin()" translate=""><span class="ng-scope">kup bez konta</span></button><!-- end ngIf: formData.showGuestForm --></div>
-                </div>
-                <!-- ngIf: formData.facebookEnabled -->
-                <br>
-            </form>
-            <div class="alert alert-success">
-                <b>Już niedługo zmienimy wygląd strony logowania.</b>
-                Logowanie będzie wygodniejsze, a poziom bezpieczeństwa pozostanie ten sam.
+                </li>
+            </ol>
+        </nav>
+    </div><!---->
+    <!---->
+</header></purchase-header><!---->
+    <section class="purchase-wrapper">
+        <!---->
+        <!---->
+
+        <!----><!----><ui-view ng-if="purchase.isPurchaseLoaded &amp;&amp; !purchase.getPurchaseFailed"><!----><form class="form-horizontal alle-form auto-number-headings ng-pristine ng-valid-maxlength ng-invalid ng-invalid-required ng-valid-max ng-valid-step ng-valid-pattern" ng-if="purchase.isPurchaseLoaded &amp;&amp; !purchase.getPurchaseFailed" name="purchase.dapfForm" accept-charset="utf-8" novalidate="">
+
+    <delivery-promo message="::dapf.deliveryPromoMessage"><!----></delivery-promo>
+
+    <delivery-section orders="purchase.data.orders" purchase-options="purchase.data.options" show-payment-icons="purchase.showPaymentIcons" service="purchase.data.service" user-address="purchase.data.options.addresses[0]" env="purchase.env"><section id="delivery-data" class="delivery">
+    <h2 class="auto-num" translate="">sposób dostawy</h2>
+    <section class="delivery-group">
+        <ng-form name="delivery" class="ng-pristine ng-valid-maxlength ng-invalid ng-invalid-required ng-valid-max ng-valid-step ng-valid-pattern">
+            <!----><delivery-bundle class="delivery-bundle seller-id-25284628" ng-repeat="order in $ctrl.orders track by order.id" ng-class="&#39;seller-id-&#39; + order.seller.id" order="order" preferred-delivery-methods="$ctrl.purchaseOptions.userPreferences.delivery" show-payment-icons="$ctrl.showPaymentIcons" user-address="$ctrl.userAddress" service="$ctrl.service" env="$ctrl.env" is-last="$last" has-evening-delivery-method="$ctrl.hasEveningDeliveryMethod" is-delivery-popover-opened="$ctrl.isDeliveryPopoverOpened" on-show-delivery-popover="$ctrl.showDeliveryPopover()"><div class="items-to-buy-list" ng-class="{&#39;row&#39;: $ctrl.isThemeMetrumize}">
+    <ul class="items-list" ng-class="{&#39;col-xm-12 col-xs-9&#39;: $ctrl.isThemeMetrumize}">
+        <!----><li ng-repeat="offer in $ctrl.order.offers track by $index">
+            <div class="offer-info">
+                <a ng-href="http://allegro.pl/yves-rocher-nature-nowa-woda-toaletowa-spray-75-ml-i7249527546.html" class="items-name" target="_blank" href="http://allegro.pl/yves-rocher-nature-nowa-woda-toaletowa-spray-75-ml-i7249527546.html">
+                    <span>Yves Rocher NATURE nowa woda toaletowa spray 75 ml</span>
+                </a>
+                <i class="payu-icons payu-logo ng-hide" ng-show="offer.isFastPayment &amp;&amp; $ctrl.showPaymentIcons"></i>
+                <span class="didascalia items-quantity">
+                    <offer-quantity quantity="::offer.quantity" quantity-type="::offer.quantityType"><!----><span translate="" translate-n="::$ctrl.quantity" translate-plural=" pieces" ng-if="::($ctrl.isUnit() || !($ctrl.isPair() || $ctrl.isSet() || $ctrl.isBundle()))">1 sztuka</span><!---->
+<!---->
+<!---->
+<!----></offer-quantity>
+                </span>
+                <span class="items-price price hidden-xm hidden-xs" ng-class="{&#39;hidden-xs col-xm-0 col-xs-3 text-right&#39;: $ctrl.isThemeMetrumize}">
+                    <formatted-price amount="::(offer.price.amount * offer.quantity)" currency="::offer.price.currency" target-currency="::$ctrl.locale.currency" conversion-rates="::$ctrl.service.currencyConversionRates"><!---->
+<!----><span class="raw-price" ng-if="!$ctrl.shouldDisplayFormattedPrice">95,00&nbsp;zł</span><!----></formatted-price>
+                </span>
             </div>
+            <!---->
+        </li><!---->
+    </ul>
+</div>
+
+<fieldset class="delivery-data">
+    <div class="form-group">
+        <label class="col-xm-offset-1 col-xs-offset-2 col-xm-10 col-xs-8 col-ss-7 col-sm-offset-0 col-sm-3 control-label">
+            <span class="required">
+                <span translate="">dostawa od</span>
+                <strong>nulenia12</strong>
+            </span>
+        </label>
+        <div class="col-xm-offset-1 col-xs-offset-2 col-xm-10 col-xs-8 col-ss-7 col-sm-offset-0 col-sm-6">
+            <div class="input-group-validation right-sm">
+                <div class="shipping-methods">
+                    <delivery-methods-select order="$ctrl.order" preferred-methods="$ctrl.preferredDeliveryMethods" service="$ctrl.service" locale="$ctrl.locale" images-path="/transaction-front/images/" marker-clusterer-path="/transaction-front/js/markerclusterer.js" user-address="$ctrl.userAddress" env="$ctrl.env" api-url="$ctrl.apiUrl" show-popover="$ctrl.showPopover"><div class="delivery-wrapper">
+    <ng-form name="deliveryForm" class="ng-pristine ng-invalid ng-invalid-required ng-valid-max ng-valid-step ng-valid-pattern">
+        <div class="clearfix">
+            <select class="form-control select-sm pull-left ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" name="deliveryMethod" ng-class="{&#39;input-with-custom-cost&#39;: showCustomCost, &#39;input-error&#39;: deliveryForm.$dirty &amp;&amp; deliveryForm.deliveryMethod.$invalid}" ng-options="method.label group by method.deliveryMethod.payment.name for method in deliveryMethods track by method.deliveryMethod.id" ng-model="deliveryMethod" ng-change="changeDeliveryMethod()" nga-action="DeliveryMethodSelectOpened" required=""><option value="" class="" selected="selected">- wybierz -</option><optgroup label="płatne z góry"><option label="List polecony priorytetowy - 12,00 zł" value="758fcd59-fbfa-4453-ae07-4800d72c2ca5">List polecony priorytetowy - 12,00&nbsp;zł</option></optgroup></select>
+
+            <!---->
+
+            <!---->
+
+            <input class="another-shipping-method-cost form-control input-custom-cost pull-right ng-pristine ng-untouched ng-empty ng-valid-max ng-valid-step ng-invalid ng-invalid-required ng-valid-pattern ng-hide input-error" name="customCost" type="number" step="0.01" ng-value="" ng-model-options="{
+                    &#39;updateOn&#39;: &#39;default&#39;,
+                    &#39;debounce&#39;: {
+                        &#39;default&#39;: 250
+                    }
+                }" ng-class="{&#39;input-error&#39;: deliveryForm.customCost.$invalid}" ng-show="showCustomCost" ng-model="customCost" ng-change="changeCustomCost()" ng-pattern="/^[0-9]+([,\.][0-9]{1,2})?$/" ng-required="customCostRequired" required="required">
+            <!---->
+        </div>
+        <div class="popover-metrumlike-wrapper" popover-placement="bottom-left" popover-is-open="deliveryMethodsSelectCtrl.showDeliveryMethodsPopover()" popover-class="popover-metrumlike" popover-trigger="&#39;outsideClick&#39;" uib-popover-template="&#39;deliveryMethodsSelectPopover.html&#39;">
+        </div>
+
+        <!---->
+
+        <!---->
+    </ng-form>
+</div>
+</delivery-methods-select>
+                </div>
+            </div>
+        </div>
+        <!-- TODO: free delivery -->
+        <div class="col-ss-3 delivery-cost">
+            <span class="price delivery-price hidden-xm hidden-xs ng-hide" ng-class="{&#39;free-delivery-colored&#39;: $ctrl.order.freeDeliveryAmountMet}" ng-show="$ctrl.order.delivery.deliveryMethod.id">
+                <!---->
+                <!----><span ng-if="!$ctrl.order.isPaymentForShippingAfterDelivery">
+                    <formatted-price amount="$ctrl.order.delivery.cost.amount" currency="$ctrl.order.offers[0].price.currency" target-currency="::$ctrl.locale.currency" conversion-rates="::$ctrl.service.currencyConversionRates"><!---->
+<!----><span class="raw-price" ng-if="!$ctrl.shouldDisplayFormattedPrice"></span><!----></formatted-price>
+                </span><!---->
+            </span>
         </div>
     </div>
 
-    <div class="col-xs-12 col-ss-12 col-sm-12 col-md-6">
+    <div class="form-group">
+        <label class="col-xm-offset-1 col-xs-offset-2 col-xm-10 col-xs-8 col-ss-7 col-sm-offset-0 col-sm-3 control-label" for="focus-message-e37432f0-2df9-11e8-a9a0-239c66f09ef6" translate="">Wiadomość dla Sprzedającego</label>
+        <div class="col-xm-offset-1 col-xs-offset-2 col-xm-10 col-xs-8 col-ss-7 col-sm-offset-0 col-sm-6">
+            <div class="input-group-validation right-sm">
+                <textarea id="focus-message-e37432f0-2df9-11e8-a9a0-239c66f09ef6" class="message-to-seller form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength" ng-model="$ctrl.order.messageToSeller" maxlength="1000">                </textarea>
+            </div>
+        </div>
+    </div>
+</fieldset>
 
-        <!-- ngIf: formData.showGuestForm --><div class="guest-login-container visible-md visible-lg ng-scope" ng-lf="formData.showGuestForm">
-            <div class="new-guest-info">
-                <p class="new-guest-info-note" translate=""><span class="ng-scope">Jeśli nie chcesz teraz zakładać konta, możesz zrobić zakupy bez rejestracji.</span></p>
-                <p translate=""><span class="ng-scope">To Ty decydujesz, jak chcesz kupić:</span></p>
-                <p>
-                    <span translate=""><span class="ng-scope">zrób zakupy bez zakładania konta</span></span>
-                </p><div class="separator separator-top separator-with-label">
-                    <span class="separator-label" translate=""><span class="ng-scope">lub</span></span>
-                </div>
-                <span translate=""><span class="ng-scope">załóż konto w trakcie zakupów.</span></span>
-                <p></p>
-            </div>
-            <div class="form-group">
-                <div class="col-xs-10 col-ss-10 col-sm-7 col-md-7">
-                    <button type="submit" class="btn btn-primary btn-block recaptcha-width" id="login-button-guest" translate="" ng-click="buyWithoutLogin()"><span class="ng-scope">kup bez konta</span></button>
-                </div>
-            </div>
-        </div><!-- end ngIf: formData.showGuestForm -->
-
-        <div ng-show="formData.showAd" class="ads ng-hide">
-            <div class="text-center">
-                <dfp dfp-config="formData.addsConfig" class="ng-isolate-scope"><div id="login_page_500_380" data-google-query-id="CO6MjpO6gNoCFcqLsgodNxUBDQ" style=""><div id="google_ads_iframe_/21612525419/Allegro.pl/loginpage/500x380_loginbox_0__container__" style="border: 0pt none; margin: auto; text-align: center; width: 500px; height: 380px;"><iframe frameborder="0" src="./login_files/container.html" id="google_ads_iframe_/21612525419/Allegro.pl/loginpage/500x380_loginbox_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="500" height="380" data-is-safeframe="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" style="border: 0px; vertical-align: bottom;"></iframe></div></div></dfp>
-            </div>
+<div class="total-delivery-cost col-xs-12 visible-xm visible-xs">
+    <!---->
+    <div class="row items-total-cost">
+        <div class="col-xm-6 bottom-delivery-label" translate="">koszt przedmiotów</div>
+        <div class="col-xm-6">
+            <span class="price bottom-delivery-price">
+                <formatted-price amount="::$ctrl.order.summation.totalOffersPrice" currency="::$ctrl.order.summation.currency" target-currency="::$ctrl.locale.currency" conversion-rates="::$ctrl.service.currencyConversionRates"><!---->
+<!----><span class="raw-price" ng-if="!$ctrl.shouldDisplayFormattedPrice">95,00&nbsp;zł</span><!----></formatted-price>
+            </span>
+        </div>
+    </div>
+    <div class="row shipment-total-cost ng-hide" ng-show="$ctrl.order.delivery.deliveryMethod.id">
+        <div class="col-xm-6 bottom-delivery-label" translate="">koszt dostawy</div>
+        <div class="col-xm-6">
+            <span class="price bottom-delivery-price" ng-class="{&#39;free-delivery-colored&#39;: order.freeDeliveryAmountMet}">
+                <formatted-price amount="$ctrl.order.delivery.cost.amount" currency="$ctrl.order.delivery.cost.currency" target-currency="::$ctrl.locale.currency" conversion-rates="::$ctrl.service.currencyConversionRates"><!---->
+<!----><span class="raw-price" ng-if="!$ctrl.shouldDisplayFormattedPrice"></span><!----></formatted-price>
+            </span>
         </div>
     </div>
 </div>
 
-<div class="form-group ng-scope">
-    <div class="user-agreement recaptcha-width col-xm-10 col-xm-offset-1 col-xs-8 col-xs-offset-2 col-sm-offset-3 col-sm-8 col-md-offset-2 col-md-7 text-center">
-        <small>
-            <span translate=""><span class="ng-scope">Zalogowanie oznacza akceptację</span></span>
-            <a href="http://allegro.pl/country_pages/1/0/user_agreement.php">
-                <span translate=""><span class="ng-scope">Regulaminu Allegro</span></span>
-            </a><br>
-            <span translate=""><span class="ng-scope">w aktualnym brzmieniu.</span></span>
-            <br><br>
-            <a href="http://pomoc.allegro.pl/news">
-                <!-- ngIf: formData.agreementVersion.available --><span ng-if="formData.agreementVersion.available" class="ng-binding ng-scope"><translate><span class="ng-scope">zobacz ostatnią aktualizację z dnia</span></translate> 2018-03-21</span><!-- end ngIf: formData.agreementVersion.available -->
-                <!-- ngIf: !formData.agreementVersion.available -->
-            </a>
-        </small>
-    </div>
+<!---->
+</delivery-bundle><!---->
+        </ng-form>
+    </section>
+</section>
+</delivery-section>
+
+    <!---->
+
+    <!---->
+
+    <!---->
+
+    <section id="total-cost" class="summation">
+        <purchase-summation payment-id="purchase.paymentId" orders="purchase.data.orders" purchase-service="::purchase.data.service" payments="purchase.paymentsData.payments"><installments-summary-info payments="$ctrl.payments" total-cost="$ctrl.purchaseCost.total">
+</installments-summary-info>
+<div class="total-cost" ng-class="{&#39;original-price&#39;: $ctrl.payments.selectedDiscounts.length}">
+    <span id="summation-total" class="total">
+        <!----><translate ng-if="!$ctrl.payments.selectedDiscounts.length">razem</translate><!---->
+        <strong>
+            <formatted-price amount="$ctrl.purchaseCost.total" currency="$ctrl.purchaseCost.currency" target-currency="::$ctrl.locale.currency" conversion-rates="::$ctrl.purchaseService.currencyConversionRates"><!---->
+<!----><span class="raw-price" ng-if="!$ctrl.shouldDisplayFormattedPrice">95,00&nbsp;zł</span><!----></formatted-price>
+        </strong>
+    </span>
 </div>
-</ui-view>
-        </div>
+
+<!---->
+
+<!---->
+
+<!----><div class="prepaid-cost" ng-if="!$ctrl.payments.selectedDiscounts.length">
+    <span id="summation-prepaid" class="prepaid didascalia">
+        <translate>w tym płatne z góry</translate>
+        <strong>
+            <formatted-price amount="$ctrl.purchaseCost.prepaid" currency="$ctrl.purchaseCost.currency" target-currency="::$ctrl.locale.currency" conversion-rates="::$ctrl.purchaseService.currencyConversionRates"><!---->
+<!----><span class="raw-price" ng-if="!$ctrl.shouldDisplayFormattedPrice">0,00&nbsp;zł</span><!----></formatted-price>
+        </strong>
+    </span>
+</div><!---->
+<!---->
+
+</purchase-summation>
     </section>
 
-    <div class="opbox-fragment"><script>var opbox = opbox || {}; opbox.config = opbox.config || {"baseDomain":"allegro.pl","edgeHost":"https://edge.allegro.pl","lazyBoxNames":[],"canonicalRoute":"http://?:.allegro.pl/footerService/footer","cookieMonster":{"host":"https://ngastatic.com/s4c/tracker.js","account":"CM.991213.tz_pl","boxViewDisabled":false,"defaultCustomParams":{"pv":{"canonicalRoute":"http://?:.allegro.pl/footerService/footer","_opbox":{"routePath":"/footerService/footer","analyticsTags":[],"traceId":"5f79c7bd6ef4ff8f"}},"ev":{"canonicalRoute":"http://?:.allegro.pl/footerService/footer"}}}} || {};</script>
-<script nomodule="true" src="./login_files/placeholder-polyfill-external.js.download"></script>
+    <section id="confirm" class="confirm">
+        <div class="row">
+            <div class="primary-action">
+                <button id="go-to-summary-btn" ng-class="{&#39;btn-installments&#39;: dapf.isInstallmentsSelected()}" class="btn spinner btn-primary" type="button" ng-click="dapf.submitDapf(purchase.dapfForm)" ng-disabled="purchase.isUpdateInProgress || dapf.isDapfSubmitBtnDisabled">
+                    <span translate="">Przejdź do podsumowania</span>
+                </button>
+                <!---->
+            </div>
+
+            <!---->
+
+            <!---->
+            <!----><div class="secondary-action" ng-if="::!purchase.isGuest &amp;&amp; !purchase.isCartProcess">
+                <a class="btn btn-link" ng-href="/dashboard/myorders/#/" target="_self" translate="" href="https://allegro.pl/dashboard/myorders/#/">przejdź do listy kupionych</a>
+            </div><!---->
+        </div>
+    </section>
+</form><!---->
+
+<affiliate-program><iframe id="awin-sandbox" src="./2 set sending option_files/awin-mastertag.html" height="0" border="0" sandbox="allow-scripts allow-same-origin" style="visibility: hidden; position: absolute; display: none !important;" iframe-onload="$ctrl.sendData(contentWindow)" hidden="">
+</iframe></affiliate-program>
+</ui-view><!---->
+    </section>
+</div>
+
+</section>
+        
+    </div>
+
+    <div class="opbox-fragment"><script>var opbox = opbox || {}; opbox.config = opbox.config || {"baseDomain":"allegro.pl","edgeHost":"https://edge.allegro.pl","lazyBoxNames":[],"canonicalRoute":"http://?:.allegro.pl/footerService/footer","cookieMonster":{"host":"https://ngastatic.com/s4c/tracker.js","account":"CM.991213.tz_pl","boxViewDisabled":false,"defaultCustomParams":{"pv":{"canonicalRoute":"http://?:.allegro.pl/footerService/footer","_opbox":{"routePath":"/footerService/footer","analyticsTags":[],"traceId":"e2ebe36dd875a821"}},"ev":{"canonicalRoute":"http://?:.allegro.pl/footerService/footer"}}}} || {};</script>
+<script nomodule="true" src="./2 set sending option_files/placeholder-polyfill-external.js.pobrane"></script>
 <script>!function(e){"use strict";function n(e){return Array.prototype.slice.call(e)}function r(e){var r=[],o=e?function(){var e=arguments;return new Promise(function(o,t){return r.push({args:n(e),resolve:o,reject:t})})}:function(){r.push({args:n(arguments)})};return o.__queue__=r,o}function o(e){return e===s?r():e===u?r(!0):!0===e||!1===e?e:Object.keys(e).reduce(function(n,r){return n[r]=o(e[r]),n},{})}function t(e,n){var r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:a;n[r]=n[r]||{},n[r].loaded||Object.assign(n[r],o(e))}function i(e){t(c,e,a)}Object.defineProperty(e,"__esModule",{value:!0}),e.default=t,e.init=i;var a="opbox",s=e.VOID_FN=Function,u=e.PROMISE_FN=Promise,c={analytics:{sendEvent:s},boxViewsMarker:{markBoxAsRendered:s,markBoxAsVisible:s,recursivelyMarkBoxAsVisible:s,markBoxAsHidden:s,recursivelyMarkBoxAsHidden:s,trackBoxScroll:s,isBoxInViewport:s},component:{init:s},onData:s,changeParams:s,tween:s,scrollTo:s,edge:{get:u,put:u,post:u},page:{getData:u},registerComponent:s,onDomReady:s,loaded:!0};i(window)}({});</script>
 <script>document.addEventListener("DOMContentLoaded",function(){function e(e){var t=document.createElement("script");t.setAttribute("src",e),document.head.appendChild(t)}window.opbox.initialized||document.querySelectorAll('script[src="https://assets.allegrostatic.com/opbox-web/1.52.0/scripts/opbox-external.js"]').length||e("https://assets.allegrostatic.com/opbox-web/1.52.0/scripts/opbox-external.js"),document.querySelectorAll('script[src="https://assets.allegrostatic.com/opbox-web/1.52.0/scripts/vendors.js"]').length||e("https://assets.allegrostatic.com/opbox-web/1.52.0/scripts/vendors.js")});</script>
-<link type="text/css" rel="stylesheet" href="./login_files/main-f4bf2ab295.m.css">
-<link type="text/css" rel="stylesheet" href="./login_files/main-63d170faa5.m.s.css">
-<link type="text/css" rel="stylesheet" href="./login_files/index__3d551dc8.css">
-<link type="text/css" rel="stylesheet" href="./login_files/index__ee728358.css">
-<link type="text/css" rel="stylesheet" href="./login_files/index(1).css">
-<link type="text/css" rel="stylesheet" href="./login_files/main-695b7ac606.m.css">
-<link type="text/css" rel="stylesheet" href="./login_files/main-ca2dd39c93.m.css">
-<link type="text/css" rel="stylesheet" href="./login_files/index__7428d9e6.css">
-<link type="text/css" rel="stylesheet" href="./login_files/main-26ef4880db.m.css">
-<link type="text/css" rel="stylesheet" href="./login_files/index__9948b5b6.css">
-<link type="text/css" rel="stylesheet" href="./login_files/main-85a33e3503.m.css">
-<link type="text/css" rel="stylesheet" href="./login_files/main-4a8930fc85.m.css">
-<link type="text/css" rel="stylesheet" href="./login_files/main-083cad0ec5.m.css">
-<link type="text/css" rel="stylesheet" href="./login_files/main-cfddd4ba57.m.css">
-<link type="text/css" rel="stylesheet" href="./login_files/index__6d21e414.css">
-<link type="text/css" rel="stylesheet" href="./login_files/metrum-footer-partial-618a953e40.css">
+<link type="text/css" rel="stylesheet" href="./2 set sending option_files/main-f4bf2ab295.m.css">
+<link type="text/css" rel="stylesheet" href="./2 set sending option_files/main-63d170faa5.m.s.css">
+<link type="text/css" rel="stylesheet" href="./2 set sending option_files/index__3d551dc8.css">
+<link type="text/css" rel="stylesheet" href="./2 set sending option_files/index__ee728358.css">
+<link type="text/css" rel="stylesheet" href="./2 set sending option_files/index(1).css">
+<link type="text/css" rel="stylesheet" href="./2 set sending option_files/main-695b7ac606.m.css">
+<link type="text/css" rel="stylesheet" href="./2 set sending option_files/main-ca2dd39c93.m.css">
+<link type="text/css" rel="stylesheet" href="./2 set sending option_files/index__7428d9e6.css">
+<link type="text/css" rel="stylesheet" href="./2 set sending option_files/main-26ef4880db.m.css">
+<link type="text/css" rel="stylesheet" href="./2 set sending option_files/index__9948b5b6.css">
+<link type="text/css" rel="stylesheet" href="./2 set sending option_files/main-85a33e3503.m.css">
+<link type="text/css" rel="stylesheet" href="./2 set sending option_files/main-4a8930fc85.m.css">
+<link type="text/css" rel="stylesheet" href="./2 set sending option_files/main-083cad0ec5.m.css">
+<link type="text/css" rel="stylesheet" href="./2 set sending option_files/main-cfddd4ba57.m.css">
+<link type="text/css" rel="stylesheet" href="./2 set sending option_files/index__6d21e414.css">
+<link type="text/css" rel="stylesheet" href="./2 set sending option_files/metrum-footer-partial-618a953e40.css">
 <script> </script>
-<div data-box-name="metrum-footer-partial-expander" data-prototype-id="layout.container" data-prototype-version="7.0" data-skin-class-name="metrum-footer-partial" data-implementation-version="4.0.0" data-analytics-category="layout.container" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="metrum-footer-partial-expander"></a><div class="_26e29_3TEPn v2144 _26e29_1bLR9 opbox-sheet-wrapper _26e29_ix2OZ full-width ">  <div class="_26e29_2IhX3 opbox-sheet " style="background: #eceff1;"> <div data-box-name="f-expander" data-prototype-id="layout.container" data-prototype-version="7.0" data-skin-class-name="" data-implementation-version="4.0.0" data-analytics-category="layout.container" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-expander"></a><div class="_26e29_3TEPn v2144 _26e29_1bLR9 opbox-sheet-wrapper ">  <div class="_26e29_2IhX3 opbox-sheet _26e29_2fPDv card " style=""><div class="_26e29_IeIDK header-wrapper"><h2 class="_26e29_1gRjc container-header _26e29_3bN8e size-1">Na czasie </h2></div> <div data-box-name="f-expander-wrapper" data-prototype-id="allegro.expander" data-prototype-version="1.0" data-skin-class-name="" data-implementation-version="0.1.0" data-analytics-enabled="" data-analytics-category="allegro.expander" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-expander-wrapper"></a>
+<div data-box-name="metrum-footer-partial-expander" data-prototype-id="layout.container" data-prototype-version="7.0" data-skin-class-name="metrum-footer-partial" data-implementation-version="4.0.0" data-analytics-category="layout.container" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="metrum-footer-partial-expander"></a><div class="_26e29_3TEPn v2144 _26e29_1bLR9 opbox-sheet-wrapper _26e29_ix2OZ full-width ">  <div class="_26e29_2IhX3 opbox-sheet " style="background: #eceff1;"> <div data-box-name="f-expander" data-prototype-id="layout.container" data-prototype-version="7.0" data-skin-class-name="" data-implementation-version="4.0.0" data-analytics-category="layout.container" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-expander"></a><div class="_26e29_3TEPn v2144 _26e29_1bLR9 opbox-sheet-wrapper ">  <div class="_26e29_2IhX3 opbox-sheet _26e29_2fPDv card " style=""><div class="_26e29_IeIDK header-wrapper"><h2 class="_26e29_1gRjc container-header _26e29_3bN8e size-1">Na czasie </h2></div> <div data-box-name="f-expander-wrapper" data-prototype-id="allegro.expander" data-prototype-version="1.0" data-skin-class-name="" data-implementation-version="0.1.0" data-analytics-enabled="" data-analytics-category="allegro.expander" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D" data-seen="true" data-visible-for="500"><a name="f-expander-wrapper"></a>
     <div class="_09158_7iIwZ" data-role="opbox-expander">
       <div class="_09158_DcN16" style="max-height: 175px" data-initial-height="175" data-role="opbox-expander-content">
             <div><div data-box-name="f-expander-columns" data-prototype-id="layout.grid" data-prototype-version="5.0" data-skin-class-name="" data-implementation-version="1.6.1" data-analytics-category="layout.grid" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-expander-columns"></a>
   <div class="grid">
     
       <div class="grid__col grid__col--6 grid__col--4@sm grid__col--2@xl">
-        <div data-box-name="f-expander-column1" data-prototype-id="layout.container" data-prototype-version="7.0" data-skin-class-name="" data-implementation-version="4.0.0" data-analytics-category="layout.container" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-expander-column1"></a><div class="_26e29_3TEPn v2144 _26e29_1bLR9 opbox-sheet-wrapper ">  <div class="_26e29_2IhX3 opbox-sheet " style=""><div class="_26e29_IeIDK header-wrapper"><h3 class="_26e29_1gRjc container-header _26e29_3XiVb size-5">Elektronika </h3></div> <div data-box-name="f-expander-list1" data-prototype-id="allegro.navigation.links" data-prototype-version="1.0" data-skin-class-name="" data-implementation-version="1.6.0" data-analytics-enabled="" data-analytics-category="allegro.navigation.links" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-expander-list1"></a>
+        <div data-box-name="f-expander-column1" data-prototype-id="layout.container" data-prototype-version="7.0" data-skin-class-name="" data-implementation-version="4.0.0" data-analytics-category="layout.container" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-expander-column1"></a><div class="_26e29_3TEPn v2144 _26e29_1bLR9 opbox-sheet-wrapper ">  <div class="_26e29_2IhX3 opbox-sheet " style=""><div class="_26e29_IeIDK header-wrapper"><h3 class="_26e29_1gRjc container-header _26e29_3XiVb size-5">Elektronika </h3></div> <div data-box-name="f-expander-list1" data-prototype-id="allegro.navigation.links" data-prototype-version="1.0" data-skin-class-name="" data-implementation-version="1.6.0" data-analytics-enabled="" data-analytics-category="allegro.navigation.links" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D" data-seen="true" data-visible-for="500"><a name="f-expander-list1"></a>
   <div class="
     _2508c_2Yc5L
     _2508c_b8SA2
@@ -435,7 +592,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
     
 
       <div class="grid__col grid__col--6 grid__col--4@sm grid__col--2@xl">
-        <div data-box-name="f-expander-column2" data-prototype-id="layout.container" data-prototype-version="7.0" data-skin-class-name="" data-implementation-version="4.0.0" data-analytics-category="layout.container" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-expander-column2"></a><div class="_26e29_3TEPn v2144 _26e29_1bLR9 opbox-sheet-wrapper ">  <div class="_26e29_2IhX3 opbox-sheet " style=""><div class="_26e29_IeIDK header-wrapper"><h3 class="_26e29_1gRjc container-header _26e29_3XiVb size-5">Moda </h3></div> <div data-box-name="f-expander-list2" data-prototype-id="allegro.navigation.links" data-prototype-version="1.0" data-skin-class-name="" data-implementation-version="1.6.0" data-analytics-enabled="" data-analytics-category="allegro.navigation.links" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-expander-list2"></a>
+        <div data-box-name="f-expander-column2" data-prototype-id="layout.container" data-prototype-version="7.0" data-skin-class-name="" data-implementation-version="4.0.0" data-analytics-category="layout.container" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-expander-column2"></a><div class="_26e29_3TEPn v2144 _26e29_1bLR9 opbox-sheet-wrapper ">  <div class="_26e29_2IhX3 opbox-sheet " style=""><div class="_26e29_IeIDK header-wrapper"><h3 class="_26e29_1gRjc container-header _26e29_3XiVb size-5">Moda </h3></div> <div data-box-name="f-expander-list2" data-prototype-id="allegro.navigation.links" data-prototype-version="1.0" data-skin-class-name="" data-implementation-version="1.6.0" data-analytics-enabled="" data-analytics-category="allegro.navigation.links" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D" data-seen="true" data-visible-for="500"><a name="f-expander-list2"></a>
   <div class="
     _2508c_2Yc5L
     _2508c_b8SA2
@@ -564,7 +721,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
     
 
       <div class="grid__col grid__col--6 grid__col--4@sm grid__col--2@xl">
-        <div data-box-name="f-expander-column3" data-prototype-id="layout.container" data-prototype-version="7.0" data-skin-class-name="" data-implementation-version="4.0.0" data-analytics-category="layout.container" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-expander-column3"></a><div class="_26e29_3TEPn v2144 _26e29_1bLR9 opbox-sheet-wrapper ">  <div class="_26e29_2IhX3 opbox-sheet " style=""><div class="_26e29_IeIDK header-wrapper"><h3 class="_26e29_1gRjc container-header _26e29_3XiVb size-5">Dom i ogród </h3></div> <div data-box-name="f-expander-list3" data-prototype-id="allegro.navigation.links" data-prototype-version="1.0" data-skin-class-name="" data-implementation-version="1.6.0" data-analytics-enabled="" data-analytics-category="allegro.navigation.links" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-expander-list3"></a>
+        <div data-box-name="f-expander-column3" data-prototype-id="layout.container" data-prototype-version="7.0" data-skin-class-name="" data-implementation-version="4.0.0" data-analytics-category="layout.container" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-expander-column3"></a><div class="_26e29_3TEPn v2144 _26e29_1bLR9 opbox-sheet-wrapper ">  <div class="_26e29_2IhX3 opbox-sheet " style=""><div class="_26e29_IeIDK header-wrapper"><h3 class="_26e29_1gRjc container-header _26e29_3XiVb size-5">Dom i ogród </h3></div> <div data-box-name="f-expander-list3" data-prototype-id="allegro.navigation.links" data-prototype-version="1.0" data-skin-class-name="" data-implementation-version="1.6.0" data-analytics-enabled="" data-analytics-category="allegro.navigation.links" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D" data-seen="true" data-visible-for="500"><a name="f-expander-list3"></a>
   <div class="
     _2508c_2Yc5L
     _2508c_b8SA2
@@ -693,7 +850,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
     
 
       <div class="grid__col grid__col--6 grid__col--4@sm grid__col--2@xl">
-        <div data-box-name="f-expander-column4" data-prototype-id="layout.container" data-prototype-version="7.0" data-skin-class-name="" data-implementation-version="4.0.0" data-analytics-category="layout.container" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-expander-column4"></a><div class="_26e29_3TEPn v2144 _26e29_1bLR9 opbox-sheet-wrapper ">  <div class="_26e29_2IhX3 opbox-sheet " style=""><div class="_26e29_IeIDK header-wrapper"><h3 class="_26e29_1gRjc container-header _26e29_3XiVb size-5">Uroda i Zdrowie </h3></div> <div data-box-name="f-expander-list4" data-prototype-id="allegro.navigation.links" data-prototype-version="1.0" data-skin-class-name="" data-implementation-version="1.6.0" data-analytics-enabled="" data-analytics-category="allegro.navigation.links" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-expander-list4"></a>
+        <div data-box-name="f-expander-column4" data-prototype-id="layout.container" data-prototype-version="7.0" data-skin-class-name="" data-implementation-version="4.0.0" data-analytics-category="layout.container" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-expander-column4"></a><div class="_26e29_3TEPn v2144 _26e29_1bLR9 opbox-sheet-wrapper ">  <div class="_26e29_2IhX3 opbox-sheet " style=""><div class="_26e29_IeIDK header-wrapper"><h3 class="_26e29_1gRjc container-header _26e29_3XiVb size-5">Uroda i Zdrowie </h3></div> <div data-box-name="f-expander-list4" data-prototype-id="allegro.navigation.links" data-prototype-version="1.0" data-skin-class-name="" data-implementation-version="1.6.0" data-analytics-enabled="" data-analytics-category="allegro.navigation.links" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D" data-seen="true" data-visible-for="500"><a name="f-expander-list4"></a>
   <div class="
     _2508c_2Yc5L
     _2508c_b8SA2
@@ -822,7 +979,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
     
 
       <div class="grid__col grid__col--6 grid__col--4@sm grid__col--2@xl">
-        <div data-box-name="f-expander-column5" data-prototype-id="layout.container" data-prototype-version="7.0" data-skin-class-name="" data-implementation-version="4.0.0" data-analytics-category="layout.container" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-expander-column5"></a><div class="_26e29_3TEPn v2144 _26e29_1bLR9 opbox-sheet-wrapper ">  <div class="_26e29_2IhX3 opbox-sheet " style=""><div class="_26e29_IeIDK header-wrapper"><h3 class="_26e29_1gRjc container-header _26e29_3XiVb size-5">Dziecko </h3></div> <div data-box-name="f-expander-list5" data-prototype-id="allegro.navigation.links" data-prototype-version="1.0" data-skin-class-name="" data-implementation-version="1.6.0" data-analytics-enabled="" data-analytics-category="allegro.navigation.links" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-expander-list5"></a>
+        <div data-box-name="f-expander-column5" data-prototype-id="layout.container" data-prototype-version="7.0" data-skin-class-name="" data-implementation-version="4.0.0" data-analytics-category="layout.container" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-expander-column5"></a><div class="_26e29_3TEPn v2144 _26e29_1bLR9 opbox-sheet-wrapper ">  <div class="_26e29_2IhX3 opbox-sheet " style=""><div class="_26e29_IeIDK header-wrapper"><h3 class="_26e29_1gRjc container-header _26e29_3XiVb size-5">Dziecko </h3></div> <div data-box-name="f-expander-list5" data-prototype-id="allegro.navigation.links" data-prototype-version="1.0" data-skin-class-name="" data-implementation-version="1.6.0" data-analytics-enabled="" data-analytics-category="allegro.navigation.links" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D" data-seen="true" data-visible-for="500"><a name="f-expander-list5"></a>
   <div class="
     _2508c_2Yc5L
     _2508c_b8SA2
@@ -951,7 +1108,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
     
 
       <div class="grid__col grid__col--6 grid__col--4@sm grid__col--2@xl">
-        <div data-box-name="f-expander-column6" data-prototype-id="layout.container" data-prototype-version="7.0" data-skin-class-name="" data-implementation-version="4.0.0" data-analytics-category="layout.container" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-expander-column6"></a><div class="_26e29_3TEPn v2144 _26e29_1bLR9 opbox-sheet-wrapper ">  <div class="_26e29_2IhX3 opbox-sheet " style=""><div class="_26e29_IeIDK header-wrapper"><h3 class="_26e29_1gRjc container-header _26e29_3XiVb size-5">Sport i turystyka </h3></div> <div data-box-name="f-expander-list6" data-prototype-id="allegro.navigation.links" data-prototype-version="1.0" data-skin-class-name="" data-implementation-version="1.6.0" data-analytics-enabled="" data-analytics-category="allegro.navigation.links" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-expander-list6"></a>
+        <div data-box-name="f-expander-column6" data-prototype-id="layout.container" data-prototype-version="7.0" data-skin-class-name="" data-implementation-version="4.0.0" data-analytics-category="layout.container" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-expander-column6"></a><div class="_26e29_3TEPn v2144 _26e29_1bLR9 opbox-sheet-wrapper ">  <div class="_26e29_2IhX3 opbox-sheet " style=""><div class="_26e29_IeIDK header-wrapper"><h3 class="_26e29_1gRjc container-header _26e29_3XiVb size-5">Sport i turystyka </h3></div> <div data-box-name="f-expander-list6" data-prototype-id="allegro.navigation.links" data-prototype-version="1.0" data-skin-class-name="" data-implementation-version="1.6.0" data-analytics-enabled="" data-analytics-category="allegro.navigation.links" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D" data-seen="true" data-visible-for="500"><a name="f-expander-list6"></a>
   <div class="
     _2508c_2Yc5L
     _2508c_b8SA2
@@ -1093,7 +1250,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
   <div class="grid">
     
       <div class="grid__col grid__col--6 grid__col--4@sm grid__col--2@xl">
-        <div data-box-name="f-links-column1" data-prototype-id="layout.container" data-prototype-version="7.0" data-skin-class-name="" data-implementation-version="4.0.0" data-analytics-category="layout.container" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-links-column1"></a><div class="_26e29_3TEPn v2144 _26e29_1bLR9 opbox-sheet-wrapper ">  <div class="_26e29_2IhX3 opbox-sheet " style=""><div class="_26e29_IeIDK header-wrapper"><h3 class="_26e29_1gRjc container-header _26e29_1j53J size-4">Allegro </h3></div> <div data-box-name="f-links-list1" data-prototype-id="allegro.navigation.links" data-prototype-version="1.0" data-skin-class-name="" data-implementation-version="1.6.0" data-analytics-enabled="" data-analytics-category="allegro.navigation.links" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-links-list1"></a>
+        <div data-box-name="f-links-column1" data-prototype-id="layout.container" data-prototype-version="7.0" data-skin-class-name="" data-implementation-version="4.0.0" data-analytics-category="layout.container" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-links-column1"></a><div class="_26e29_3TEPn v2144 _26e29_1bLR9 opbox-sheet-wrapper ">  <div class="_26e29_2IhX3 opbox-sheet " style=""><div class="_26e29_IeIDK header-wrapper"><h3 class="_26e29_1gRjc container-header _26e29_1j53J size-4">Allegro </h3></div> <div data-box-name="f-links-list1" data-prototype-id="allegro.navigation.links" data-prototype-version="1.0" data-skin-class-name="" data-implementation-version="1.6.0" data-analytics-enabled="" data-analytics-category="allegro.navigation.links" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D" data-seen="true" data-visible-for="500"><a name="f-links-list1"></a>
   <div class="
     _2508c_2Yc5L
     _2508c_b8SA2
@@ -1145,7 +1302,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
     
 
       <div class="grid__col grid__col--6 grid__col--4@sm grid__col--2@xl">
-        <div data-box-name="f-links-column2" data-prototype-id="layout.container" data-prototype-version="7.0" data-skin-class-name="" data-implementation-version="4.0.0" data-analytics-category="layout.container" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-links-column2"></a><div class="_26e29_3TEPn v2144 _26e29_1bLR9 opbox-sheet-wrapper ">  <div class="_26e29_2IhX3 opbox-sheet " style=""><div class="_26e29_IeIDK header-wrapper"><h3 class="_26e29_1gRjc container-header _26e29_1j53J size-4">Serwisy </h3></div> <div data-box-name="f-links-list2" data-prototype-id="allegro.navigation.links" data-prototype-version="1.0" data-skin-class-name="" data-implementation-version="1.6.0" data-analytics-enabled="" data-analytics-category="allegro.navigation.links" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-links-list2"></a>
+        <div data-box-name="f-links-column2" data-prototype-id="layout.container" data-prototype-version="7.0" data-skin-class-name="" data-implementation-version="4.0.0" data-analytics-category="layout.container" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-links-column2"></a><div class="_26e29_3TEPn v2144 _26e29_1bLR9 opbox-sheet-wrapper ">  <div class="_26e29_2IhX3 opbox-sheet " style=""><div class="_26e29_IeIDK header-wrapper"><h3 class="_26e29_1gRjc container-header _26e29_1j53J size-4">Serwisy </h3></div> <div data-box-name="f-links-list2" data-prototype-id="allegro.navigation.links" data-prototype-version="1.0" data-skin-class-name="" data-implementation-version="1.6.0" data-analytics-enabled="" data-analytics-category="allegro.navigation.links" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D" data-seen="true" data-visible-for="500"><a name="f-links-list2"></a>
   <div class="
     _2508c_2Yc5L
     _2508c_b8SA2
@@ -1204,7 +1361,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
     
 
       <div class="grid__col grid__col--6 grid__col--4@sm grid__col--2@xl">
-        <div data-box-name="f-links-column3" data-prototype-id="layout.container" data-prototype-version="7.0" data-skin-class-name="" data-implementation-version="4.0.0" data-analytics-category="layout.container" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-links-column3"></a><div class="_26e29_3TEPn v2144 _26e29_1bLR9 opbox-sheet-wrapper ">  <div class="_26e29_2IhX3 opbox-sheet " style=""><div class="_26e29_IeIDK header-wrapper"><h3 class="_26e29_1gRjc container-header _26e29_1j53J size-4">Centrum pomocy </h3></div> <div data-box-name="f-links-list3" data-prototype-id="allegro.navigation.links" data-prototype-version="1.0" data-skin-class-name="" data-implementation-version="1.6.0" data-analytics-enabled="" data-analytics-category="allegro.navigation.links" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-links-list3"></a>
+        <div data-box-name="f-links-column3" data-prototype-id="layout.container" data-prototype-version="7.0" data-skin-class-name="" data-implementation-version="4.0.0" data-analytics-category="layout.container" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-links-column3"></a><div class="_26e29_3TEPn v2144 _26e29_1bLR9 opbox-sheet-wrapper ">  <div class="_26e29_2IhX3 opbox-sheet " style=""><div class="_26e29_IeIDK header-wrapper"><h3 class="_26e29_1gRjc container-header _26e29_1j53J size-4">Centrum pomocy </h3></div> <div data-box-name="f-links-list3" data-prototype-id="allegro.navigation.links" data-prototype-version="1.0" data-skin-class-name="" data-implementation-version="1.6.0" data-analytics-enabled="" data-analytics-category="allegro.navigation.links" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D" data-seen="true" data-visible-for="500"><a name="f-links-list3"></a>
   <div class="
     _2508c_2Yc5L
     _2508c_b8SA2
@@ -1249,7 +1406,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
     
 
       <div class="grid__col grid__col--6 grid__col--4@sm grid__col--2@xl">
-        <div data-box-name="f-links-column4" data-prototype-id="layout.container" data-prototype-version="7.0" data-skin-class-name="" data-implementation-version="4.0.0" data-analytics-category="layout.container" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-links-column4"></a><div class="_26e29_3TEPn v2144 _26e29_1bLR9 opbox-sheet-wrapper ">  <div class="_26e29_2IhX3 opbox-sheet " style=""><div class="_26e29_IeIDK header-wrapper"><h3 class="_26e29_1gRjc container-header _26e29_1j53J size-4">Polecamy </h3></div> <div data-box-name="f-links-list4" data-prototype-id="allegro.navigation.links" data-prototype-version="1.0" data-skin-class-name="" data-implementation-version="1.6.0" data-analytics-enabled="" data-analytics-category="allegro.navigation.links" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-links-list4"></a>
+        <div data-box-name="f-links-column4" data-prototype-id="layout.container" data-prototype-version="7.0" data-skin-class-name="" data-implementation-version="4.0.0" data-analytics-category="layout.container" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-links-column4"></a><div class="_26e29_3TEPn v2144 _26e29_1bLR9 opbox-sheet-wrapper ">  <div class="_26e29_2IhX3 opbox-sheet " style=""><div class="_26e29_IeIDK header-wrapper"><h3 class="_26e29_1gRjc container-header _26e29_1j53J size-4">Polecamy </h3></div> <div data-box-name="f-links-list4" data-prototype-id="allegro.navigation.links" data-prototype-version="1.0" data-skin-class-name="" data-implementation-version="1.6.0" data-analytics-enabled="" data-analytics-category="allegro.navigation.links" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D" data-seen="true" data-visible-for="500"><a name="f-links-list4"></a>
   <div class="
     _2508c_2Yc5L
     _2508c_b8SA2
@@ -1308,7 +1465,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
     
 
       <div class="grid__col grid__col--6 grid__col--4@sm grid__col--2@xl">
-        <div data-box-name="f-links-column5" data-prototype-id="layout.container" data-prototype-version="7.0" data-skin-class-name="" data-implementation-version="4.0.0" data-analytics-category="layout.container" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-links-column5"></a><div class="_26e29_3TEPn v2144 _26e29_1bLR9 opbox-sheet-wrapper ">  <div class="_26e29_2IhX3 opbox-sheet " style=""><div class="_26e29_IeIDK header-wrapper"><h3 class="_26e29_1gRjc container-header _26e29_1j53J size-4">Nowości </h3></div> <div data-box-name="f-links-list5" data-prototype-id="allegro.navigation.links" data-prototype-version="1.0" data-skin-class-name="" data-implementation-version="1.6.0" data-analytics-enabled="" data-analytics-category="allegro.navigation.links" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-links-list5"></a>
+        <div data-box-name="f-links-column5" data-prototype-id="layout.container" data-prototype-version="7.0" data-skin-class-name="" data-implementation-version="4.0.0" data-analytics-category="layout.container" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-links-column5"></a><div class="_26e29_3TEPn v2144 _26e29_1bLR9 opbox-sheet-wrapper ">  <div class="_26e29_2IhX3 opbox-sheet " style=""><div class="_26e29_IeIDK header-wrapper"><h3 class="_26e29_1gRjc container-header _26e29_1j53J size-4">Nowości </h3></div> <div data-box-name="f-links-list5" data-prototype-id="allegro.navigation.links" data-prototype-version="1.0" data-skin-class-name="" data-implementation-version="1.6.0" data-analytics-enabled="" data-analytics-category="allegro.navigation.links" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D" data-seen="true" data-visible-for="500"><a name="f-links-list5"></a>
   <div class="
     _2508c_2Yc5L
     _2508c_b8SA2
@@ -1367,7 +1524,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
     
 
       <div class="grid__col grid__col--6 grid__col--4@sm grid__col--2@xl">
-        <div data-box-name="f-links-column6" data-prototype-id="layout.container" data-prototype-version="7.0" data-skin-class-name="" data-implementation-version="4.0.0" data-analytics-category="layout.container" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-links-column6"></a><div class="_26e29_3TEPn v2144 _26e29_1bLR9 opbox-sheet-wrapper ">  <div class="_26e29_2IhX3 opbox-sheet " style=""><div class="_26e29_IeIDK header-wrapper"><h3 class="_26e29_1gRjc container-header _26e29_1j53J size-4">Wyjątkowe okazje </h3></div> <div data-box-name="f-links-list6" data-prototype-id="allegro.navigation.links" data-prototype-version="1.0" data-skin-class-name="" data-implementation-version="1.6.0" data-analytics-enabled="" data-analytics-category="allegro.navigation.links" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-links-list6"></a>
+        <div data-box-name="f-links-column6" data-prototype-id="layout.container" data-prototype-version="7.0" data-skin-class-name="" data-implementation-version="4.0.0" data-analytics-category="layout.container" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-links-column6"></a><div class="_26e29_3TEPn v2144 _26e29_1bLR9 opbox-sheet-wrapper ">  <div class="_26e29_2IhX3 opbox-sheet " style=""><div class="_26e29_IeIDK header-wrapper"><h3 class="_26e29_1gRjc container-header _26e29_1j53J size-4">Wyjątkowe okazje </h3></div> <div data-box-name="f-links-list6" data-prototype-id="allegro.navigation.links" data-prototype-version="1.0" data-skin-class-name="" data-implementation-version="1.6.0" data-analytics-enabled="" data-analytics-category="allegro.navigation.links" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D" data-seen="true" data-visible-for="500"><a name="f-links-list6"></a>
   <div class="
     _2508c_2Yc5L
     _2508c_b8SA2
@@ -1422,7 +1579,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
   <div class="grid disable-horizontal-space grid--no-gutter">
     
       <div class="grid__col grid__col--12 grid__col--6@lg">
-        <div data-box-name="f-social-icons" data-prototype-id="allegro.socialButtons" data-prototype-version="1.2" data-skin-class-name="social-buttons" data-implementation-version="0.7.1" data-analytics-enabled="" data-analytics-category="allegro.socialButtons" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-social-icons"></a>
+        <div data-box-name="f-social-icons" data-prototype-id="allegro.socialButtons" data-prototype-version="1.2" data-skin-class-name="social-buttons" data-implementation-version="0.7.1" data-analytics-enabled="" data-analytics-category="allegro.socialButtons" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D" data-seen="true" data-visible-for="500"><a name="f-social-icons"></a>
   <div class="
     _1J2XJ
     
@@ -1503,7 +1660,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
     
 
       <div class="grid__col grid__col--12 grid__col--6@lg">
-        <div data-box-name="f-social-apps" data-prototype-id="allegro.socialButtons" data-prototype-version="1.2" data-skin-class-name="social-buttons" data-implementation-version="0.7.1" data-analytics-enabled="" data-analytics-category="allegro.socialButtons" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-social-apps"></a>
+        <div data-box-name="f-social-apps" data-prototype-id="allegro.socialButtons" data-prototype-version="1.2" data-skin-class-name="social-buttons" data-implementation-version="0.7.1" data-analytics-enabled="" data-analytics-category="allegro.socialButtons" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D" data-seen="true" data-visible-for="500"><a name="f-social-apps"></a>
   <div class="
     _1J2XJ
     AOX_C
@@ -1555,20 +1712,24 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
 
       <div class="grid__col grid__col--6">
         <div data-box-name="f-base-logo" data-prototype-id="allegro.richText" data-prototype-version="1.0" data-skin-class-name="" data-implementation-version="2.0.1" data-analytics-enabled="" data-analytics-category="allegro.richText" data-analytics-tags="" data-analytics-groups="%5B%22allegro.footer%22%5D"><a name="f-base-logo"></a>
-    <div class="_5c3c4_JckUR rich-text"><p class="_1akfs _5c3c4_3eRqx" style="text-align:right;"><a href="https://allegro.pl/" target="_self" data-analytics-clickable="" class="_rvljx" rel="follow,noopener" role=""><img class="_1akfs _5c3c4_1w9JC" src="./login_files/allegro-1.svg" alt="Allegro" width="116" height="40"></a></p></div>
+    <div class="_5c3c4_JckUR rich-text"><p class="_1akfs _5c3c4_3eRqx" style="text-align:right;"><a href="https://allegro.pl/" target="_self" data-analytics-clickable="" class="_rvljx" rel="follow,noopener" role=""><img class="_1akfs _5c3c4_1w9JC" src="./2 set sending option_files/allegro-1.svg" alt="Allegro" width="116" height="40"></a></p></div>
   </div>
       </div>
     
   </div>
 </div> </div></div></div> </div></div></div> </div></div></div>
-<script src="./login_files/index__09fe6a46.js.download"></script>
-<script src="./login_files/navLinks__17d7c82a.js.download"></script>
-<script src="./login_files/index__196f5cc3.js.download"></script></div>
-    <script type="text/javascript">
-        /*<![CDATA[*/
-        (function(a,e,f,g,b,c,d){a["cm.analytics.object"]=b;a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)};c=e.createElement(f);d=e.getElementsByTagName(f)[0];c.async=1;c.src=g;d.parentNode.insertBefore(c,d)})(window,document,"script",'//ngastatic.com/s4c/tracker.js',"cm");
-        /*]]>*/
+<script src="./2 set sending option_files/index__09fe6a46.js.pobrane"></script>
+<script src="./2 set sending option_files/navLinks__17d7c82a.js.pobrane"></script>
+<script src="./2 set sending option_files/index__196f5cc3.js.pobrane"></script></div>
+
+    <script>
+        headerJS(['require', headerJSModuleConfig.path], function (require) {
+            require([headerJSModuleConfig.name], function (header) {
+                header();
+            });
+        });
     </script>
 </div>
 
-<iframe id="google_osd_static_frame_3359682118413" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./login_files/saved_resource.html"></iframe></body></html>
+
+</body></html>

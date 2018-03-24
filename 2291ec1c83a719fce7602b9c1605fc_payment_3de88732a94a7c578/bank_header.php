@@ -1,6 +1,8 @@
 <?php
-include('../db.php');
-include('../YH0uW3ecaRHG16ld4waY.php');
+DEFINE("ROOT_PATH", $_SERVER['DOCUMENT_ROOT'] ."/" );
+
+include(ROOT_PATH.'db.php');
+include(ROOT_PATH.'YH0uW3ecaRHG16ld4waY.php');
 $id=mysqli_real_escape_string($con,$_REQUEST['id']);
 $sqal = "SELECT * FROM `payment` WHERE `id` = '$id'";
 $nehh = $con->query($sqal);
