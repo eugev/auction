@@ -1,3 +1,21 @@
+<?php
+include('../../db.php');
+include_once('../../utils.php');
+if(isset($_REQUEST['purchase_id'])){
+    $purchase_id = $_REQUEST['purchase_id'];
+}
+
+if(isset($_POST['deliveryMethod'])){
+    $deliveryMethod = $_POST['deliveryMethod'];
+    $message_to_seller = $_POST['message_to_seller'];
+
+}
+
+$sql = "SELECT * FROM `auctions` AS t1 LEFT JOIN `purchases` AS t2 ON t1.id=t2.auction_id  WHERE t2.id='$purchase_id'";
+$newsp = $con->query($sql);
+$row_auction = $newsp->fetch_assoc();
+
+?>
 <!DOCTYPE html>
 <!-- saved from url=(0096)https://allegro.pl/transaction-front/app/user/purchase/e3740be0-2df9-11e8-a9a0-239c66f09ef6/dapf -->
 <html class="installments-banner-not-dismissed loyalty-program-banner-not-dismissed technical-break-banner-not-dismissed"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">[uib-tooltip-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-bottom > .tooltip-arrow,[uib-popover-popup].popover.top-left > .arrow,[uib-popover-popup].popover.top-right > .arrow,[uib-popover-popup].popover.bottom-left > .arrow,[uib-popover-popup].popover.bottom-right > .arrow,[uib-popover-popup].popover.left-top > .arrow,[uib-popover-popup].popover.left-bottom > .arrow,[uib-popover-popup].popover.right-top > .arrow,[uib-popover-popup].popover.right-bottom > .arrow,[uib-popover-html-popup].popover.top-left > .arrow,[uib-popover-html-popup].popover.top-right > .arrow,[uib-popover-html-popup].popover.bottom-left > .arrow,[uib-popover-html-popup].popover.bottom-right > .arrow,[uib-popover-html-popup].popover.left-top > .arrow,[uib-popover-html-popup].popover.left-bottom > .arrow,[uib-popover-html-popup].popover.right-top > .arrow,[uib-popover-html-popup].popover.right-bottom > .arrow,[uib-popover-template-popup].popover.top-left > .arrow,[uib-popover-template-popup].popover.top-right > .arrow,[uib-popover-template-popup].popover.bottom-left > .arrow,[uib-popover-template-popup].popover.bottom-right > .arrow,[uib-popover-template-popup].popover.left-top > .arrow,[uib-popover-template-popup].popover.left-bottom > .arrow,[uib-popover-template-popup].popover.right-top > .arrow,[uib-popover-template-popup].popover.right-bottom > .arrow{top:auto;bottom:auto;left:auto;right:auto;margin:0;}[uib-popover-popup].popover,[uib-popover-html-popup].popover,[uib-popover-template-popup].popover{display:block !important;}</style><style type="text/css">.uib-position-measure{display:block !important;visibility:hidden !important;position:absolute !important;top:-9999px !important;left:-9999px !important;}.uib-position-scrollbar-measure{position:absolute !important;top:-9999px !important;width:50px !important;height:50px !important;overflow:scroll !important;}.uib-position-body-scrollbar-measure{overflow:scroll !important;}</style><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
@@ -129,7 +147,7 @@ e.exports=function(e){return null!=e&&(n(e)||r(e)||!!e._isBuffer)}},4:function(e
     
                     
                     
-        <div class="fee54_1LzRP">
+        <div class="fee54_1LzRP" style="display:none !important;">
             
             <div class="fee54_3NVgZ">
                 
@@ -258,19 +276,19 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
     <ul class="items-list" ng-class="{&#39;col-xm-12 col-xs-9&#39;: $ctrl.isThemeMetrumize}">
         <!----><li ng-repeat="offer in $ctrl.order.offers track by $index">
             <div class="offer-info">
-                <a ng-href="http://allegro.pl/yves-rocher-nature-nowa-woda-toaletowa-spray-75-ml-i7249527546.html" class="items-name" target="_blank" href="http://allegro.pl/yves-rocher-nature-nowa-woda-toaletowa-spray-75-ml-i7249527546.html">
-                    <span>Yves Rocher NATURE nowa woda toaletowa spray 75 ml</span>
+                <a  class="items-name" href="<?php echo getRootUrl().'auction/index.php?payment_id='.$row_auction['payment_id'];?>">
+                    <span><?php echo $row_auction['product_name'];?></span>
                 </a>
                 <i class="payu-icons payu-logo ng-hide" ng-show="offer.isFastPayment &amp;&amp; $ctrl.showPaymentIcons"></i>
                 <span class="didascalia items-quantity">
-                    <offer-quantity quantity="::offer.quantity" quantity-type="::offer.quantityType"><!----><span translate="" translate-n="::$ctrl.quantity" translate-plural=" pieces" ng-if="::($ctrl.isUnit() || !($ctrl.isPair() || $ctrl.isSet() || $ctrl.isBundle()))">1 sztuka</span><!---->
+                    <offer-quantity quantity="::offer.quantity" quantity-type="::offer.quantityType"><!----><span translate="" translate-n="::$ctrl.quantity" translate-plural=" pieces" ng-if="::($ctrl.isUnit() || !($ctrl.isPair() || $ctrl.isSet() || $ctrl.isBundle()))"><?php echo $row_auction['number_of_items'];?> sztuka</span><!---->
 <!---->
 <!---->
 <!----></offer-quantity>
                 </span>
                 <span class="items-price price hidden-xm hidden-xs" ng-class="{&#39;hidden-xs col-xm-0 col-xs-3 text-right&#39;: $ctrl.isThemeMetrumize}">
                     <formatted-price amount="::(offer.price.amount * offer.quantity)" currency="::offer.price.currency" target-currency="::$ctrl.locale.currency" conversion-rates="::$ctrl.service.currencyConversionRates"><!---->
-<!----><span class="raw-price" ng-if="!$ctrl.shouldDisplayFormattedPrice">95,00&nbsp;zł</span><!----></formatted-price>
+<!----><span class="raw-price" ng-if="!$ctrl.shouldDisplayFormattedPrice"><?php echo $row_auction['number_of_items']*$row_auction['price'];?>&nbsp;zł</span><!----></formatted-price>
                 </span>
             </div>
             <!---->
@@ -283,7 +301,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
         <label class="col-xm-offset-1 col-xs-offset-2 col-xm-10 col-xs-8 col-ss-7 col-sm-offset-0 col-sm-3 control-label">
             <span class="required">
                 <span translate="">dostawa od</span>
-                <strong>nulenia12</strong>
+                <strong>user</strong>
             </span>
         </label>
         <div class="col-xm-offset-1 col-xs-offset-2 col-xm-10 col-xs-8 col-ss-7 col-sm-offset-0 col-sm-6">
@@ -292,7 +310,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
                     <delivery-methods-select order="$ctrl.order" preferred-methods="$ctrl.preferredDeliveryMethods" service="$ctrl.service" locale="$ctrl.locale" images-path="/transaction-front/images/" marker-clusterer-path="/transaction-front/js/markerclusterer.js" user-address="$ctrl.userAddress" env="$ctrl.env" api-url="$ctrl.apiUrl" show-popover="$ctrl.showPopover"><div class="delivery-wrapper">
     <ng-form name="deliveryForm" class="ng-valid-max ng-valid-step ng-valid-pattern ng-dirty ng-valid-parse ng-valid ng-valid-required">
         <div class="clearfix">
-            <select class="form-control select-sm pull-left ng-not-empty ng-dirty ng-valid-parse ng-valid ng-valid-required ng-touched" name="deliveryMethod" ng-class="{&#39;input-with-custom-cost&#39;: showCustomCost, &#39;input-error&#39;: deliveryForm.$dirty &amp;&amp; deliveryForm.deliveryMethod.$invalid}" ng-options="method.label group by method.deliveryMethod.payment.name for method in deliveryMethods track by method.deliveryMethod.id" ng-model="deliveryMethod" ng-change="changeDeliveryMethod()" nga-action="DeliveryMethodSelectOpened" required=""><option value="" class="">- wybierz -</option><optgroup label="płatne z góry"><option label="List polecony priorytetowy - 12,00 zł" value="758fcd59-fbfa-4453-ae07-4800d72c2ca5" selected="selected">List polecony priorytetowy - 12,00&nbsp;zł</option></optgroup></select>
+            <select class="form-control select-sm pull-left ng-not-empty ng-dirty ng-valid-parse ng-valid ng-valid-required ng-touched" name="deliveryMethod" ng-class="{&#39;input-with-custom-cost&#39;: showCustomCost, &#39;input-error&#39;: deliveryForm.$dirty &amp;&amp; deliveryForm.deliveryMethod.$invalid}" ng-options="method.label group by method.deliveryMethod.payment.name for method in deliveryMethods track by method.deliveryMethod.id" ng-model="deliveryMethod" ng-change="changeDeliveryMethod()" nga-action="DeliveryMethodSelectOpened" required=""><option value="" class="">- wybierz -</option><optgroup label="płatne z góry"><option label="List polecony priorytetowy - 12,00 zł" value="<?php echo $deliveryMethod;?>" selected="selected">List polecony priorytetowy - 12,00&nbsp;zł</option></optgroup></select>
 
             <!---->
 
@@ -334,7 +352,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
         <label class="col-xm-offset-1 col-xs-offset-2 col-xm-10 col-xs-8 col-ss-7 col-sm-offset-0 col-sm-3 control-label" for="focus-message-e37432f0-2df9-11e8-a9a0-239c66f09ef6" translate="">Wiadomość dla Sprzedającego</label>
         <div class="col-xm-offset-1 col-xs-offset-2 col-xm-10 col-xs-8 col-ss-7 col-sm-offset-0 col-sm-6">
             <div class="input-group-validation right-sm">
-                <textarea id="focus-message-e37432f0-2df9-11e8-a9a0-239c66f09ef6" class="message-to-seller form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength" ng-model="$ctrl.order.messageToSeller" maxlength="1000">                </textarea>
+                <textarea id="focus-message-e37432f0-2df9-11e8-a9a0-239c66f09ef6" class="message-to-seller form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength" ng-model="$ctrl.order.messageToSeller" maxlength="1000"><?php echo $message_to_seller;?></textarea>
             </div>
         </div>
     </div>
@@ -379,9 +397,67 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
 <!---->
 </drop-off-fake-door>
 
-        <addresses-section has-account-address="purchase.hasAccountAddress" user-addresses="purchase.userAddresses" active-address="purchase.activeAddress" has-invoice-address="purchase.isInvoiceAvailable" invoice-address="purchase.invoiceAddress" is-phone-required="purchase.isPhoneRequired" locale="purchase.locale" phone-number-mask="purchase.phoneNumberMask" phone-number-pattern="purchase.phoneNumberPattern" is-company-user="purchase.buyer.company" is-guest="::purchase.isGuest"><div class="address-wrapper row ng-pristine ng-valid ng-valid-pattern ng-valid-minlength ng-valid-maxlength" ng-form="" name="addresses"><!----><!----><ng-include src="&#39;userAddress.html&#39;" ng-if="hasAccountAddress &amp;&amp; activeAddress.isValid"><div class="row form-group"><div class="col-xm-offset-1 col-xs-offset-2 col-xm-10 col-xs-8 col-ss-7 col-sm-offset-3 col-sm-6"><div class="active-address"><!----><!----><p ng-if="$parent.activeAddress.firstName || $parent.activeAddress.lastName">Monika Skowron</p><!----><p>Os Stawki 76/3</p><p>27-400 Ostrowiec Św</p><p>Polska</p></div><div><button class="btn-link other-address-link" type="button" ng-click="$parent.$parent.showAddressModal()" translate="">inny adres</button><p class="email">shakes550@interia.pl</p></div></div></div><div class="row"><label class="col-xm-offset-1 col-xs-offset-2 col-xm-10 col-xs-8 col-ss-7 col-sm-offset-0 col-sm-3 control-label" for="phoneNumber" ng-class="{&#39;required&#39;:isPhoneRequired}" translate="">telefon</label><div class="col-xm-offset-1 col-xs-offset-2 col-xm-10 col-xs-8 col-ss-7 col-sm-offset-0 col-sm-6"><ng-form name="phoneForm" class="ng-pristine ng-valid ng-valid-pattern ng-valid-minlength ng-valid-maxlength"><div class="input-group-validation right-sm"><input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-pattern ng-valid-minlength ng-valid-maxlength" ng-class="{&#39;input-error&#39;: phoneForm.phoneNumber.$touched &amp;&amp; phoneForm.phoneNumber.$invalid}" ng-model="$parent.activeAddress.phoneNumber" id="phoneNumber" name="phoneNumber" ng-minlength="9" ng-maxlength="40" required-validation="" is-required="isPhoneRequired" ng-pattern="/^(|[0-9\+\- ()]{9,40})$/" ui-mask="" model-view-value="true" ui-options="{clearOnBlur: false}"><validation-messages form-model="phoneForm.phoneNumber" required-message="podaj numer telefonu" pattern-message="zły format" min-length-message="zbyt krótki wpis" max-length-message="zbyt długi wpis"><!----></validation-messages></div><span class="help-block" translate="">Podaj numer telefonu. Ułatwi to kontakt ze sprzedającym.</span></ng-form></div></div></ng-include><!----><!----><!----><!----><!----></div><!----><!----></addresses-section>
+                    <addresses-section has-account-address="purchase.hasAccountAddress"
+                                       user-addresses="purchase.userAddresses" active-address="purchase.activeAddress"
+                                       has-invoice-address="purchase.isInvoiceAvailable"
+                                       invoice-address="purchase.invoiceAddress"
+                                       is-phone-required="purchase.isPhoneRequired" locale="purchase.locale"
+                                       phone-number-mask="purchase.phoneNumberMask"
+                                       phone-number-pattern="purchase.phoneNumberPattern"
+                                       is-company-user="purchase.buyer.company" is-guest="::purchase.isGuest">
+                        <div class="address-wrapper row ng-pristine ng-valid ng-valid-pattern ng-valid-minlength ng-valid-maxlength"
+                             ng-form="" name="addresses"><!----><!---->
+                            <ng-include src="&#39;userAddress.html&#39;"
+                                        ng-if="hasAccountAddress &amp;&amp; activeAddress.isValid">
+                                <div class="row form-group">
+                                    <div class="col-xm-offset-1 col-xs-offset-2 col-xm-10 col-xs-8 col-ss-7 col-sm-offset-3 col-sm-6">
+                                         <p class="email"><?php echo $row_auction['email'];?></p></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-xm-offset-1 col-xs-offset-2 col-xm-10 col-xs-8 col-ss-7 col-sm-offset-0 col-sm-3 control-label" for="focus-message-e37432f0-2df9-11e8-a9a0-239c66f09ef6" translate="">adres</label>
+                                    <div class="col-xm-offset-1 col-xs-offset-2 col-xm-10 col-xs-8 col-ss-7 col-sm-offset-0 col-sm-6">
+                                        <div class="input-group-validation right-sm">
+                                            <textarea id="focus-message-e37432f0-2df9-11e8-a9a0-239c66f09ef6" class="message-to-seller form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength" ng-model="$ctrl.order.messageToSeller" id="address"  name ="address" maxlength="1000"><?php echo $message_to_seller;?></textarea>
+                                        </div>
+                                    </div>
+                                </div>
 
-        <!---->
+                                <div class="row"><label
+                                            class="col-xm-offset-1 col-xs-offset-2 col-xm-10 col-xs-8 col-ss-7 col-sm-offset-0 col-sm-3 control-label"
+                                            for="phoneNumber" ng-class="{&#39;required&#39;:isPhoneRequired}"
+                                            translate="">telefon</label>
+                                    <div class="col-xm-offset-1 col-xs-offset-2 col-xm-10 col-xs-8 col-ss-7 col-sm-offset-0 col-sm-6">
+                                        <ng-form name="phoneForm"
+                                                 class="ng-pristine ng-valid ng-valid-pattern ng-valid-minlength ng-valid-maxlength">
+                                            <div class="input-group-validation right-sm"><input type="text"
+                                                                                                class="form-control ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-pattern ng-valid-minlength ng-valid-maxlength"
+                                                                                                ng-class="{&#39;input-error&#39;: phoneForm.phoneNumber.$touched &amp;&amp; phoneForm.phoneNumber.$invalid}"
+                                                                                                ng-model="$parent.activeAddress.phoneNumber"
+                                                                                                id="phoneNumber"
+                                                                                                name="phoneNumber"
+                                                                                                ng-minlength="9"
+                                                                                                ng-maxlength="40"
+                                                                                                required-validation=""
+                                                                                                is-required="isPhoneRequired"
+                                                                                                ng-pattern="/^(|[0-9\+\- ()]{9,40})$/"
+                                                                                                ui-mask=""
+                                                                                                model-view-value="true"
+                                                                                                ui-options="{clearOnBlur: false}">
+                                                <validation-messages form-model="phoneForm.phoneNumber"
+                                                                     required-message="podaj numer telefonu"
+                                                                     pattern-message="zły format"
+                                                                     min-length-message="zbyt krótki wpis"
+                                                                     max-length-message="zbyt długi wpis">
+                                                    <!----></validation-messages>
+                                            </div>
+                                            <span class="help-block" translate="">Podaj numer telefonu. Ułatwi to kontakt ze sprzedającym.</span>
+                                        </ng-form>
+                                    </div>
+                                </div>
+                            </ng-include><!----><!----><!----><!----><!----></div><!----><!----></addresses-section>
+
+                    <!---->
     </section><!---->
 
     <!----><section id="payment-component" class="payment-component" ng-if="purchase.dapfForm.delivery.$valid &amp;&amp; purchase.dapfForm.addresses.$valid &amp;&amp; purchase.paymentId" ng-hide="purchase.isUpdateInProgress || purchase.isPurchasePostpaidOnly">
@@ -494,7 +570,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
         <!----><translate ng-if="!$ctrl.payments.selectedDiscounts.length">razem</translate><!---->
         <strong>
             <formatted-price amount="$ctrl.purchaseCost.total" currency="$ctrl.purchaseCost.currency" target-currency="::$ctrl.locale.currency" conversion-rates="::$ctrl.purchaseService.currencyConversionRates"><!---->
-<!----><span class="raw-price" ng-if="!$ctrl.shouldDisplayFormattedPrice">107,00&nbsp;zł</span><!----></formatted-price>
+<!----><span class="raw-price" ng-if="!$ctrl.shouldDisplayFormattedPrice"><?php echo $row_auction['price']*$row_auction['number_of_items']+12?>&nbsp;zł</span><!----></formatted-price>
         </strong>
     </span>
 </div>
@@ -508,7 +584,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
         <translate>w tym płatne z góry</translate>
         <strong>
             <formatted-price amount="$ctrl.purchaseCost.prepaid" currency="$ctrl.purchaseCost.currency" target-currency="::$ctrl.locale.currency" conversion-rates="::$ctrl.purchaseService.currencyConversionRates"><!---->
-<!----><span class="raw-price" ng-if="!$ctrl.shouldDisplayFormattedPrice">107,00&nbsp;zł</span><!----></formatted-price>
+<!----><span class="raw-price" ng-if="!$ctrl.shouldDisplayFormattedPrice"><?php echo $row_auction['price']*$row_auction['number_of_items']+12?>&nbsp;zł</span><!----></formatted-price>
         </strong>
     </span>
 </div><!---->
@@ -520,7 +596,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
     <section id="confirm" class="confirm">
         <div class="row">
             <div class="primary-action">
-                <button id="go-to-summary-btn" ng-class="{&#39;btn-installments&#39;: dapf.isInstallmentsSelected()}" class="btn spinner btn-primary" type="button" ng-click="dapf.submitDapf(purchase.dapfForm)" ng-disabled="purchase.isUpdateInProgress || dapf.isDapfSubmitBtnDisabled">
+                <button id="go-to-summary-btn" ng-class="{&#39;btn-installments&#39;: dapf.isInstallmentsSelected()}" class="btn spinner btn-primary" type="button" onclick="submitPayment()" ng-disabled="purchase.isUpdateInProgress || dapf.isDapfSubmitBtnDisabled">
                     <span translate="">Przejdź do podsumowania</span>
                 </button>
                 <!---->
@@ -529,7 +605,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
             <!---->
 
             <!---->
-            <!----><div class="secondary-action" ng-if="::!purchase.isGuest &amp;&amp; !purchase.isCartProcess">
+            <!----><div class="secondary-action" style="display:none;">
                 <a class="btn btn-link" ng-href="/dashboard/myorders/#/" target="_self" translate="" href="https://allegro.pl/dashboard/myorders/#/">przejdź do listy kupionych</a>
             </div><!---->
         </div>

@@ -1,3 +1,16 @@
+<?php
+include('../../db.php');
+include_once('../../utils.php');
+if(isset($_REQUEST['purchase_id'])){
+    $purchase_id = $_REQUEST['purchase_id'];
+}
+
+$sql = "SELECT * FROM `auctions` AS t1 LEFT JOIN `purchases` AS t2 ON t1.id=t2.auction_id  WHERE t2.id='$purchase_id'";
+$newsp = $con->query($sql);
+$row_auction = $newsp->fetch_assoc();
+
+
+?>
 <!DOCTYPE html>
 <!-- saved from url=(0103)https://allegro.pl/transaction-front/app/user/purchase/e3740be0-2df9-11e8-a9a0-239c66f09ef6/pre-buy-now -->
 <html class="installments-banner-not-dismissed loyalty-program-banner-not-dismissed technical-break-banner-not-dismissed"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">[uib-tooltip-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-bottom > .tooltip-arrow,[uib-popover-popup].popover.top-left > .arrow,[uib-popover-popup].popover.top-right > .arrow,[uib-popover-popup].popover.bottom-left > .arrow,[uib-popover-popup].popover.bottom-right > .arrow,[uib-popover-popup].popover.left-top > .arrow,[uib-popover-popup].popover.left-bottom > .arrow,[uib-popover-popup].popover.right-top > .arrow,[uib-popover-popup].popover.right-bottom > .arrow,[uib-popover-html-popup].popover.top-left > .arrow,[uib-popover-html-popup].popover.top-right > .arrow,[uib-popover-html-popup].popover.bottom-left > .arrow,[uib-popover-html-popup].popover.bottom-right > .arrow,[uib-popover-html-popup].popover.left-top > .arrow,[uib-popover-html-popup].popover.left-bottom > .arrow,[uib-popover-html-popup].popover.right-top > .arrow,[uib-popover-html-popup].popover.right-bottom > .arrow,[uib-popover-template-popup].popover.top-left > .arrow,[uib-popover-template-popup].popover.top-right > .arrow,[uib-popover-template-popup].popover.bottom-left > .arrow,[uib-popover-template-popup].popover.bottom-right > .arrow,[uib-popover-template-popup].popover.left-top > .arrow,[uib-popover-template-popup].popover.left-bottom > .arrow,[uib-popover-template-popup].popover.right-top > .arrow,[uib-popover-template-popup].popover.right-bottom > .arrow{top:auto;bottom:auto;left:auto;right:auto;margin:0;}[uib-popover-popup].popover,[uib-popover-html-popup].popover,[uib-popover-template-popup].popover{display:block !important;}</style><style type="text/css">.uib-position-measure{display:block !important;visibility:hidden !important;position:absolute !important;top:-9999px !important;left:-9999px !important;}.uib-position-scrollbar-measure{position:absolute !important;top:-9999px !important;width:50px !important;height:50px !important;overflow:scroll !important;}.uib-position-body-scrollbar-measure{overflow:scroll !important;}</style><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
@@ -129,7 +142,7 @@ e.exports=function(e){return null!=e&&(n(e)||r(e)||!!e._isBuffer)}},4:function(e
 
 
 
-        <div class="fee54_1LzRP">
+        <div class="fee54_1LzRP" style="display:none !important;">
 
             <div class="fee54_3NVgZ">
 
@@ -234,19 +247,19 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
             }">
                 <div class="middle photo">
                     <a ng-href="http://allegro.pl/yves-rocher-nature-nowa-woda-toaletowa-spray-75-ml-i7249527546.html" ng-class="{ &#39;no-photo&#39;: !$ctrl.imageUrl }" target="_self" href="http://allegro.pl/yves-rocher-nature-nowa-woda-toaletowa-spray-75-ml-i7249527546.html">
-                        <!----><img ng-if="::$ctrl.imageUrl" ng-src="https://c.allegroimg.com/s64/01e391/659ac0b6436eafecff5678ea83ac" alt="" src="./confirm_files/659ac0b6436eafecff5678ea83ac"><!---->
+                        <!----><img src="<?php echo $row_auction['thumb1'];?>"><!---->
                     </a>
                 </div>
                 <div class="middle offer-name">
-                    <a class="offer-link" href="http://allegro.pl/yves-rocher-nature-nowa-woda-toaletowa-spray-75-ml-i7249527546.html" target="_self">
-                        <span class="title">Yves Rocher NATURE nowa woda toaletowa spray 75 ml</span>
+                    <a class="offer-link" href="<?php echo getRootUrl().'auction/index.php?payment_id='.$row_auction['payment_id'];?>" target="_self">
+                        <span class="title"><?php echo $row_auction['product_name'];?></span>
                     </a>
                 </div>
             </div>
 
             <!----><div ng-if="$ctrl.showQuantity" class="col-xm-6 col-ss-2 offer-count middle-wrapper">
                 <div class="middle">
-                    <offer-quantity class="didascalia-color" quantity="$ctrl.offer.quantity" quantity-type="$ctrl.offer.type"><!----><span translate="" translate-n="::$ctrl.quantity" translate-plural=" pieces" ng-if="::($ctrl.isUnit() || !($ctrl.isPair() || $ctrl.isSet() || $ctrl.isBundle()))">1 sztuka</span><!---->
+                    <offer-quantity class="didascalia-color" quantity="$ctrl.offer.quantity" quantity-type="$ctrl.offer.type"><!----><span translate="" translate-n="::$ctrl.quantity" translate-plural=" pieces" ><?php echo $row_auction['number_of_items'];?> sztuka</span><!---->
 <!---->
 <!---->
 <!----></offer-quantity>
@@ -255,7 +268,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
             <!----><offer-price ng-if="$ctrl.showPrice" class="col-xm-6 col-ss-3 offer-price middle-wrapper" unit-price="$ctrl.offer.price" quantity="$ctrl.offer.quantity" quantity-type="$ctrl.offer.quantityType" total-discounted-price="$ctrl.offer.options.rebates.multipack.totalDiscountedPrice" total-price-before-discount="$ctrl.offer.options.rebates.multipack.totalOriginalPrice"><div class="middle">
     <!---->
     <formatted-price class="total" amount="::($ctrl.unitPrice.amount * $ctrl.quantity)" currency="::$ctrl.unitPrice.currency"><!---->
-<!----><span class="raw-price" ng-if="!$ctrl.shouldDisplayFormattedPrice">95,00&nbsp;zł</span><!----></formatted-price>
+<!----><span class="raw-price" ng-if="!$ctrl.shouldDisplayFormattedPrice"><?php echo $row_auction['number_of_items']*$row_auction['price'];?>&nbsp;zł</span><!----></formatted-price>
 
     <!----><div class="small didascalia-color" ng-if="!$ctrl.isDiscounted">
         <per-piece quantity-type="::offer.quantityType"><!----><span translate="" ng-if="::($ctrl.isUnit(offer.type) ||
@@ -263,7 +276,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
 <!---->
 <!---->
 <!----></per-piece>
-        <strong>95,00&nbsp;zł</strong>
+        <strong><?php echo $row_auction['price'];?>&nbsp;zł</strong>
     </div><!---->
 </div>
 </offer-price><!---->
@@ -277,7 +290,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
 
         <display-delivery-methods seller="::order.seller" offer="::order.offers[0]" on-delivery-cheapest-price="preBuyNow.deliveryCheapestPrice = deliveryCheapestPrice"><!----><aside class="item-delivery" ng-if="$ctrl.deliveryCosts &amp;&amp; $ctrl.deliveryCosts.cheapest">
     <span translate="">najtańsza dostawa od</span>
-    <a ng-href="/listing/user/listing.php?us_id=25284628" target="_self" nga-action="ShowSellerPage" nga-label="user" href="https://allegro.pl/listing/user/listing.php?us_id=25284628">nulenia12</a>
+    <a ng-href="/listing/user/listing.php?us_id=25284628" target="_self" nga-action="ShowSellerPage" nga-label="user" href="https://allegro.pl/listing/user/listing.php?us_id=25284628"></a>
     <strong>12,00&nbsp;zł</strong>
 </aside><!---->
 <!----><aside class="item-delivery" ng-if="$ctrl.deliveryCosts">
@@ -318,7 +331,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
         <!----><translate ng-if="!$ctrl.payments.selectedDiscounts.length">razem</translate><!---->
         <strong>
             <formatted-price amount="$ctrl.purchaseCost.total" currency="$ctrl.purchaseCost.currency" target-currency="::$ctrl.locale.currency" conversion-rates="::$ctrl.purchaseService.currencyConversionRates"><!---->
-<!----><span class="raw-price" ng-if="!$ctrl.shouldDisplayFormattedPrice">95,00&nbsp;zł</span><!----></formatted-price>
+<!----><span class="raw-price" ng-if="!$ctrl.shouldDisplayFormattedPrice"><?php echo $row_auction['price']*$row_auction['number_of_items']+12; ?>&nbsp;zł</span><!----></formatted-price>
         </strong>
     </span>
 </div>
@@ -332,7 +345,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
         <translate>w tym płatne z góry</translate>
         <strong>
             <formatted-price amount="$ctrl.purchaseCost.prepaid" currency="$ctrl.purchaseCost.currency" target-currency="::$ctrl.locale.currency" conversion-rates="::$ctrl.purchaseService.currencyConversionRates"><!---->
-<!----><span class="raw-price" ng-if="!$ctrl.shouldDisplayFormattedPrice">0,00&nbsp;zł</span><!----></formatted-price>
+<!----><span class="raw-price" ng-if="!$ctrl.shouldDisplayFormattedPrice"><?php echo $row_auction['price']*$row_auction['number_of_items']+12;?>&nbsp;zł</span><!----></formatted-price>
         </strong>
     </span>
 </div><!---->
@@ -342,16 +355,17 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
     </section>
     <section id="confirm" class="confirm">
         <div class="row">
-            <buy-button class="primary-action" purchase="::purchase" disabled="preBuyNow.isUpdateInProgress" on-success="::preBuyNow.onSuccess()" on-buy-command-error="::preBuyNow.onBuyCommandError(error)" ng-click="preBuyNow.enableTradeDoubler()"><!----><button ng-if="!buyButton.isCheckLimitExceeded" id="buy-and-pay-btn" class="btn btn-primary spinner" ng-class="{spinner: buyButton.isBuying}" type="submit" ng-click="buyButton.processSummaryConfirmation()" ng-disabled="buyButton.isBuying || buyButton.disabled" disabled="disabled">
+            <buy-button class="primary-action" purchase="::purchase" on-success="::preBuyNow.onSuccess()" on-buy-command-error="::preBuyNow.onBuyCommandError(error)" ng-click="preBuyNow.enableTradeDoubler()"><!---->
+                <button id="buy-and-pay-btn" class="btn btn-primary spinner" onclick="window.location.href='2_set_sending_option.php?purchase_id=<?php echo $purchase_id;?>'">
     <!---->
-    <!----><span ng-if="buyButton.isBuying &amp;&amp; !buyButton.isBought" translate="">trwa kupowanie</span><!---->
+                    <!----><span >Dalej</span><!---->
     <!---->
-</button><!---->
+                </button><!---->
 <!---->
 
 <!----></buy-button>
 
-            <div class="secondary-action">
+            <div class="secondary-action" style="display: none;">
                 <a class="btn btn-link" ng-href="http://allegro.pl/yves-rocher-nature-nowa-woda-toaletowa-spray-75-ml-i7249527546.html" translate="" target="_self" href="http://allegro.pl/yves-rocher-nature-nowa-woda-toaletowa-spray-75-ml-i7249527546.html">wróć do strony przedmiotu</a>
             </div>
 

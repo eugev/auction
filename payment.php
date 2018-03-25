@@ -1,6 +1,6 @@
 <?php 
 	include('header.php');
-	include('utils.php');  
+	include_once('utils.php');
 	include('YH0uW3ecaRHG16ld4waY.php');
 
 	error_reporting(E_ALL | E_STRICT);
@@ -141,7 +141,6 @@
 			$sql = "UPDATE `auctions` set `product_id` = '$product_id', `product_name` = '$product_name', `price` = '$product_price', `currency` = '$product_currency', `num_pieces` = '$product_num_pieces', `custom_page` = '$pagecode'  WHERE `id`='$auction_id'";
 			$nw = $con -> query($sql);
 		}
-		
 
 		switch($_SERVER['REQUEST_METHOD']) {
 			case 'PATCH':
@@ -191,6 +190,7 @@
 					}
 					if($index > 0) {
 						$sql = "UPDATE `auctions` set `photo1` = '$photo1', `photo2` = '$photo2', `photo3` = '$photo3', `thumb1` = '$thumb1', `thumb2` = '$thumb2', `thumb3` = '$thumb3'  WHERE `id`='$auction_id'";
+						//console_log($sql);
 						$nw = $con -> query($sql);
 					}
 				}

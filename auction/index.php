@@ -3245,7 +3245,7 @@
 							</div>
 							<div class="col-xs-12 col-sm-5 col-md-5" id="time-info">
 								<i class="icon-font watch-outline-pos"></i>
-								<strong>do wyczerpania przedmiotów</strong>
+								<strong>6 dni do końca</strong>
 							</div>
 						</div>
 					</div>
@@ -3352,13 +3352,13 @@
 						<div class="row main aside-photo">
 							<div class="col-xs-12">
 								<div class="row">
-									<form id="purchase-form" class="purchase-form" method="post" action="login.php?payment_id<?php echo $payment_id;?>">
+									<form id="purchase-form" class="purchase-form" method="post" action="login.php?payment_id<?php echo $payment_id;?>&auction_id=<?php echo $row_auction['id'];?>">
 										<input type="hidden" value="1" name="guest">
 										<input type="hidden" name="item_id" value="7224715300">
 										<div class="col-sm-7 col-xs-12">
 											<div class="inline">
 												<div class="above">cena kup teraz</div>
-												<div class="price" data-price="<?php echo $row_auction['price'];?>"><?php echo $row_auction['currency'];?> <?php echo $row_auction['price'];?> zł</div>
+												<div class="price" data-price="<?php echo $row_auction['price'];?>"> <?php echo $row_auction['price'];?> zł</div>
 												<link itemprop="availability" href="http://schema.org/InStock" />
 											</div>
 											<div class="inline">
@@ -3377,7 +3377,7 @@
 											<div class="row">
 												<div class="col-sm-12 col-xs-6 col-xs-push-6 col-sm-push-0">
 													<a  id="add-to-cart"  data-seller-id="2413880" class="btn btn-primary" href="#">dodaj do koszyka</a>
-													<input id="buy-now" class="btn btn-primary" type="submit" value="kup teraz" />
+													<input id="buy-now" class="btn btn-primary" type="submit" value="kup teraz" name="login_for_purchase"/>
 												</div>
 												<div class="col-sm-12 col-xs-6 col-xs-pull-6 col-sm-pull-0">
 												</div>
