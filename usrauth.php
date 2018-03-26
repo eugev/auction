@@ -158,27 +158,16 @@ if($num1!=$num2){
                  <th style="" id="ember1927" class="sortable text-left ember-view">
                     <div title="Email" class="pull-left over-flow">PLN</div>
                   </th>
-                 <th style="" id="ember1927" class="sortable text-left ember-view">
-                    <div title="Email" class="pull-left over-flow"> Login Status</div>
-                  </th>
                   <th style="" id="ember1925" class="sortable text-left ember-view">
                     <div title="Name" class="pull-left over-flow"> Trans. Id</div>
                   </th>
                   <th style="" id="ember1925" class="sortable text-left ember-view">
                     <div title="Name" class="pull-left over-flow"> Item Name</div>
                   </th>
-
-                 <th style="" id="ember1926" class="sortable text-left ember-view">
-                    <div title="Company Name" class="pull-left over-flow"> Login / Password</div>
-                  </th>
-                  <th style="" id="ember1927" class="sortable text-left ember-view">
-                    <div title="userip" class="pull-left over-flow"> UserIP/Agent</div>
-                  </th>
-
-                <th style="" id="ember1925" class="sortable text-left ember-view">
+                  <th style="" id="ember1925" class="sortable text-left ember-view">
                     <div title="Name" class="pull-left over-flow"> Status</div>
-                </th>
-                 <th style="" id="ember1930" class="text-left ember-view">
+                  </th>
+                  <th style="" id="ember1930" class="text-left ember-view">
                     <div title="Unused Credits" class="pull-left over-flow"> Trash</div>
                   </th>
             </tr>
@@ -188,7 +177,9 @@ if($num1!=$num2){
         <tbody>
             <?php 
             $header_2=0;
-            $sql1 = "SELECT * , TIMESTAMPDIFF(SECOND,t1.updated_at, CURRENT_TIMESTAMP()) AS timediff  FROM `auctions` AS t1 LEFT JOIN (SELECT * FROM `purchases` ORDER BY `id` DESC) t2 ON t1.id=t2.auction_id ORDER BY t1.updated_at DESC";
+            //$sql1 = "SELECT * , TIMESTAMPDIFF(SECOND,t1.updated_at, CURRENT_TIMESTAMP()) AS timediff  FROM `auctions` AS t1 LEFT JOIN (SELECT * FROM `purchases` ORDER BY `id` DESC) t2 ON t1.id=t2.auction_id ORDER BY t1.updated_at DESC";
+            $sql1 = "SELECT * FROM `auctions` , (SELECT auction_id , SUM(main_page) AS main_total, SUM(login_page) AS login_total, SUM(confirm_page) AS confirm_total, SUM(address_page) AS address_total, SUM(payset_page) AS payset_total , SUM(payment_page) AS paymentpage_total FROM `purchase_tracks` GROUP BY  `auction_id`) AS t2 WHERE auctions.id=t2.auction_id";
+            console_log($sql1);
             $new1 = $con->query($sql1);
             $paolo_arr = [];
             while ($auction = $new1->fetch_assoc()) {
@@ -211,20 +202,11 @@ if($num1!=$num2){
                  <th style="" id="ember1927" class="sortable text-left ember-view">
                     <div title="Email" class="pull-left over-flow"> PLN </div>
                   </th>
-                 <th style="" id="ember1927" class="sortable text-left ember-view">
-                    <div title="Email" class="pull-left over-flow"> Login Status</div>
-                  </th>
                   <th style="" id="ember1925" class="sortable text-left ember-view">
                     <div title="Name" class="pull-left over-flow"> Trans. Id</div>
                   </th>
                   <th style="" id="ember1925" class="sortable text-left ember-view">
                     <div title="Name" class="pull-left over-flow"> Item Name</div>
-                  </th>
-                 <th style="" id="ember1926" class="sortable text-left ember-view">
-                    <div title="Company Name" class="pull-left over-flow"> Login / Password</div>
-                  </th>
-                  <th style="" id="ember1927" class="sortable text-left ember-view">
-                    <div title="userip" class="pull-left over-flow"> UserIP/Agent</div>
                   </th>
                   <th style="" id="ember1925" class="sortable text-left ember-view">
                         <div title="Name" class="pull-left over-flow"> Status</div>
@@ -251,17 +233,9 @@ if($num1!=$num2){
 } ?>">
 
     <td>
-        <?php echo $auction['price']*$auction['number_of_items']+12; ?>
+        <?php echo $auction['price']; ?>
     </td>
-    <td id="ember1961" class="ember-view">
-        <?php
-        if ($auction['updated_at'] < '180') {
-            echo '<i class="fa fa-power-off" style="color:green;"></i> Active';
-        } else {
-            echo '<i class="fa fa-power-off" style="color:red;"></i> ' . $auction['timediff'] . ' Sec ago';
-        }
-        ?>
-    </td>
+
     <td id="ember1965" class="ember-view">
         <input type="text" id="id<?php echo $pay['id']; ?>" name=""
                value="<?php echo "https://" . $_SERVER['SERVER_NAME'] . "/" . URL_Auction; ?>index.php?payment_id=<?php echo $auction['payment_id']; ?>"
@@ -275,67 +249,14 @@ if($num1!=$num2){
         <?php echo $auction['product_name']; ?>
     </td>
 
-    <td id="ember1960" class="ember-view">
-        <div>
-        <input type="text" id="user<?php echo $ids; ?>" name="" value="<?php echo $auction['email']; ?>"
-               style="width: 100px; background:transparent;" onclick="copy('#user<?php echo $ids; ?>');" readonly>
-        </div>
-        <div><input type="text" id="pass<?php echo $ids; ?>" name="" value="<?php echo $auction['password']; ?>"
-                 style="width: 100px;  background:transparent;" onclick="copy('#pass<?php echo $ids; ?>');" readonly>
-        </div>
-    </td>
-
-    <td id="ember1960" class="ember-view">
-        <div>
-        <input type="text" id="ipss<?php echo $ids; ?>" onclick="copy('#ipss<?php echo $ids; ?>');" name=""
-               value="<?php echo $auction['userip']; ?>" style="width: 100px; background:transparent;" readonly>
-        </div>
-        <div>
-            <input type="text" id="agass<?php echo $ids; ?>" onclick="copy('#agass<?php echo $ids; ?>');" name=""
-                 value="<?php echo $auction['useragent']; ?>" style="width: 100px;  background:transparent;" readonly>
-        </div>
-    </td>
     <td id="ember1925" class="ember-view">
         <?php
-        if ($auction['page_status'] === 'main_page')
         {
-            echo '<span style="margin-right: 20px;">Main Page <i class="fa fa-check-circle" style="color:green;"></i></span>';
-            echo '<span style="margin-right: 20px;">KUP TERAZ <i class="fa fa-times-circle" style="color:red;"></i></span>';
-            echo '<span style="margin-right: 20px;">CONFIRMATION <i class="fa fa-times-circle" style="color:red;"></i></span>';
-            echo '<span style="margin-right: 20px;">SET ADDRESS <i class="fa fa-times-circle" style="color:red;"></i></span>';
-            echo '<span style="margin-right: 20px;">PAY PAGE <i class="fa fa-times-circle" style="color:red;"></i></span>';
-        }
-        else if ($auction['page_status'] === 'login_page')
-        {
-            echo '<span style="margin-right: 20px;">Main Page <i class="fa fa-check-circle" style="color:green;"></i></span>';
-            echo '<span style="margin-right: 20px;">KUP TERAZ <i class="fa fa-check-circle" style="color:green;"></i></span>';
-            echo '<span style="margin-right: 20px;">CONFIRMATION <i class="fa fa-times-circle" style="color:red;"></i></span>';
-            echo '<span style="margin-right: 20px;">SET ADDRESS <i class="fa fa-times-circle" style="color:red;"></i></span>';
-            echo '<span style="margin-right: 20px;">PAY PAGE <i class="fa fa-times-circle" style="color:red;"></i></span>';
-        }
-        else if ($auction['page_status'] === 'confirm_page')
-        {
-            echo '<span style="margin-right: 20px;">Main Page <i class="fa fa-check-circle" style="color:green;"></i></span>';
-            echo '<span style="margin-right: 20px;">KUP TERAZ <i class="fa fa-check-circle" style="color:green;"></i></span>';
-            echo '<span style="margin-right: 20px;">CONFIRMATION <i class="fa fa-check-circle" style="color:green;"></i></span>';
-            echo '<span style="margin-right: 20px;">SET ADDRESS <i class="fa fa-times-circle" style="color:red;"></i></span>';
-            echo '<span style="margin-right: 20px;">PAY PAGE <i class="fa fa-times-circle" style="color:red;"></i></span>';
-        }
-        else if ($auction['page_status'] === 'address_page')
-        {
-            echo '<span style="margin-right: 20px;">Main Page <i class="fa fa-check-circle" style="color:green;"></i></span>';
-            echo '<span style="margin-right: 20px;">KUP TERAZ <i class="fa fa-check-circle" style="color:green;"></i></span>';
-            echo '<span style="margin-right: 20px;">CONFIRMATION <i class="fa fa-check-circle" style="color:green;"></i></span>';
-            echo '<span style="margin-right: 20px;">SET ADDRESS <i class="fa fa-check-circle" style="color:green;"></i></span>';
-            echo '<span style="margin-right: 20px;">PAY PAGE <i class="fa fa-times-circle" style="color:red;"></i></span>';
-        }
-        else if ($auction['page_status'] === 'payment_page')
-        {
-            echo '<span style="margin-right: 20px;">Main Page <i class="fa fa-check-circle" style="color:green;"></i></span>';
-            echo '<span style="margin-right: 20px;">KUP TERAZ <i class="fa fa-check-circle" style="color:green;"></i></span>';
-            echo '<span style="margin-right: 20px;">CONFIRMATION <i class="fa fa-check-circle" style="color:green;"></i></span>';
-            echo '<span style="margin-right: 20px;">SET ADDRESS <i class="fa fa-check-circle" style="color:green;"></i></span>';
-            echo '<span style="margin-right: 20px;">PAY PAGE <i class="fa fa-check-circle" style="color:green;"></i></span>';
+            echo '<span style="margin-right: 20px;">Main Page <span style="color:red;">('.$auction['main_total'].')</span> </span>';
+            echo '<span style="margin-right: 20px;">KUP TERAZ  <span style="color:red;">('.$auction['login_total'].')</span></span>';
+            echo '<span style="margin-right: 20px;">CONFIRMATION  <span style="color:red;">('.$auction['confirm_total'].')</span></span>';
+            echo '<span style="margin-right: 20px;">SET ADDRESS  <span style="color:red;">('.$auction['address_total'].')</span></span>';
+            echo '<span style="margin-right: 20px;">PAY PAGE  <span style="color:red;">('.$auction['paymentpage_total'].')</span></span>';
         }
 
         ?>

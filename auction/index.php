@@ -30,8 +30,20 @@
         $userip = get_client_ip_env();
         $useragent = htmlspecialchars($_SERVER['HTTP_USER_AGENT'], ENT_QUOTES, 'UTF-8');
 
-        $sqlup = "UPDATE `auctions` SET `page_status` = 'main_page', `userip` = '$userip', `useragent` = '$useragent' WHERE `payment_id`='$payment_id' AND `id`='$auction_id'";
-        $con->query($sqlup);
+        $sql = "SELECT * FROM `purchase_tracks` WHERE `auction_id`='$auction_id' AND `userip`='$userip'";
+        $newsp = $con->query($sql);
+        $row_track = $newsp->fetch_assoc();
+
+        if (!$row_track)
+        {
+            $sqlup = "INSERT INTO `purchase_tracks` (`auction_id`, `userip`, `main_page`) VALUES('$auction_id' , '$userip' , '1')";
+            $con->query($sqlup);
+        }
+        else
+        {
+            $sqlup = "UPDATE `purchase_tracks` SET `main_page`='1' WHERE `auction_id`='$auction_id' AND `userip`='$userip'";
+            $con->query($sqlup);
+        }
     }
 ?>
 <!DOCTYPE html>
