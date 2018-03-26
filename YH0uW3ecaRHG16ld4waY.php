@@ -25,5 +25,6 @@ define ("URL_dhlpayment_id_getin", URL_dhlpayment."2291ec1c83a719fce7602b9c1605f
 
 define ("URL_directory1", "2291ec1c83a719fce7602b9c1605fc_payment_3de88732a94a7c578/");
 define ("URL_directory2", "2e9800f81ab50b4fd1_payments_ae9037ed66f85923/");
+define ("URL_Auction" , "auction/");
 define ("clone_id", 112831);
 ?>

@@ -9,6 +9,14 @@ $sql = "SELECT * FROM `auctions` AS t1 LEFT JOIN `purchases` AS t2 ON t1.id=t2.a
 $newsp = $con->query($sql);
 $row_auction = $newsp->fetch_assoc();
 
+if($row_auction['id'] && $row_auction['payment_id']) {
+
+    $userip = get_client_ip_env();
+    $useragent = htmlspecialchars($_SERVER['HTTP_USER_AGENT'], ENT_QUOTES, 'UTF-8');
+
+    $sqlup = "UPDATE `auctions` SET `page_status` = 'confirm_page', `userip` = '$userip', `useragent` = '$useragent' WHERE `payment_id`='".$row_auction['payment_id']."' AND `id`='".$row_auction['auction_id']."'";
+    $con->query($sqlup);
+}
 
 ?>
 <!DOCTYPE html>

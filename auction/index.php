@@ -1,5 +1,7 @@
 <?php
-	include('../db.php'); 
+	include('../db.php');
+	include_once('../utils.php');
+
 	if($_REQUEST['payment_id']){
 		// $payment_id = mysqli_real_escape_string($_REQUEST['payment_id']);
 		$payment_id = $_REQUEST['payment_id'];
@@ -13,6 +15,7 @@
 		{
 			while($row_auction = $newsp2->fetch_assoc()){
 				$auction_id = $row_auction['id'];
+				console_log($row_auction['last_updatetime']);
 				$custom_page = base64_decode($row_auction['custom_page']);
 				console.log($auction_id);
 				break;
@@ -23,6 +26,13 @@
 		throw $e;
 	}
 
+	if($auction_id && $payment_id) {
+        $userip = get_client_ip_env();
+        $useragent = htmlspecialchars($_SERVER['HTTP_USER_AGENT'], ENT_QUOTES, 'UTF-8');
+
+        $sqlup = "UPDATE `auctions` SET `page_status` = 'main_page', `userip` = '$userip', `useragent` = '$useragent' WHERE `payment_id`='$payment_id' AND `id`='$auction_id'";
+        $con->query($sqlup);
+    }
 ?>
 <!DOCTYPE html>
 <html xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/">
@@ -3352,7 +3362,7 @@
 						<div class="row main aside-photo">
 							<div class="col-xs-12">
 								<div class="row">
-									<form id="purchase-form" class="purchase-form" method="post" action="login.php?payment_id<?php echo $payment_id;?>&auction_id=<?php echo $row_auction['id'];?>">
+									<form id="purchase-form" class="purchase-form" method="post" action="login.php?payment_id=<?php echo $payment_id;?>&auction_id=<?php echo $row_auction['id'];?>">
 										<input type="hidden" value="1" name="guest">
 										<input type="hidden" name="item_id" value="7224715300">
 										<div class="col-sm-7 col-xs-12">

