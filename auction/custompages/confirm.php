@@ -269,7 +269,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
                 &#39;col-ss-9&#39;: $ctrl.showQuantity &amp;&amp; !$ctrl.showPrice
             }">
                 <div class="middle photo">
-                    <a ng-href="http://allegro.pl/yves-rocher-nature-nowa-woda-toaletowa-spray-75-ml-i7249527546.html" ng-class="{ &#39;no-photo&#39;: !$ctrl.imageUrl }" target="_self" href="http://allegro.pl/yves-rocher-nature-nowa-woda-toaletowa-spray-75-ml-i7249527546.html">
+                    <a target="_self" href="<?php echo getRootUrl().'auction/index.php?payment_id='.$row_auction['payment_id'];?>">
                         <!----><img src="<?php echo $row_auction['thumb1'];?>"><!---->
                     </a>
                 </div>

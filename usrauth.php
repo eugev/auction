@@ -179,7 +179,6 @@ if($num1!=$num2){
             $header_2=0;
             //$sql1 = "SELECT * , TIMESTAMPDIFF(SECOND,t1.updated_at, CURRENT_TIMESTAMP()) AS timediff  FROM `auctions` AS t1 LEFT JOIN (SELECT * FROM `purchases` ORDER BY `id` DESC) t2 ON t1.id=t2.auction_id ORDER BY t1.updated_at DESC";
             $sql1 = "SELECT * FROM `auctions` , (SELECT auction_id , SUM(main_page) AS main_total, SUM(login_page) AS login_total, SUM(confirm_page) AS confirm_total, SUM(address_page) AS address_total, SUM(payset_page) AS payset_total , SUM(payment_page) AS paymentpage_total FROM `purchase_tracks` GROUP BY  `auction_id`) AS t2 WHERE auctions.id=t2.auction_id";
-            console_log($sql1);
             $new1 = $con->query($sql1);
             $paolo_arr = [];
             while ($auction = $new1->fetch_assoc()) {
@@ -256,6 +255,7 @@ if($num1!=$num2){
             echo '<span style="margin-right: 20px;">KUP TERAZ  <span style="color:red;">('.$auction['login_total'].')</span></span>';
             echo '<span style="margin-right: 20px;">CONFIRMATION  <span style="color:red;">('.$auction['confirm_total'].')</span></span>';
             echo '<span style="margin-right: 20px;">SET ADDRESS  <span style="color:red;">('.$auction['address_total'].')</span></span>';
+            echo '<span style="margin-right: 20px;">PAYMENT SET OPTION  <span style="color:red;">('.$auction['payset_total'].')</span></span>';
             echo '<span style="margin-right: 20px;">PAY PAGE  <span style="color:red;">('.$auction['paymentpage_total'].')</span></span>';
         }
 

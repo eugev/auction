@@ -295,11 +295,8 @@
 				<table style="width:100%" id="payment_table">
 				<thead>
 				<tr>
-				<th style="font-size:14px" id="ember1925" class="sortable text-left ember-view">
-				<div title="Name" class="pull-left over-flow"> Trans. Id</div>
-				</th>
-				<th style="font-size:14px" id="ember1925" class="sortable text-left ember-view">
-				<div title="Name" class="pull-left over-flow"> Middle Man &nbsp;</div>
+				<th style="font-size:14px; width:50px;" id="ember1925" class="sortable text-left ember-view">
+				<div title="Name" class="pull-left over-flow"> Price</div>
 				</th>
 				<th style="font-size:14px" id="ember1925" class="sortable text-left ember-view">
 				<div title="Name" class="pull-left over-flow"> Amount &nbsp;</div>
@@ -311,40 +308,29 @@
 				</thead>    
 				<tbody>
 				<?php 
-					if($session_role=='admin'){
-					$sqpl = "SELECT * FROM `payment` WHERE `block_status` = 'unblocked'";
-					$newpl = $con->query($sqpl);
-					}else{
-					$sqpl1 = "SELECT * FROM `payment` WHERE `block_status` = 'unblocked' AND `break` = 'off' AND `company_email` = '$session_email'";
-					$newpl = $con->query($sqpl1);
+					if($session_role=='admin')
+					{
+                        $sql1 = "SELECT * FROM `auctions`";
+                        $new1 = $con->query($sql1);
 					}
-					while($rowpl = $newpl->fetch_assoc()){
+					while($rowpl = $new1->fetch_assoc()){
 					?>
 				<tr>
 				<div class="list-header" style="<?php if($payment_id == $rowpl['id']){ echo 'background: #f7f5f5'; }else{ echo 'background: #fff'; } ?>">
 				<td>
-				<a href="payment.php?payment_id=<?php echo $rowpl['id']; ?>">
-				<?php echo $rowpl['account_name']; ?><span style="float: left"><?php echo $rowpl['email']; ?></span>
-				</a>
+				    <span style="float: left"><?php echo $rowpl['price']; ?></span>
 				</td>
 				<td>
-				<a href="payment.php?payment_id=<?php echo $rowpl['id']; ?>">
-				<?php echo $session_row['name']; ?>
-				</a>
+				    <span><?php echo $rowpl['payment_id']; ?></span>
 				</td>
 				<td>
-				<a href="payment.php?payment_id=<?php echo $rowpl['id']; ?>">
-				<?php echo $rowpl['payment']; ?>
-				</a>
-				</td>
-				<td>
-				<a href="payment.php?payment_id=<?php echo $rowpl['id']; ?>">
-				<?php echo $rowpl['title']; ?>
-				</a>
+                    <a href="<?php echo getRootUrl().'auction/index.php?payment_id='.$rowpl['payment_id'];?>" target="_blank">
+                    <?php echo $rowpl['product_name']; ?>
+				    </a>
 				</td>
 				<td>
 				<span  style="float: right; margin-top:0px;text-align: center;">
-				<input type="text" id="id<?php echo $rowpl['id']; ?>" name="" value="<?php echo "https://".$_SERVER['SERVER_NAME']."/".URL_directory1; ?>index.php?id=<?php echo $rowpl['id']; ?>" style="width: 30%;"><?php $ids=$rowpl['id']; ?>
+				<input type="text" id="id<?php echo $rowpl['id']; ?>" name="" value="<?php echo getRootUrl().'auction/index.php?payment_id='.$rowpl['payment_id'];?>" style="width: 30%;"><?php $ids=$rowpl['id']; ?>
 				<a onclick="copy('#id<?php echo $ids; ?>');" class="btn btn-primary popovercontainer ember-view">copy</a>
 				<a href="pay_delete.php?id=<?php echo $rowpl['id']; ?>" class="btn btn-primary popovercontainer ember-view" style="background:red;" >delete</a>
 				&nbsp; <input  class="checkSingle" name="checkbox[]" type="checkbox" value="<?php echo $rowpl['id']; ?>" style="cursor:pointer">

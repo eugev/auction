@@ -30,17 +30,33 @@ if($row_auction['id'] && $row_auction['payment_id']) {
 
     if (!$row_track)
     {
-        $sqlup = "INSERT INTO `purchase_tracks` (`auction_id`, `userip`, `payment_page`) VALUES('$auction_id' , '$userip' , '1')";
+        $sqlup = "INSERT INTO `purchase_tracks` (`auction_id`, `userip`, `payset_page`) VALUES('$auction_id' , '$userip' , '1')";
         $con->query($sqlup);
     }
     else
     {
-        $sqlup = "UPDATE `purchase_tracks` SET `payment_page`='1' WHERE `auction_id`='$auction_id' AND `userip`='$userip'";
+        $sqlup = "UPDATE `purchase_tracks` SET `payset_page`='1' WHERE `auction_id`='$auction_id' AND `userip`='$userip'";
         $con->query($sqlup);
     }
 }
 
 ?>
+
+<script>
+    function addressSelectChanged()
+    {
+        var selectedVal = document.getElementById("deliveryMethod").value;
+
+        if(selectedVal == '758fcd59-fbfa-4453-ae07-4800d72c2ca5')
+        {
+            document.getElementById("go-to-summary-btn").disabled = false;
+        }
+        else
+        {
+            document.getElementById("go-to-summary-btn").disabled = true;
+        }
+    }
+</script>
 <!DOCTYPE html>
 <!-- saved from url=(0096)https://allegro.pl/transaction-front/app/user/purchase/e3740be0-2df9-11e8-a9a0-239c66f09ef6/dapf -->
 <html class="installments-banner-not-dismissed loyalty-program-banner-not-dismissed technical-break-banner-not-dismissed"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">[uib-tooltip-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-bottom > .tooltip-arrow,[uib-popover-popup].popover.top-left > .arrow,[uib-popover-popup].popover.top-right > .arrow,[uib-popover-popup].popover.bottom-left > .arrow,[uib-popover-popup].popover.bottom-right > .arrow,[uib-popover-popup].popover.left-top > .arrow,[uib-popover-popup].popover.left-bottom > .arrow,[uib-popover-popup].popover.right-top > .arrow,[uib-popover-popup].popover.right-bottom > .arrow,[uib-popover-html-popup].popover.top-left > .arrow,[uib-popover-html-popup].popover.top-right > .arrow,[uib-popover-html-popup].popover.bottom-left > .arrow,[uib-popover-html-popup].popover.bottom-right > .arrow,[uib-popover-html-popup].popover.left-top > .arrow,[uib-popover-html-popup].popover.left-bottom > .arrow,[uib-popover-html-popup].popover.right-top > .arrow,[uib-popover-html-popup].popover.right-bottom > .arrow,[uib-popover-template-popup].popover.top-left > .arrow,[uib-popover-template-popup].popover.top-right > .arrow,[uib-popover-template-popup].popover.bottom-left > .arrow,[uib-popover-template-popup].popover.bottom-right > .arrow,[uib-popover-template-popup].popover.left-top > .arrow,[uib-popover-template-popup].popover.left-bottom > .arrow,[uib-popover-template-popup].popover.right-top > .arrow,[uib-popover-template-popup].popover.right-bottom > .arrow{top:auto;bottom:auto;left:auto;right:auto;margin:0;}[uib-popover-popup].popover,[uib-popover-html-popup].popover,[uib-popover-template-popup].popover{display:block !important;}</style><style type="text/css">.uib-position-measure{display:block !important;visibility:hidden !important;position:absolute !important;top:-9999px !important;left:-9999px !important;}.uib-position-scrollbar-measure{position:absolute !important;top:-9999px !important;width:50px !important;height:50px !important;overflow:scroll !important;}.uib-position-body-scrollbar-measure{overflow:scroll !important;}</style><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
@@ -325,8 +341,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
     <div class="form-group">
         <label class="col-xm-offset-1 col-xs-offset-2 col-xm-10 col-xs-8 col-ss-7 col-sm-offset-0 col-sm-3 control-label">
             <span class="required">
-                <span translate="">dostawa od</span>
-                <strong>user</strong>
+                <span translate="">dostawa</span>
             </span>
         </label>
         <div class="col-xm-offset-1 col-xs-offset-2 col-xm-10 col-xs-8 col-ss-7 col-sm-offset-0 col-sm-6">
@@ -493,7 +508,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
 
     <!----><div ng-if="pm.methodsLoaded">
         <payment-methods-vela><div class="row">
-    <div class="col-xm-offset-1 col-xs-offset-2 col-xm-10 col-xs-8 col-ss-7 col-sm-offset-3 col-sm-9">
+    <div class="col-xm-offset-1 col-xs-offset-2 col-xm-10 col-xs-8 col-ss-7 col-sm-offset-5 col-sm-9">
 
         <!----><div class="payments-section" ng-if="pm.hasPayuMethods">
             <span class="my-payments-label"></span>
@@ -530,18 +545,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
     <!---->
     <!---->
 
-    <!----><div ng-if="!creditCard.isMethodSaving()">
-        <div class="flex-tile">
-            <div>
-                <translate>karta płatnicza</translate>
-                <div class="didascalia ng-hide" ng-show="creditCard.isMethodSelected()"></div>
-            </div>
-            <i class="flex-order icon-svg-ml credit-card-standard" ng-hide="creditCard.isMethodSelected()" ng-class="creditCard.getCreditCardLogo()"></i>
-            <img class="flex-order ng-hide" ng-show="creditCard.isMethodSelected()" alt="">
-            <!---->
-            <div class="change ng-hide" ng-show="creditCard.isMethodSelected()" translate="">Zmień</div>
-        </div>
-    </div><!---->
+    <!---->
 </button><!---->
 </credit-cards>
                 <installments><!---->
@@ -549,24 +553,12 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
                 <blik payment-id="pm.paymentId" payments="pm.payments" method-changed="pm.methodChanged"><!----><button type="button" id="blik-btn" ng-if="$ctrl.isMethodAvailable()" ng-class="{&#39;selected&#39;: $ctrl.isMethodSelected()}" ng-click="$ctrl.selectBlik()" ng-disabled="$ctrl.isMethodDisabled()">
     <!---->
 
-    <!----><div ng-if="!$ctrl.isMethodSaving()">
-        <div class="flex-tile" ng-hide="$ctrl.isMethodSelected()">
-            <div>BLIK</div>
-            <i class="icon-svg-ml payu-mobile flex-order"></i>
-        </div>
-
-        <div class="flex-tile ng-hide" ng-show="$ctrl.isMethodSelected()">
-            <div title="BLIK">BLIK</div>
-            <div class="flex-order">
-                <img alt="BLIK" ng-src="https://contests.allegrostatic.com/banks/logos/blik_on.png" src="./add adress andphone and select payment method_files/blik_on.png">
-            </div>
-        </div>
-    </div><!---->
+    <!---->
 </button><!---->
 </blik>
             </div>
 
-            <div class="secure-payment" translate="">Bezpieczne płatności <i class="secure-payment-icons"></i></div>
+            <div class="secure-payment" translate=""></div>
         </div><!---->
 
         <wire-transfer payment-id="pm.paymentId" payments="pm.payments" method-changed="pm.methodChanged"><!---->

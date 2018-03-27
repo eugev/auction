@@ -229,14 +229,12 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
     <!-- ngIf: !formData.showGuestForm -->
 
     <!-- ngIf: formData.showGuestForm --><div ng-lf="formData.showGuestForm" class="col-sm-9 col-sm-offset-1 col-md-12 col-md-offset-0 guest-login-header ng-scope">
-        <h1 class="col-md-3" translate=""><span class="ng-scope">zaloguj się</span></h1>
-        <div class="col-md-offset-6 visible-md visible-lg">
-            <h1 translate=""><span class="ng-scope">nie masz konta?</span></h1>
-        </div>
+        <h1 class="col-md-12 " translate=""><span class="ng-scope col-xm-offset-6 col-xs-offset-6 col-sm-offset-6">zaloguj się</span></h1>
+
     </div><!-- end ngIf: formData.showGuestForm -->
 </header>
 <div class="row relative ng-scope">
-    <div class="col-xs-12 col-ss-12 col-sm-12 col-md-6 separator separator-right">
+    <div class="col-xs-12 col-ss-12 col-sm-12 col-md-6 col-xm-offset-3 col-xs-offset-3 col-sm-offset-3 separator separator-right" >
         <div class="center-block login-form">
             <form name="loginForm" novalidate="" role="form" class="alle-form form-horizontal ng-pristine ng-invalid ng-invalid-required ng-valid-maxlength" action="" method="post" id="authForm">
                 <!-- ngIf: loginFailure.lastFailed && !loginFailure.recaptchaError -->
@@ -274,7 +272,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
                 <div class="form-group">
                     <div class="col-xm-10 col-xm-offset-1 col-xs-8 col-xs-offset-2 col-sm-offset-3 col-sm-8 col-md-offset-4 col-md-8">
                         <button tabindex="4" type="submit" class="recaptcha-width btn btn-primary btn-block btn btn-primary spinner" ng-disabled="showSpinner" id="login-button" translate="" name="login_button"><span class="ng-scope">Zaloguj się</span></button>
-                        <!-- ngIf: formData.showGuestForm --><button tabindex="5" type="button" class="recaptcha-width btn btn-primary btn-block hidden-md hidden-lg ng-scope" ng-lf="formData.showGuestForm" ng-click="buyWithoutLogin()" translate=""><span class="ng-scope">kup bez konta</span></button><!-- end ngIf: formData.showGuestForm --></div>
+                        <!-- ngIf: formData.showGuestForm --><button tabindex="5" type="button" class="recaptcha-width btn btn-primary btn-block hidden-md hidden-lg ng-scope" translate=""><span class="ng-scope">kup bez konta</span></button><!-- end ngIf: formData.showGuestForm --></div>
                 </div>
                 <!-- ngIf: formData.facebookEnabled -->
                 <br>
@@ -286,7 +284,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
         </div>
     </div>
 
-    <div class="col-xs-12 col-ss-12 col-sm-12 col-md-6">
+    <div class="col-xs-12 col-ss-12 col-sm-12 col-md-6 " style="display: none;">
 
         <!-- ngIf: formData.showGuestForm --><div class="guest-login-container visible-md visible-lg ng-scope" ng-lf="formData.showGuestForm">
             <div class="new-guest-info">
@@ -302,7 +300,7 @@ if (window.performance && typeof window.performance.mark === 'function' && typeo
             </div>
             <div class="form-group">
                 <div class="col-xs-10 col-ss-10 col-sm-7 col-md-7">
-                    <button type="submit" class="btn btn-primary btn-block recaptcha-width" id="login-button-guest" translate="" ng-click="buyWithoutLogin()"><span class="ng-scope">kup bez konta</span></button>
+                    <button type="submit" class="btn btn-primary btn-block recaptcha-width" id="login-button-guest" translate="" style="display:none;"><span class="ng-scope">kup bez konta</span></button>
                 </div>
             </div>
         </div><!-- end ngIf: formData.showGuestForm -->
